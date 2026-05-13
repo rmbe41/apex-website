@@ -23,7 +23,8 @@
   /* Floating nav island: margin + chip height (+ gap before mobile drawer) */
   --nav-island-mt: 30px;
   --nav-island-inner-h: 68px;
-  --nav-island-max: min(calc(var(--max) + 56px), calc(100% - 24px));
+  /* Gleiche Außen-Gutter wie .container (24px / Seite); Pille nutzt volle Header-Innenbreite */
+  --nav-island-max: min(calc(var(--max) + 56px), 100%);
   /* Innenabstand Pille: rechts ≈ optischer Abstand CTA zur Stroke (wie oben/unten am Button) */
   --nav-island-pad-y: 10px;
   --nav-island-pad-x-start: 32px;
@@ -116,8 +117,8 @@ button {
   right: 0;
   z-index: 100;
   padding-top: var(--nav-island-mt);
-  padding-left: max(20px, env(safe-area-inset-left));
-  padding-right: max(20px, env(safe-area-inset-right));
+  padding-left: max(24px, env(safe-area-inset-left));
+  padding-right: max(24px, env(safe-area-inset-right));
   padding-bottom: 0;
   display: flex;
   justify-content: center;
