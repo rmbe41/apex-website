@@ -21,9 +21,13 @@
   /* Abstand Buttons↔Video und Video↔Trennlinie (identisch) */
   --hero-video-gap: clamp(56px, 6vw, 76px);
   /* Floating nav island: margin + chip height (+ gap before mobile drawer) */
-  --nav-island-mt: 16px;
-  --nav-island-inner-h: 74px;
+  --nav-island-mt: 30px;
+  --nav-island-inner-h: 68px;
   --nav-island-max: min(calc(var(--max) + 56px), calc(100% - 24px));
+  /* Innenabstand Pille: rechts ≈ optischer Abstand CTA zur Stroke (wie oben/unten am Button) */
+  --nav-island-pad-y: 10px;
+  --nav-island-pad-x-start: 32px;
+  --nav-island-pad-x-end: 13px;
   --nav-h: calc(var(--nav-island-mt) + var(--nav-island-inner-h) + 8px);
 }
 
@@ -189,7 +193,8 @@ button {
   max-width: var(--nav-island-max);
   min-height: var(--nav-island-inner-h);
   margin-inline: auto;
-  padding: 14px 32px;
+  padding: var(--nav-island-pad-y) var(--nav-island-pad-x-end) var(--nav-island-pad-y)
+    var(--nav-island-pad-x-start);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -301,9 +306,16 @@ button {
 }
 
 @media (min-width: 900px) {
-  .nav-desktop,
-  .header-cta {
+  .nav-desktop {
     display: flex;
+  }
+
+  .header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 24px;
   }
 
   .nav-toggle {
