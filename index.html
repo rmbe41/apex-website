@@ -646,6 +646,11 @@
          * delta = Abstand Hero-Top → Pills-Top inkl. bisherigem Snap; Ziel = nächstes Vielfaches von step.
          */
         function snapHeroRuleLine() {
+          /* Einheitlicher Video-Abstand: Snap am Pills-wrap würde Video→Strich verzerren */
+          if (window.matchMedia("(max-width: 899px)").matches) {
+            hero.style.setProperty("--hero-rule-snap", "0px");
+            return;
+          }
           var oldSnap =
             parseFloat(getComputedStyle(hero).getPropertyValue("--hero-rule-snap")) || 0;
           var delta = Math.round(

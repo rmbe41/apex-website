@@ -20,6 +20,8 @@
   --hero-grid-step: 80px;
   /* Abstand Buttons↔Video und Video↔Trennlinie (identisch) */
   --hero-video-gap: clamp(56px, 6vw, 76px);
+  /* Mobile: ein Abstand oben/unten (Grid-Gap zwischen Copy und Video ist 0) */
+  --hero-video-stack-gap: clamp(58px, 5.5vw, 72px);
   /* Floating nav island: margin + chip height (+ gap before mobile drawer) */
   --nav-island-mt: 30px;
   --nav-island-inner-h: 68px;
@@ -472,8 +474,8 @@ button {
   position: absolute;
   inset: 0;
   margin: auto;
-  width: 88px;
-  height: 88px;
+  width: 72px;
+  height: 72px;
   border: none;
   padding: 0;
   cursor: pointer;
@@ -501,8 +503,8 @@ button {
   position: absolute;
   inset: 0;
   margin: auto;
-  width: 88px;
-  height: 88px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.16);
   backdrop-filter: blur(10px);
@@ -713,11 +715,13 @@ button {
 @media (max-width: 899px) {
   .hero-layout {
     grid-template-columns: 1fr;
+    /* Sonst addiert sich gap + margin-top am Video → größerer Abstand als zum Strich */
+    gap: 0;
   }
 
   .hero-layout .hero-video {
-    margin-top: var(--hero-video-gap);
-    margin-bottom: var(--hero-video-gap);
+    margin-top: var(--hero-video-stack-gap);
+    margin-bottom: var(--hero-video-stack-gap);
     width: min(960px, 100%);
     margin-left: auto;
     margin-right: auto;
@@ -1210,15 +1214,20 @@ button {
 @media (max-width: 720px) {
   .pulscheck-two-col {
     grid-template-columns: 1fr;
-    align-items: center;
+    align-items: stretch;
+  }
+
+  /* Copy (Überschrift, Text, Button) zuerst — Grafik darunter */
+  .pulscheck-col--copy {
+    order: -1;
+    text-align: center;
   }
 
   .pulscheck-col--visual {
+    order: 1;
     justify-content: center;
-  }
-
-  .pulscheck-col--copy {
-    text-align: center;
+    align-items: center;
+    width: 100%;
   }
 
   .pulscheck-col--copy .pulscheck-title-row {
@@ -1237,7 +1246,12 @@ button {
   user-select: none;
   width: fit-content;
   max-width: min(100%, 500px);
-  margin-inline-start: 0;
+}
+
+@media (min-width: 721px) {
+  .pulscheck-preview {
+    margin-inline-start: 0;
+  }
 }
 
 .pulscheck-preview-card {
