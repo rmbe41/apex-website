@@ -19,7 +19,7 @@
   /* Hero grid — keep in sync with .hero-grid background-size */
   --hero-grid-step: 80px;
   /* Abstand Buttons↔Video und Video↔Trennlinie (identisch) */
-  --hero-video-gap: clamp(40px, 5vw, 56px);
+  --hero-video-gap: clamp(48px, 5.5vw, 64px);
   /* Abstand von Hero-Content-Start bis unterhalb Video inkl. unterem Video-Abstand */
   --hero-stack-before-rule: calc(936px + var(--hero-video-gap));
   /* Horizontal rule snaps to this grid line index from top of .hero */
@@ -319,8 +319,8 @@ button {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--nav-h) + 88px) 0 104px;
-  --hero-content-pad-extra: 88px;
+  padding: calc(var(--nav-h) + 112px) 0 104px;
+  --hero-content-pad-extra: 112px;
 }
 
 .hero-grid {
@@ -353,29 +353,36 @@ button {
   z-index: 1;
 }
 
-.hero .eyebrow {
-  text-align: center;
+.hero-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(280px, min(580px, 48vw));
+  gap: clamp(28px, 4vw, 48px);
+  align-items: center;
 }
 
-.hero .hero-title {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+.hero-copy .eyebrow {
+  text-align: left;
 }
 
-.hero .hero-lead {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+.hero-copy .hero-title {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.hero .hero-actions {
-  justify-content: center;
+.hero-copy .hero-lead {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
 }
 
-.hero .hero-video {
-  margin-left: auto;
-  margin-right: auto;
+.hero-copy .hero-actions {
+  justify-content: flex-start;
+}
+
+.hero-layout .hero-video {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .eyebrow {
@@ -421,7 +428,7 @@ button {
 .hero-video {
   margin-top: var(--hero-video-gap);
   margin-bottom: var(--hero-video-gap);
-  width: min(880px, 100%);
+  width: min(920px, 100%);
 }
 
 .hero-video-frame {
@@ -439,7 +446,8 @@ button {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center;
   background: #060f18;
 }
 
@@ -664,10 +672,41 @@ button {
   }
 }
 
+@media (min-width: 900px) {
+  .hero-layout .hero-video {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100%;
+    max-width: none;
+  }
+
+  .hero-layout {
+    padding-bottom: calc(var(--hero-video-gap) + 24px);
+  }
+
+  .hero {
+    --hero-stack-before-rule: calc(560px + var(--hero-video-gap) + 24px);
+  }
+}
+
+@media (max-width: 899px) {
+  .hero-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-layout .hero-video {
+    margin-top: var(--hero-video-gap);
+    margin-bottom: var(--hero-video-gap);
+    width: min(920px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 599px) {
   .hero {
-    padding: calc(var(--nav-h) + 72px) 0 72px;
-    --hero-content-pad-extra: 72px;
+    padding: calc(var(--nav-h) + 88px) 0 72px;
+    --hero-content-pad-extra: 88px;
   }
 
   .hero-logo-band {
