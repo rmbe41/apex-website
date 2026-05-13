@@ -19,7 +19,7 @@
   /* Hero grid — keep in sync with .hero-grid background-size */
   --hero-grid-step: 80px;
   /* Abstand Buttons↔Video und Video↔Trennlinie (identisch) */
-  --hero-video-gap: clamp(48px, 5.5vw, 64px);
+  --hero-video-gap: clamp(56px, 6vw, 76px);
   /* Abstand von Hero-Content-Start bis unterhalb Video inkl. unterem Video-Abstand */
   --hero-stack-before-rule: calc(936px + var(--hero-video-gap));
   /* Horizontal rule snaps to this grid line index from top of .hero */
@@ -355,7 +355,7 @@ button {
 
 .hero-layout {
   display: grid;
-  grid-template-columns: 1fr minmax(280px, min(580px, 48vw));
+  grid-template-columns: 1fr minmax(290px, min(620px, 51vw));
   gap: clamp(28px, 4vw, 48px);
   align-items: center;
 }
@@ -428,7 +428,7 @@ button {
 .hero-video {
   margin-top: var(--hero-video-gap);
   margin-bottom: var(--hero-video-gap);
-  width: min(920px, 100%);
+  width: min(960px, 100%);
 }
 
 .hero-video-frame {
@@ -674,18 +674,18 @@ button {
 
 @media (min-width: 900px) {
   .hero-layout .hero-video {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: var(--hero-video-gap);
+    margin-bottom: var(--hero-video-gap);
     width: 100%;
     max-width: none;
   }
 
   .hero-layout {
-    padding-bottom: calc(var(--hero-video-gap) + 24px);
+    padding-bottom: calc(var(--hero-video-gap) + 28px);
   }
 
   .hero {
-    --hero-stack-before-rule: calc(560px + var(--hero-video-gap) + 24px);
+    --hero-stack-before-rule: calc(610px + 2 * var(--hero-video-gap) + 28px);
   }
 }
 
@@ -697,7 +697,7 @@ button {
   .hero-layout .hero-video {
     margin-top: var(--hero-video-gap);
     margin-bottom: var(--hero-video-gap);
-    width: min(920px, 100%);
+    width: min(960px, 100%);
     margin-left: auto;
     margin-right: auto;
   }
