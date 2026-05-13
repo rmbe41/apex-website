@@ -20,10 +20,6 @@
   --hero-grid-step: 80px;
   /* Abstand Buttons↔Video und Video↔Trennlinie (identisch) */
   --hero-video-gap: clamp(56px, 6vw, 76px);
-  /* Abstand von Hero-Content-Start bis unterhalb Video inkl. unterem Video-Abstand */
-  --hero-stack-before-rule: calc(936px + var(--hero-video-gap));
-  /* Horizontal rule snaps to this grid line index from top of .hero */
-  --hero-rule-target-row: 8;
   /* Floating nav island: margin + chip height (+ gap before mobile drawer) */
   --nav-island-mt: 16px;
   --nav-island-inner-h: 74px;
@@ -320,7 +316,6 @@ button {
   position: relative;
   overflow: hidden;
   padding: calc(var(--nav-h) + 112px) 0 104px;
-  --hero-content-pad-extra: 112px;
 }
 
 .hero-grid {
@@ -566,16 +561,33 @@ button {
   color: #ffffff;
 }
 
+.btn-ghost--stroke {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 25px;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 45, 74, 0.16);
+  transition:
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.band--dark .btn-ghost--stroke {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.btn-ghost--stroke:hover {
+  border-color: rgba(15, 45, 74, 0.26);
+}
+
+.band--dark .btn-ghost--stroke:hover {
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
 .hero-pills-wrap {
-  /* Trennlinie auf horizontale BG-Rasterlinie (80px-Takt ab Hero-Top) */
-  margin-top: max(
-    0px,
-    calc(
-      var(--hero-rule-target-row) * var(--hero-grid-step) -
-        (var(--nav-h) + var(--hero-content-pad-extra)) -
-        var(--hero-stack-before-rule)
-    )
-  );
+  /* Basisabstand + --hero-rule-snap (per JS auf 80px-Raster aus .hero-Top) */
+  margin-top: calc(var(--hero-pills-mt-base, 0px) + var(--hero-rule-snap, 0px));
   padding-top: 52px;
   border-top: 1px solid var(--border);
 }
@@ -683,10 +695,6 @@ button {
   .hero-layout {
     padding-bottom: calc(var(--hero-video-gap) + 28px);
   }
-
-  .hero {
-    --hero-stack-before-rule: calc(610px + 2 * var(--hero-video-gap) + 28px);
-  }
 }
 
 @media (max-width: 899px) {
@@ -706,7 +714,6 @@ button {
 @media (max-width: 599px) {
   .hero {
     padding: calc(var(--nav-h) + 88px) 0 72px;
-    --hero-content-pad-extra: 88px;
   }
 
   .hero-logo-band {
@@ -718,8 +725,6 @@ button {
   }
 
   .hero-pills-wrap {
-    --hero-stack-before-rule: calc(640px + var(--hero-video-gap));
-    --hero-rule-target-row: 6;
     padding-top: 29px;
   }
 }
@@ -1017,7 +1022,7 @@ button {
 .progress-bar > span {
   display: block;
   height: 100%;
-  width: 72%;
+  width: 94%;
   border-radius: 3px;
   background: linear-gradient(90deg, #5a8fb0, #b8d4e8);
 }
@@ -1116,4 +1121,1088 @@ button {
 
 .footer-bottom a:hover {
   color: var(--text);
+}
+
+/* --- KI Puls-Check --- */
+#pulscheck {
+  scroll-margin-top: calc(var(--nav-h) + 12px);
+}
+
+/* Dezent abgesetzt vom Dashboard („Der Überblick“): kühler Verlauf, Raster */
+.pulscheck-band.band--light {
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 108px;
+  border-top: 1px solid rgba(15, 45, 74, 0.1);
+  border-bottom: 1px solid rgba(15, 45, 74, 0.07);
+  background-color: #f3f6f9;
+  background-image:
+    radial-gradient(ellipse 85% 55% at 15% 10%, rgba(15, 45, 74, 0.055), transparent 58%),
+    radial-gradient(ellipse 70% 45% at 92% 85%, rgba(15, 45, 74, 0.04), transparent 52%),
+    linear-gradient(180deg, #e8edf3 0%, #f7f9fb 38%, #ffffff 72%, #f4f6f8 100%),
+    radial-gradient(rgba(15, 45, 74, 0.055) 1px, transparent 1px);
+  background-size: auto, auto, auto, 24px 24px;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+}
+
+.pulscheck-band .container {
+  position: relative;
+  z-index: 1;
+}
+
+.pulscheck-two-col {
+  display: grid;
+  grid-template-columns: minmax(240px, min(100%, 500px)) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin-top: 0.35rem;
+}
+
+.pulscheck-col--copy {
+  min-width: 0;
+}
+
+.pulscheck-col--copy .pulscheck-title-row {
+  margin-bottom: 1.15rem;
+}
+
+.pulscheck-col--copy .pulscheck-section-title {
+  max-width: none;
+  flex: 1 1 auto;
+}
+
+.pulscheck-col--copy .pulscheck-lead {
+  margin: 0 0 1.25rem;
+  font-size: clamp(1rem, 1.9vw, 1.0625rem);
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.pulscheck-col--visual {
+  min-width: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.pulscheck-cta {
+  margin-top: 0;
+}
+
+.pulscheck-cta .pulscheck-open-btn {
+  flex-shrink: 0;
+}
+
+@media (max-width: 720px) {
+  .pulscheck-two-col {
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .pulscheck-col--visual {
+    justify-content: center;
+  }
+
+  .pulscheck-col--copy {
+    text-align: center;
+  }
+
+  .pulscheck-col--copy .pulscheck-title-row {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pulscheck-preview {
+    margin-inline: auto;
+  }
+}
+
+/* Puls-Check: heller Fragebogen-Mock wie Modal (Silhouette, nur Dekoration) */
+.pulscheck-preview {
+  pointer-events: none;
+  user-select: none;
+  width: fit-content;
+  max-width: min(100%, 500px);
+  margin-inline-start: 0;
+}
+
+.pulscheck-preview-card {
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 45, 74, 0.11);
+  padding: 24px 26px 26px 28px;
+  box-shadow:
+    0 20px 52px rgba(15, 45, 74, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.pulscheck-preview-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: rgba(15, 45, 74, 0.07);
+  padding: 8px 17px;
+  border-radius: 999px;
+  margin-bottom: 16px;
+}
+
+.pulscheck-preview-badge-icon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pulscheck-preview-card {
+    animation: pulscheck-preview-float 11s ease-in-out infinite;
+  }
+
+  .pulscheck-preview-fill {
+    animation: pulscheck-preview-fill-nudge 8s ease-in-out infinite;
+  }
+
+  .pulscheck-preview-badge-icon {
+    animation: pulscheck-badge-icon-sway 10s ease-in-out infinite;
+    transform-origin: 50% 50%;
+  }
+}
+
+@keyframes pulscheck-preview-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes pulscheck-preview-fill-nudge {
+  0%,
+  100% {
+    width: 22%;
+  }
+
+  50% {
+    width: 27%;
+  }
+}
+
+@keyframes pulscheck-badge-icon-sway {
+  0%,
+  100% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(4deg);
+  }
+}
+
+.pulscheck-preview-title-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pulscheck-preview-bar-line {
+  display: block;
+  height: 12px;
+  border-radius: 6px;
+  background: rgba(15, 45, 74, 0.1);
+  width: 92%;
+}
+
+.pulscheck-preview-bar-line--short {
+  width: 58%;
+}
+
+.pulscheck-preview-bar-line--question {
+  height: 14px;
+}
+
+.pulscheck-preview-bar-line--mid {
+  width: 78%;
+}
+
+.pulscheck-preview-progress-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--muted-2);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.pulscheck-preview-progress-dim {
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 58%;
+}
+
+.pulscheck-preview-track {
+  height: 6px;
+  background: var(--bg-elevated);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.pulscheck-preview-fill {
+  height: 100%;
+  width: 22%;
+  border-radius: 999px;
+  background: var(--navy);
+}
+
+.pulscheck-preview-dim-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(15, 45, 74, 0.07);
+  padding: 5px 13px;
+  border-radius: 999px;
+  display: inline-block;
+  margin: 0 0 14px;
+}
+
+.pulscheck-preview-q-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-bottom: 16px;
+}
+
+.pulscheck-preview-opts {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.pulscheck-preview-opt {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px 14px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(15, 45, 74, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.pulscheck-preview-opt.is-selected {
+  border-color: var(--navy);
+  border-width: 2px;
+  padding: 11px 13px;
+  background: rgba(15, 45, 74, 0.05);
+  box-shadow: 0 0 0 1px rgba(15, 45, 74, 0.04);
+}
+
+.pulscheck-preview-radio {
+  flex-shrink: 0;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 2px solid rgba(15, 45, 74, 0.28);
+  background: transparent;
+}
+
+.pulscheck-preview-opt.is-selected .pulscheck-preview-radio {
+  border-color: var(--navy);
+  border-width: 2px;
+  background: radial-gradient(circle at 50% 50%, var(--navy) 0, var(--navy) 32%, transparent 33%);
+}
+
+.pulscheck-preview-opt-text {
+  flex: 1;
+  min-height: 13px;
+  border-radius: 4px;
+  background: rgba(15, 45, 74, 0.1);
+}
+
+.pulscheck-preview-opt-text--short {
+  max-width: 72%;
+}
+
+.pulscheck-preview-opt-text--tiny {
+  max-width: 48%;
+}
+
+.pulscheck-modal[hidden] {
+  display: none !important;
+}
+
+.pulscheck-modal:not([hidden]) {
+  display: flex;
+}
+
+.pulscheck-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  box-sizing: border-box;
+}
+
+.pulscheck-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 31, 51, 0.52);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.pulscheck-modal:not([hidden]) .pulscheck-modal-backdrop {
+  animation: pulscheck-backdrop-in 0.28s ease forwards;
+}
+
+.pulscheck-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(736px, 100%);
+  max-height: min(92vh, 920px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.pulscheck-modal:not([hidden]) .pulscheck-modal-panel {
+  animation: pulscheck-panel-in 0.32s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+@keyframes pulscheck-backdrop-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulscheck-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck-modal:not([hidden]) .pulscheck-modal-backdrop,
+  .pulscheck-modal:not([hidden]) .pulscheck-modal-panel {
+    animation: none;
+  }
+}
+
+.pulscheck-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--muted);
+  background: rgba(15, 45, 74, 0.07);
+  border: 1px solid rgba(15, 45, 74, 0.08);
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s;
+}
+
+.pulscheck-modal-close:hover {
+  background: rgba(15, 45, 74, 0.11);
+  color: var(--navy);
+  border-color: rgba(15, 45, 74, 0.14);
+}
+
+.pulscheck-modal-close:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.pulscheck-modal-panel .pulscheck-card {
+  max-width: none;
+  margin: 0;
+  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+  box-shadow:
+    0 24px 64px rgba(15, 45, 74, 0.14),
+    0 1px 0 rgba(255, 255, 255, 0.75) inset;
+}
+
+body.pulscheck-modal-open {
+  overflow: hidden;
+}
+
+.pulscheck-title-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3.5vw, 32px);
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.pulscheck-teaser {
+  margin: 0;
+  flex-shrink: 0;
+  color: var(--navy);
+}
+
+.pulscheck-teaser-svg {
+  display: block;
+  width: clamp(52px, 11vw, 76px);
+  height: auto;
+}
+
+.pulscheck-band .pulscheck-section-title {
+  margin: 0;
+  flex: 1 1 14rem;
+  min-width: 0;
+  max-width: 20ch;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pulscheck-teaser-arc--main {
+    animation: pulscheck-teaser-breathe 5s ease-in-out infinite;
+    transform-origin: 44px 44px;
+  }
+
+  .pulscheck-teaser-arc--soft {
+    animation: pulscheck-teaser-soft 6.5s ease-in-out infinite;
+    animation-delay: 1.4s;
+    transform-origin: 44px 44px;
+  }
+
+  .pulscheck-teaser-ring--outer {
+    animation: pulscheck-teaser-ring-outer 8s ease-in-out infinite;
+  }
+
+  .pulscheck-teaser-ring--inner {
+    animation: pulscheck-teaser-ring-inner 5.5s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .pulscheck-teaser-dot {
+    animation: pulscheck-teaser-dot 4.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+@keyframes pulscheck-teaser-breathe {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.24;
+  }
+}
+
+@keyframes pulscheck-teaser-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes pulscheck-teaser-ring-outer {
+  0%,
+  100% {
+    opacity: 0.38;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulscheck-teaser-ring-inner {
+  0%,
+  100% {
+    opacity: 0.92;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes pulscheck-teaser-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.88;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck-teaser-arc--main,
+  .pulscheck-teaser-arc--soft,
+  .pulscheck-teaser-ring--outer,
+  .pulscheck-teaser-ring--inner,
+  .pulscheck-teaser-dot {
+    animation: none;
+  }
+
+  .pulscheck-preview-card,
+  .pulscheck-preview-fill,
+  .pulscheck-preview-badge-icon {
+    animation: none;
+  }
+}
+
+.pulscheck-lead strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.pulscheck {
+  --pulscheck-ease: cubic-bezier(0.33, 1, 0.68, 1);
+  --pulscheck-duration: 0.3s;
+  --pulscheck-ring-bg: rgba(15, 45, 74, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck {
+    --pulscheck-duration: 0.01ms;
+  }
+}
+
+.pulscheck-card {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(15, 45, 74, 0.11);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  max-width: 680px;
+  margin: 0 auto;
+  box-shadow:
+    0 22px 56px rgba(15, 45, 74, 0.09),
+    0 1px 0 rgba(255, 255, 255, 0.75) inset;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.pulscheck-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: rgba(15, 45, 74, 0.07);
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.pulscheck-badge-icon {
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+.pulscheck-card-title {
+  font-family: var(--font-sans);
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  line-height: 1.25;
+}
+
+.pulscheck-card-sub {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin: 0 0 1.75rem;
+}
+
+.pulscheck-progress {
+  margin-bottom: 1.75rem;
+}
+
+.pulscheck-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted-2);
+  margin-bottom: 8px;
+}
+
+.pulscheck-progress-track {
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.pulscheck-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--navy);
+  border-radius: 999px;
+  transition: width var(--pulscheck-duration) var(--pulscheck-ease);
+}
+
+.pulscheck-step-body {
+  transition:
+    opacity var(--pulscheck-duration) var(--pulscheck-ease),
+    transform var(--pulscheck-duration) var(--pulscheck-ease);
+}
+
+.pulscheck-step-body.pulscheck-step--out {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.pulscheck-step-body.pulscheck-step--in {
+  animation: pulscheck-step-in var(--pulscheck-duration) var(--pulscheck-ease) forwards;
+}
+
+@keyframes pulscheck-step-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck-step-body.pulscheck-step--in {
+    animation: none;
+  }
+
+  .pulscheck-step-body.pulscheck-step--out {
+    opacity: 1;
+    transform: none;
+  }
+
+  .pulscheck-quiz.pulscheck-quiz--out {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.pulscheck-dim-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(15, 45, 74, 0.07);
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-block;
+  margin: 0 0 1rem;
+}
+
+.pulscheck-q-text {
+  font-size: clamp(1.0625rem, 2vw, 1.1875rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.45;
+  margin: 0 0 1.5rem;
+}
+
+.pulscheck-q-text:focus {
+  outline: none;
+}
+
+.pulscheck-q-text:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.pulscheck-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.pulscheck-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  padding: 16px 16px;
+  min-height: 52px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  transition:
+    border-color 0.18s var(--pulscheck-ease),
+    background 0.18s var(--pulscheck-ease),
+    box-shadow 0.18s var(--pulscheck-ease);
+}
+
+.pulscheck-option:hover {
+  border-color: rgba(15, 45, 74, 0.35);
+  background: rgba(15, 45, 74, 0.03);
+}
+
+.pulscheck-option.is-selected {
+  border-color: var(--navy);
+  border-width: 2px;
+  padding: 15px 15px;
+  background: rgba(15, 45, 74, 0.06);
+  box-shadow: 0 0 0 1px rgba(15, 45, 74, 0.06);
+}
+
+.pulscheck-option:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.pulscheck-opt-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pulscheck-option.is-selected .pulscheck-opt-label {
+  color: var(--navy);
+}
+
+.pulscheck-opt-text {
+  flex: 1;
+}
+
+.pulscheck-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pulscheck-btn-back {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  background: #fff;
+  transition:
+    border-color 0.15s,
+    color 0.15s,
+    background 0.15s;
+}
+
+.pulscheck-btn-back:hover {
+  border-color: rgba(15, 45, 74, 0.35);
+  color: var(--text);
+}
+
+.pulscheck-btn-next {
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background: var(--navy);
+  opacity: 0.35;
+  pointer-events: none;
+  transition:
+    opacity 0.2s var(--pulscheck-ease),
+    transform 0.15s;
+}
+
+.pulscheck-btn-next.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.pulscheck-btn-next.is-active:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.pulscheck-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pulscheck-quiz {
+  transition:
+    opacity var(--pulscheck-duration) var(--pulscheck-ease),
+    transform var(--pulscheck-duration) var(--pulscheck-ease);
+}
+
+.pulscheck-quiz.pulscheck-quiz--out {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.pulscheck-results {
+  animation: pulscheck-results-in var(--pulscheck-duration) var(--pulscheck-ease) forwards;
+}
+
+@keyframes pulscheck-results-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck-results {
+    animation: none;
+  }
+}
+
+.pulscheck-score-ring-wrap {
+  text-align: center;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.pulscheck-score-ring {
+  display: inline-block;
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.pulscheck-score-ring svg {
+  transform: rotate(-90deg);
+}
+
+.pulscheck-score-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.pulscheck-score-num {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+}
+
+.pulscheck-score-max {
+  font-size: 13px;
+  color: var(--muted-2);
+  margin-top: 4px;
+}
+
+.pulscheck-result-label {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 1.85rem);
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.pulscheck-result-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.65;
+  text-align: center;
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+}
+
+.pulscheck-dim-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 2rem;
+}
+
+.pulscheck-dim-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+}
+
+.pulscheck-dim-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.pulscheck-dim-bar-track {
+  height: 6px;
+  background: rgba(15, 45, 74, 0.1);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.pulscheck-dim-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--navy);
+  width: 0%;
+  transition: width 0.85s var(--pulscheck-ease);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck-dim-bar-fill {
+    transition: none;
+  }
+}
+
+.pulscheck-dim-score-label {
+  font-size: 12px;
+  color: var(--muted-2);
+}
+
+.pulscheck-next-moves {
+  margin-bottom: 1.75rem;
+}
+
+.pulscheck-next-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 1rem;
+  font-family: var(--font-sans);
+}
+
+.pulscheck-move {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pulscheck-move:last-child {
+  border-bottom: none;
+}
+
+.pulscheck-move-icon-wrap {
+  flex-shrink: 0;
+  color: var(--navy);
+  opacity: 0.9;
+  margin-top: 2px;
+}
+
+.pulscheck-move-icon {
+  display: block;
+}
+
+.pulscheck-move-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 4px;
+}
+
+.pulscheck-move-body {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.pulscheck-results-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.pulscheck-results-actions .btn-primary {
+  text-align: center;
+  justify-content: center;
+}
+
+.pulscheck-btn-restart {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  background: #fff;
+  transition:
+    border-color 0.15s,
+    color 0.15s;
+}
+
+.pulscheck-btn-restart:hover {
+  border-color: rgba(15, 45, 74, 0.35);
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulscheck #pulscheck-ring-dash {
+    transition: none !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .pulscheck-dim-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pulscheck-card {
+    padding: 1.35rem 1.15rem;
+  }
 }
