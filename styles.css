@@ -742,9 +742,13 @@ button {
 
   .hero-logo-band {
     padding-block: 22px;
-    /* mask-image + animiertes transform = unscharfe Logos in iOS Safari */
     mask-image: none;
     -webkit-mask-image: none;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
 
   .hero-logo-band::before,
@@ -753,7 +757,7 @@ button {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: min(18%, 72px);
+    width: min(14%, 56px);
     z-index: 2;
     pointer-events: none;
   }
@@ -768,17 +772,21 @@ button {
     background: linear-gradient(270deg, #071525 0%, transparent 100%);
   }
 
-  .hero-logo-track {
-    animation: none;
+  .hero-logo-band::-webkit-scrollbar {
+    display: none;
   }
 
-  .hero-logo-track.hero-logo-track--js {
+  .hero-logo-track {
+    animation: none;
+    transform: none;
     will-change: auto;
   }
 
-  /* Nur Rendering: gleiche Größen/Opacity wie zuvor, kein Extra-GPU-Layer an <img> */
+  /* 2× rendern, zoom 0.5 → gleiche Optik, schärfer auf Retina; keine transform an <img> */
   .hero-logo-set img {
-    height: clamp(36px, 5.5vw, 44px);
+    --hero-logo-h: clamp(36px, 5.5vw, 44px);
+    height: calc(var(--hero-logo-h) * 2);
+    zoom: 0.5;
     transform: none;
     -webkit-transform: none;
     -webkit-backface-visibility: visible;
@@ -786,7 +794,13 @@ button {
   }
 
   .hero-logo-set img.hero-logo--aareal {
-    height: clamp(28px, 4.2vw, 34px);
+    --hero-logo-h: clamp(28px, 4.2vw, 34px);
+  }
+
+  @supports not (zoom: 1) {
+    .hero-logo-set img {
+      height: var(--hero-logo-h, clamp(36px, 5.5vw, 44px));
+    }
   }
 
   .hero-pills-wrap .hero-pills {

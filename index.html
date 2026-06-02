@@ -113,27 +113,27 @@
           </div>
 
           <div class="hero-pills-wrap">
-            <div class="hero-logo-band" role="region" aria-label="Kunden und Partner">
+            <div class="hero-logo-band" id="hero-logo-band" role="region" aria-label="Kunden und Partner">
               <div class="hero-logo-track" id="hero-logo-track">
                 <div class="hero-logo-set">
-                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Dominos.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-EIT.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-GD.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Hive.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Pflege.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Raixa.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Schneider.svg" alt="" loading="lazy" decoding="async" />
+                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Dominos.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-EIT.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-GD.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Hive.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Pflege.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Raixa.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Schneider.svg" alt="" decoding="async" fetchpriority="low" />
                 </div>
                 <div class="hero-logo-set" aria-hidden="true">
-                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Dominos.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-EIT.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-GD.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Hive.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Pflege.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Raixa.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Schneider.svg" alt="" loading="lazy" decoding="async" />
+                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Dominos.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-EIT.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-GD.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Hive.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Pflege.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Raixa.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Schneider.svg" alt="" decoding="async" fetchpriority="low" />
                 </div>
               </div>
             </div>
@@ -991,25 +991,25 @@
     </script>
     <script>
       (function () {
+        var band = document.getElementById("hero-logo-band");
         var track = document.getElementById("hero-logo-track");
-        if (!track) return;
+        if (!band || !track) return;
 
         var mobileMq = window.matchMedia("(max-width: 599px)");
         var reduceMq = window.matchMedia("(prefers-reduced-motion: reduce)");
         var durationMs = 48000;
         var rafId = null;
-        var halfWidth = 0;
+        var loopWidth = 0;
         var startTs = null;
 
         function measure() {
-          halfWidth = track.scrollWidth / 2;
+          loopWidth = Math.round(track.scrollWidth / 2);
         }
 
         function frame(ts) {
           if (!startTs) startTs = ts;
           var loop = (ts - startTs) % durationMs;
-          var x = -Math.round((halfWidth * loop) / durationMs);
-          track.style.transform = "translate3d(" + x + "px,0,0)";
+          band.scrollLeft = Math.round((loopWidth * loop) / durationMs);
           rafId = requestAnimationFrame(frame);
         }
 
@@ -1017,14 +1017,12 @@
           if (rafId) cancelAnimationFrame(rafId);
           rafId = null;
           startTs = null;
-          track.classList.remove("hero-logo-track--js");
-          track.style.transform = "";
+          band.scrollLeft = 0;
         }
 
         function start() {
           stop();
-          if (!mobileMq.matches || reduceMq.matches || halfWidth <= 0) return;
-          track.classList.add("hero-logo-track--js");
+          if (!mobileMq.matches || reduceMq.matches || loopWidth <= 0) return;
           rafId = requestAnimationFrame(frame);
         }
 
