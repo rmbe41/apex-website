@@ -673,6 +673,12 @@ button {
   padding-inline-end: clamp(36px, 5vw, 72px);
 }
 
+.hero-logo-set picture {
+  display: block;
+  flex-shrink: 0;
+  line-height: 0;
+}
+
 .hero-logo-set img {
   display: block;
   flex-shrink: 0;
@@ -742,39 +748,49 @@ button {
 
   .hero-logo-band {
     padding-block: 22px;
-    /* Weichere Kantenmasken reduzieren Unschärfe auf Retina-Phones */
-    mask-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.45) 5%,
-      black 12%,
-      black 88%,
-      rgba(0, 0, 0, 0.45) 95%,
-      transparent 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(0, 0, 0, 0.45) 5%,
-      black 12%,
-      black 88%,
-      rgba(0, 0, 0, 0.45) 95%,
-      transparent 100%
-    );
+    /* mask-image + animiertes transform = unscharfe Logos in iOS Safari */
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .hero-logo-band::before,
+  .hero-logo-band::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: min(18%, 72px);
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .hero-logo-band::before {
+    left: 0;
+    background: linear-gradient(90deg, #071525 0%, transparent 100%);
+  }
+
+  .hero-logo-band::after {
+    right: 0;
+    background: linear-gradient(270deg, #071525 0%, transparent 100%);
   }
 
   .hero-logo-track {
-    animation-duration: 48s;
+    animation: none;
   }
 
-  /* PNG-in-SVG: ganzzahlige px-Höhen + kein eigener GPU-Layer an <img> → schärfer auf Retina/iOS */
+  .hero-logo-track.hero-logo-track--js {
+    will-change: auto;
+  }
+
+  /* Direkte PNGs (via <picture>) statt PNG-in-SVG; volle Deckkraft, keine Extra-GPU-Layer */
   .hero-logo-set img {
     height: 40px;
+    opacity: 1;
     transform: none;
     -webkit-transform: none;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
-    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
   }
 
   .hero-logo-set img.hero-logo--aareal {

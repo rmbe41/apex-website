@@ -114,26 +114,26 @@
 
           <div class="hero-pills-wrap">
             <div class="hero-logo-band" role="region" aria-label="Kunden und Partner">
-              <div class="hero-logo-track">
+              <div class="hero-logo-track" id="hero-logo-track">
                 <div class="hero-logo-set">
-                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Dominos.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-EIT.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-GD.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Hive.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Pflege.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Raixa.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Schneider.svg" alt="" loading="lazy" decoding="async" />
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Aareal.png" /><img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" width="139" height="32" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Dominos.png" /><img src="assets/customers/Customer-Dominos.svg" alt="" width="64" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-EIT.png" /><img src="assets/customers/Customer-EIT.svg" alt="" width="92" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-GD.png" /><img src="assets/customers/Customer-GD.svg" alt="" width="72" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Hive.png" /><img src="assets/customers/Customer-Hive.svg" alt="" width="91" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Pflege.png" /><img src="assets/customers/Customer-Pflege.svg" alt="" width="40" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Raixa.png" /><img src="assets/customers/Customer-Raixa.svg" alt="" width="40" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Schneider.png" /><img src="assets/customers/Customer-Schneider.svg" alt="" width="146" height="40" decoding="async" /></picture>
                 </div>
                 <div class="hero-logo-set" aria-hidden="true">
-                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Dominos.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-EIT.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-GD.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Hive.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Pflege.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Raixa.svg" alt="" loading="lazy" decoding="async" />
-                  <img src="assets/customers/Customer-Schneider.svg" alt="" loading="lazy" decoding="async" />
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Aareal.png" /><img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" width="139" height="32" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Dominos.png" /><img src="assets/customers/Customer-Dominos.svg" alt="" width="64" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-EIT.png" /><img src="assets/customers/Customer-EIT.svg" alt="" width="92" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-GD.png" /><img src="assets/customers/Customer-GD.svg" alt="" width="72" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Hive.png" /><img src="assets/customers/Customer-Hive.svg" alt="" width="91" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Pflege.png" /><img src="assets/customers/Customer-Pflege.svg" alt="" width="40" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Raixa.png" /><img src="assets/customers/Customer-Raixa.svg" alt="" width="40" height="40" decoding="async" /></picture>
+                  <picture><source media="(max-width: 599px)" srcset="assets/customers/png/Customer-Schneider.png" /><img src="assets/customers/Customer-Schneider.svg" alt="" width="146" height="40" decoding="async" /></picture>
                 </div>
               </div>
             </div>
@@ -987,6 +987,62 @@
             })
             .catch(function () {});
         });
+      })();
+    </script>
+    <script>
+      (function () {
+        var track = document.getElementById("hero-logo-track");
+        if (!track) return;
+
+        var mobileMq = window.matchMedia("(max-width: 599px)");
+        var reduceMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+        var durationMs = 48000;
+        var rafId = null;
+        var halfWidth = 0;
+        var startTs = null;
+
+        function measure() {
+          halfWidth = track.scrollWidth / 2;
+        }
+
+        function frame(ts) {
+          if (!startTs) startTs = ts;
+          var loop = (ts - startTs) % durationMs;
+          var x = -Math.round((halfWidth * loop) / durationMs);
+          track.style.transform = "translate3d(" + x + "px,0,0)";
+          rafId = requestAnimationFrame(frame);
+        }
+
+        function stop() {
+          if (rafId) cancelAnimationFrame(rafId);
+          rafId = null;
+          startTs = null;
+          track.classList.remove("hero-logo-track--js");
+          track.style.transform = "";
+        }
+
+        function start() {
+          stop();
+          if (!mobileMq.matches || reduceMq.matches || halfWidth <= 0) return;
+          track.classList.add("hero-logo-track--js");
+          rafId = requestAnimationFrame(frame);
+        }
+
+        function refresh() {
+          measure();
+          start();
+        }
+
+        mobileMq.addEventListener("change", refresh);
+        reduceMq.addEventListener("change", refresh);
+        window.addEventListener("resize", refresh, { passive: true });
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(refresh);
+        } else {
+          window.addEventListener("load", refresh);
+        }
+        refresh();
       })();
     </script>
     <script src="pulscheck.js"></script>
