@@ -673,12 +673,6 @@ button {
   padding-inline-end: clamp(36px, 5vw, 72px);
 }
 
-.hero-logo-set picture {
-  display: block;
-  flex-shrink: 0;
-  line-height: 0;
-}
-
 .hero-logo-set img {
   display: block;
   flex-shrink: 0;
@@ -782,19 +776,17 @@ button {
     will-change: auto;
   }
 
-  /* Direkte PNGs (via <picture>) statt PNG-in-SVG; volle Deckkraft, keine Extra-GPU-Layer */
+  /* Nur Rendering: gleiche Größen/Opacity wie zuvor, kein Extra-GPU-Layer an <img> */
   .hero-logo-set img {
-    height: 40px;
-    opacity: 1;
+    height: clamp(36px, 5.5vw, 44px);
     transform: none;
     -webkit-transform: none;
     -webkit-backface-visibility: visible;
     backface-visibility: visible;
-    image-rendering: auto;
   }
 
   .hero-logo-set img.hero-logo--aareal {
-    height: 32px;
+    height: clamp(28px, 4.2vw, 34px);
   }
 
   .hero-pills-wrap .hero-pills {
