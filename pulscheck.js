@@ -717,8 +717,14 @@
 
   var modal = el("pulscheck-modal");
   var openBtn = el("pulscheck-open");
+  var previewOpen = document.querySelector(".pulscheck-preview-open");
   var modalClose = el("pulscheck-modal-close");
   var lastFocusEl = null;
+
+  function setOpenExpanded(expanded) {
+    if (openBtn) openBtn.setAttribute("aria-expanded", expanded ? "true" : "false");
+    if (previewOpen) previewOpen.setAttribute("aria-expanded", expanded ? "true" : "false");
+  }
 
   function isFocusableVisible(node) {
     if (!node || !modal.contains(node)) return false;
@@ -767,7 +773,7 @@
     modal.removeAttribute("hidden");
     document.body.classList.add("pulscheck-modal-open");
     document.addEventListener("keydown", onModalKeydown);
-    if (openBtn) openBtn.setAttribute("aria-expanded", "true");
+    setOpenExpanded(true);
     requestAnimationFrame(function () {
       var qt = el("pulscheck-q-text");
       if (qt) qt.focus({ preventScroll: true });
@@ -780,7 +786,7 @@
     modal.setAttribute("hidden", "");
     document.body.classList.remove("pulscheck-modal-open");
     document.removeEventListener("keydown", onModalKeydown);
-    if (openBtn) openBtn.setAttribute("aria-expanded", "false");
+    setOpenExpanded(false);
     if (lastFocusEl && typeof lastFocusEl.focus === "function") {
       lastFocusEl.focus({ preventScroll: true });
     }
@@ -788,6 +794,7 @@
   }
 
   if (openBtn) openBtn.addEventListener("click", openModal);
+  if (previewOpen) previewOpen.addEventListener("click", openModal);
   if (modalClose) modalClose.addEventListener("click", closeModal);
   if (modal) {
     var closeEls = modal.querySelectorAll("[data-pulscheck-close]");
