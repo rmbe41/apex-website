@@ -661,6 +661,9 @@ button {
   display: flex;
   width: max-content;
   animation: hero-logo-marquee 80s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
 
 .hero-logo-set {
@@ -676,6 +679,9 @@ button {
   max-width: min(200px, 28vw);
   object-fit: contain;
   opacity: 0.72;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 /* Aareal — Customer-Aareal.svg; nochmals gegenüber Standard verkleinert */
@@ -735,6 +741,25 @@ button {
 
   .hero-logo-band {
     padding-block: 22px;
+    /* Weichere Kantenmasken reduzieren Unschärfe auf Retina-Phones */
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 5%,
+      black 12%,
+      black 88%,
+      rgba(0, 0, 0, 0.45) 95%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 5%,
+      black 12%,
+      black 88%,
+      rgba(0, 0, 0, 0.45) 95%,
+      transparent 100%
+    );
   }
 
   .hero-pills-wrap .hero-pills {
