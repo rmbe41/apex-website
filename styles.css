@@ -845,7 +845,7 @@ button {
   text-align: center;
 }
 
-.principles-lead {
+.section-lead {
   margin: 0 auto;
   font-family: var(--font-serif);
   font-size: clamp(1.15rem, 2.2vw, 1.4rem);
@@ -853,8 +853,25 @@ button {
   font-style: italic;
   line-height: 1.35;
   color: var(--muted);
-  max-width: 32ch;
+  max-width: 38rem;
   text-align: center;
+}
+
+.principles-header .section-lead {
+  max-width: 32ch;
+}
+
+#use-cases .section-lead {
+  margin-bottom: 40px;
+}
+
+.pulscheck-band .section-lead {
+  margin-bottom: clamp(2.25rem, 4.5vw, 3.25rem);
+}
+
+.cta-final .section-lead {
+  max-width: 36rem;
+  margin-bottom: clamp(28px, 3.5vw, 36px);
 }
 
 .steps-grid {
@@ -933,19 +950,6 @@ button {
   color: var(--muted);
 }
 
-@media (min-width: 768px) {
-  .step-card:not(:last-child)::before {
-    content: "";
-    position: absolute;
-    top: clamp(48px, 8vw, 56px);
-    right: -10px;
-    width: 20px;
-    height: 1px;
-    background: linear-gradient(90deg, rgba(15, 45, 74, 0.18), transparent);
-    pointer-events: none;
-  }
-}
-
 /* Use Cases */
 #use-cases {
   scroll-margin-top: calc(var(--nav-h) + 12px);
@@ -958,28 +962,14 @@ button {
 
 .use-cases-section-title {
   max-width: 28ch;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   margin-inline: auto;
-  text-align: center;
-}
-
-.use-cases-intro {
-  margin: 0 auto 40px;
-  max-width: 38rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: var(--muted);
   text-align: center;
 }
 
 .use-cases-frame {
   box-sizing: border-box;
-  width: min(
-    var(--nav-island-max),
-    calc(
-      100vw - max(24px, env(safe-area-inset-left)) - max(24px, env(safe-area-inset-right))
-    )
-  );
+  width: min(var(--max), calc(100% - 48px));
   margin-inline: auto;
   padding: clamp(16px, 2.5vw, 24px);
   border: 1px solid var(--border);
@@ -1412,6 +1402,7 @@ button {
 .cta-final .section-title {
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 14px;
   max-width: 16ch;
 }
 
@@ -1541,7 +1532,7 @@ button {
 }
 
 .pulscheck-band .pulscheck-section-title {
-  margin: 0 auto clamp(2.25rem, 4.5vw, 3.25rem);
+  margin: 0 auto 14px;
   max-width: 22ch;
   text-align: center;
 }
@@ -1552,7 +1543,7 @@ button {
   --pulscheck-panel-inset-top: clamp(40px, 5.5vw, 60px);
   --pulscheck-panel-inset-bottom: clamp(64px, 8.5vw, 92px);
   --pulscheck-panel-gap: clamp(1.75rem, 3vw, 2.5rem);
-  width: min(100%, 1100px);
+  width: min(100%, var(--max));
   margin-inline: auto;
   border-radius: calc(var(--radius-lg) + 4px);
   background: #ffffff;
