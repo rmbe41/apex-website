@@ -1751,7 +1751,7 @@ button {
   scroll-margin-top: calc(var(--nav-h) + 12px);
 }
 
-/* Dezent abgesetzt: weißer Grund + Gitter (::before), nach außen in Weiß auslaufend */
+/* Dezent abgesetzt: weißer Grund, ohne Gitter */
 .pulscheck-band.band--light {
   position: relative;
   overflow: hidden;
@@ -1760,21 +1760,6 @@ button {
   border-top: 1px solid rgba(15, 45, 74, 0.1);
   border-bottom: 1px solid rgba(15, 45, 74, 0.07);
   background: #ffffff;
-}
-
-.pulscheck-band.band--light::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image:
-    linear-gradient(rgba(15, 45, 74, 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(15, 45, 74, 0.07) 1px, transparent 1px);
-  background-size: var(--hero-grid-step) var(--hero-grid-step);
-  background-position: 0 0;
-  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, black 22%, transparent 80%);
-  mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, black 22%, transparent 80%);
 }
 
 .pulscheck-band .container {
@@ -1793,24 +1778,165 @@ button {
   text-align: center;
 }
 
-/* Grafik + Text — weißes Milchglas-Panel */
+/* Grafik + Text — Layered Pulse Surface (Glow + Milchglas) */
 .pulscheck-panel {
   --pulscheck-panel-inset-x: clamp(40px, 5.5vw, 60px);
   --pulscheck-panel-inset-top: clamp(40px, 5.5vw, 60px);
   --pulscheck-panel-inset-bottom: clamp(64px, 8.5vw, 92px);
   --pulscheck-panel-gap: clamp(1.75rem, 3vw, 2.5rem);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
   width: min(100%, var(--max));
   margin-inline: auto;
   border-radius: calc(var(--radius-lg) + 4px);
-  background: #ffffff;
-  border: 1px solid rgba(15, 45, 74, 0.1);
+  background:
+    linear-gradient(165deg, #ffffff 0%, #f4f7fa 48%, #eef2f6 100%);
+  background-color: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px) saturate(115%);
+  -webkit-backdrop-filter: blur(12px) saturate(115%);
+  border: 1px solid rgba(15, 45, 74, 0.11);
   box-shadow:
-    0 20px 56px rgba(15, 45, 74, 0.09),
-    0 4px 16px rgba(15, 45, 74, 0.05),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 24px 64px rgba(15, 45, 74, 0.11),
+    0 6px 20px rgba(15, 45, 74, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
   padding-top: var(--pulscheck-panel-inset-top);
   padding-bottom: var(--pulscheck-panel-inset-bottom);
   padding-inline: var(--pulscheck-panel-inset-x);
+}
+
+/* Weicher statischer Spotlight — kein rotierender Konik (vermeidet „Tornado“-Artefakt) */
+.pulscheck-panel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    ellipse 55% 50% at 34% 46%,
+    rgba(15, 45, 74, 0.04) 0%,
+    transparent 72%
+  );
+}
+
+@media (min-width: 721px) {
+  .pulscheck-panel::after {
+    opacity: 1;
+  }
+}
+
+.pulscheck-ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(40px);
+}
+
+.pulscheck-ambient-orb--a {
+  top: -12%;
+  left: -8%;
+  width: min(72%, 520px);
+  height: min(58%, 420px);
+  background: radial-gradient(circle, rgba(15, 45, 74, 0.05) 0%, transparent 72%);
+}
+
+.pulscheck-ambient-orb--b {
+  bottom: -18%;
+  right: -6%;
+  width: min(48%, 340px);
+  height: min(42%, 300px);
+  background: radial-gradient(circle, rgba(90, 143, 176, 0.06) 0%, transparent 72%);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pulscheck-ambient-orb--a {
+    animation: pulscheck-ambient-orb-a 28s ease-in-out infinite;
+  }
+
+  .pulscheck-ambient-orb--b {
+    animation: pulscheck-ambient-orb-b 32s ease-in-out infinite;
+  }
+}
+
+@keyframes pulscheck-ambient-orb-a {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(1.5%, 2%) scale(1.02);
+  }
+}
+
+@keyframes pulscheck-ambient-orb-b {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-1.5%, -1.5%) scale(1.02);
+  }
+}
+
+@media (max-width: 720px) {
+  .pulscheck-ambient-orb--a {
+    top: 8%;
+    left: 50%;
+    width: 85%;
+    height: 45%;
+    transform: translateX(-50%);
+  }
+
+  .pulscheck-ambient-orb--b {
+    bottom: 12%;
+    right: auto;
+    left: 50%;
+    width: 70%;
+    height: 38%;
+    transform: translateX(-50%);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .pulscheck-ambient-orb--a {
+      animation: pulscheck-ambient-orb-a-mobile 28s ease-in-out infinite;
+    }
+
+    .pulscheck-ambient-orb--b {
+      animation: pulscheck-ambient-orb-b-mobile 32s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes pulscheck-ambient-orb-a-mobile {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-49.5%) scale(1.015);
+  }
+}
+
+@keyframes pulscheck-ambient-orb-b-mobile {
+  0%,
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    transform: translateX(-50.5%) scale(1.015);
+  }
+}
+
+.pulscheck-panel-intro,
+.pulscheck-two-col {
+  position: relative;
+  z-index: 1;
 }
 
 .pulscheck-panel-intro {
@@ -1901,7 +2027,7 @@ button {
 
   .pulscheck-col--copy {
     padding-left: calc(var(--pulscheck-panel-gap) / 2);
-    border-left: 1px solid rgba(15, 45, 74, 0.08);
+    border-left: 1px solid rgba(15, 45, 74, 0.06);
   }
 }
 
@@ -1924,8 +2050,14 @@ button {
   padding: 5px 10px 5px 8px;
   border-radius: 8px;
   border: 1px solid rgba(15, 45, 74, 0.14);
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.72);
   box-shadow: none;
+}
+
+.pulscheck-col--copy .pulscheck-meta-item {
+  font-size: clamp(13px, 1.35vw, 14px);
+  padding: 6px 12px 6px 9px;
+  gap: 8px;
 }
 
 .pulscheck-meta-icon {
@@ -1939,10 +2071,15 @@ button {
   height: 14px;
 }
 
+.pulscheck-col--copy .pulscheck-meta-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
 .pulscheck-col--copy .pulscheck-lead {
   margin: 0 0 1.5rem;
-  font-size: clamp(1rem, 1.9vw, 1.0625rem);
-  line-height: 1.6;
+  font-size: clamp(1.0625rem, 2.15vw, 1.1875rem);
+  line-height: 1.62;
   color: var(--text);
   max-width: 36rem;
 }
@@ -1967,6 +2104,11 @@ button {
   border: 1px dashed rgba(15, 45, 74, 0.22);
 }
 
+.pulscheck-col--copy .pulscheck-dim-chip {
+  font-size: clamp(10px, 1.1vw, 11px);
+  padding: 5px 10px;
+}
+
 .pulscheck-cta {
   margin-top: 0.5rem;
   padding-top: 0.5rem;
@@ -1976,6 +2118,11 @@ button {
   flex-shrink: 0;
   min-width: 12rem;
   box-shadow: 0 4px 14px rgba(15, 45, 74, 0.2);
+}
+
+.pulscheck-col--copy .pulscheck-open-btn {
+  font-size: clamp(15px, 1.5vw, 16px);
+  padding: 15px 28px;
 }
 
 .pulscheck-col--visual {

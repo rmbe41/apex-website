@@ -1051,7 +1051,9 @@
   }
 
   function getPulscheck() {
-    return translations[currentLang].pulscheck.data;
+    if (!translations) return null;
+    var block = translations[currentLang];
+    return block && block.pulscheck ? block.pulscheck.data : null;
   }
 
   function apply() {

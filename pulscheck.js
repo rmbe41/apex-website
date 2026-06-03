@@ -464,7 +464,15 @@
     }
   }
 
-  render(true);
+  function bootQuiz() {
+    render(true);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootQuiz);
+  } else {
+    bootQuiz();
+  }
 
   document.addEventListener("languagechange", function () {
     var results = el("pulscheck-results");
