@@ -805,18 +805,7 @@ button {
   align-items: center;
   min-height: var(--hero-logo-zone-height, 312px);
   position: relative;
-  border-top: none;
-}
-
-.hero-pills-wrap::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: var(--border);
-  pointer-events: none;
+  border-top: 1px solid var(--border);
 }
 
 .hero-pills {
@@ -873,6 +862,8 @@ button {
   display: flex;
   width: max-content;
   animation: hero-logo-marquee 58s linear infinite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   will-change: transform;
 }
 
@@ -881,7 +872,6 @@ button {
   align-items: center;
   gap: clamp(36px, 5vw, 72px);
   padding-inline-end: clamp(36px, 5vw, 72px);
-  line-height: 0;
 }
 
 .hero-logo-set img {
@@ -893,6 +883,9 @@ button {
   object-fit: contain;
   object-position: center;
   opacity: 0.82;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .hero-logo-set img.hero-logo--aareal {
@@ -957,56 +950,24 @@ button {
     -webkit-overflow-scrolling: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
-    /* Logos beim Ein-/Auslaufen weich ausblenden (kein harter Clip) */
+    width: 100%;
+    /* Wie Desktop: weiche Mask statt Overlay-Boxen (keine harten Gradient-Kanten) */
     mask-image: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(0, 0, 0, 0.45) 8%,
-      black 18%,
-      black 82%,
-      rgba(0, 0, 0, 0.45) 92%,
+      rgba(0, 0, 0, 0.35) 6%,
+      black 14%,
+      black 86%,
+      rgba(0, 0, 0, 0.35) 94%,
       transparent 100%
     );
     -webkit-mask-image: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(0, 0, 0, 0.45) 8%,
-      black 18%,
-      black 82%,
-      rgba(0, 0, 0, 0.45) 92%,
-      transparent 100%
-    );
-  }
-
-  .hero-logo-band::before,
-  .hero-logo-band::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: min(22%, 80px);
-    z-index: 2;
-    pointer-events: none;
-  }
-
-  .hero-logo-band::before {
-    left: 0;
-    background: linear-gradient(
-      90deg,
-      #071525 0%,
-      var(--navy-deep) 45%,
-      rgba(10, 31, 51, 0.35) 75%,
-      transparent 100%
-    );
-  }
-
-  .hero-logo-band::after {
-    right: 0;
-    background: linear-gradient(
-      270deg,
-      #071525 0%,
-      var(--navy-deep) 45%,
-      rgba(10, 31, 51, 0.35) 75%,
+      rgba(0, 0, 0, 0.35) 6%,
+      black 14%,
+      black 86%,
+      rgba(0, 0, 0, 0.35) 94%,
       transparent 100%
     );
   }
@@ -1021,21 +982,25 @@ button {
     will-change: auto;
   }
 
-  /* Kein zoom/scale/filter/mix-blend — Safari-Rechteck um halbtransparente PNG-Flächen */
+  /* 2× rendern, zoom 0.5 → gleiche Optik, schärfer auf Retina; keine transform an <img> */
   .hero-logo-set img {
     --hero-logo-h: clamp(36px, 5.5vw, 44px);
-    height: var(--hero-logo-h);
-    margin-block: 0;
+    height: calc(var(--hero-logo-h) * 2);
+    zoom: 0.5;
     transform: none;
-    mix-blend-mode: normal;
     -webkit-transform: none;
-    filter: none;
-    -webkit-filter: none;
-    opacity: 1;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
   }
 
   .hero-logo-set img.hero-logo--aareal {
     --hero-logo-h: clamp(28px, 4.2vw, 34px);
+  }
+
+  @supports not (zoom: 1) {
+    .hero-logo-set img {
+      height: var(--hero-logo-h, clamp(36px, 5.5vw, 44px));
+    }
   }
 }
 
