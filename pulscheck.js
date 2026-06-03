@@ -6,382 +6,46 @@
   var DURATION_QUIZ_OUT = reduceMotion ? 0 : 280;
   var AUTO_ADVANCE = reduceMotion ? 80 : 340;
 
-  var DIMENSIONS = [
-    "Strategie & Führung",
-    "Talent & Kultur",
-    "Tools & Infrastruktur",
-    "Prozesse & Betrieb",
-    "Produkt",
-    "Governance & Risiko",
-  ];
+  function pcData() {
+    return window.ApexI18n ? window.ApexI18n.getPulscheck() : null;
+  }
 
-  var STAGE_LABEL = ["Stufe 0", "Stufe 1", "Stufe 2", "Stufe 3", "Stufe 4", "Stufe 5"];
+  function t(key) {
+    return window.ApexI18n ? window.ApexI18n.get(key) : "";
+  }
 
-  var questions = [
-    {
-      dimension: "Strategie & Führung",
-      q: "Wie zentral steht KI in der Strategie und auf der Roadmap Ihres Unternehmens?",
-      options: [
-        { score: 0, text: "Es gibt keine KI-Strategie — Thema steht auf dem Backlog." },
-        {
-          score: 1,
-          text: "Einzelne Personen experimentieren eigenverantwortlich mit KI-Tools.",
-        },
-        {
-          score: 2,
-          text: "Es gibt eine informelle KI-Initiative in einem Team oder einer Funktion.",
-        },
-        {
-          score: 3,
-          text: "KI ist in der Roadmap, aber (noch) keine strategische Priorität.",
-        },
-        {
-          score: 4,
-          text: "KI ist benannte strategische Säule mit Budget und klar verantwortlichen Personen.",
-        },
-        {
-          score: 5,
-          text: "KI prägt wesentliche Entscheidungen — Produkte, Hiring, Ops und Vision.",
-        },
-      ],
-    },
-    {
-      dimension: "Strategie & Führung",
-      q: "Nutzt Ihre Führungsriege KI-Tools selbst praktisch, hands-on?",
-      options: [
-        { score: 0, text: "Nein — Führung liest höchstens über KI." },
-        { score: 1, text: "Einzelne Führungskräfte nutzen KI gelegentlich für persönliche Aufgaben." },
-        {
-          score: 2,
-          text: "Mehrere Führungskräfte arbeiten regelmäßig mit KI an eigenen Themen.",
-        },
-        {
-          score: 3,
-          text: "Der Großteil der Führungsriege hat einen aktiven KI-Workflow.",
-        },
-        {
-          score: 4,
-          text: "Führung ist mit KI vertraut und macht die Nutzung im Unternehmen vor.",
-        },
-        {
-          score: 5,
-          text: "Führung baut mit KI — Prompts, Agenten, Evals — und nutzt es nicht nur oberflächlich.",
-        },
-      ],
-    },
-    {
-      dimension: "Talent & Kultur",
-      q: "Wie berücksichtigen Sie KI-Kompetenz bei Einstellung und Entwicklung?",
-      options: [
-        { score: 0, text: "KI spielt weder in Hiring noch in Weiterbildung eine Rolle." },
-        { score: 1, text: "In Stellenanzeigen taucht KI gelegentlich auf." },
-        { score: 2, text: "Es gibt optionale KI-Schulungen für Interessierte." },
-        {
-          score: 3,
-          text: "KI-Kompetenz ist für ausgewählte Rollen in Leistungsgesprächen relevant.",
-        },
-        {
-          score: 4,
-          text: "KI-Skills sind Kriterium beim Einstieg und Teil des Onboardings für alle Rollen.",
-        },
-        {
-          score: 5,
-          text: "Wir messen und entwickeln KI-Kompetenz unternehmensweit — sie ist Kernkompetenz.",
-        },
-      ],
-    },
-    {
-      dimension: "Talent & Kultur",
-      q: "Wie sicher fühlen sich Mitarbeitende beim Experimentieren mit KI und beim Teilen von Learnings?",
-      options: [
-        { score: 0, text: "Es gibt keine KI-Kultur — jede:r macht für sich." },
-        {
-          score: 1,
-          text: "Einzelne experimentieren, Erkenntnisse werden selten geteilt.",
-        },
-        {
-          score: 2,
-          text: "Es gibt informelle Kanäle (z. B. Slack), in denen KI-Tipps geteilt werden.",
-        },
-        {
-          score: 3,
-          text: "Strukturierte Formate (Show & Tell, Demos, Guilds) fördern den Austausch.",
-        },
-        {
-          score: 4,
-          text: "Psychologische Sicherheit beim KI-Experimentieren ist ausdrücklich gewollt.",
-        },
-        {
-          score: 5,
-          text: "„Fail forward“ bei KI ist gewollt; Learnings fließen in Systeme und Prozesse ein.",
-        },
-      ],
-    },
-    {
-      dimension: "Tools & Infrastruktur",
-      q: "Wie sieht es bei Ihnen mit KI-Tools und Infrastruktur aus?",
-      options: [
-        {
-          score: 0,
-          text: "Mitarbeitende nutzen kostenlose Consumer-Tools auf privaten Konten, unkoordiniert.",
-        },
-        {
-          score: 1,
-          text: "Ein oder zwei lizenzierte KI-Tools, genutzt von spezifischen Teams.",
-        },
-        {
-          score: 2,
-          text: "Ein abgestimmtes KI-Tool-Set ist definiert und breit ausgerollt.",
-        },
-        {
-          score: 3,
-          text: "Freigegebene KI-Tools mit Nutzungsrichtlinien und SSO.",
-        },
-        {
-          score: 4,
-          text: "Eigene Integrationen, Prompt-Bibliotheken oder interne Copilots auf APIs.",
-        },
-        {
-          score: 5,
-          text: "Eigene Modelle, Fine-Tuning oder KI-Infrastruktur passend zur Domäne.",
-        },
-      ],
-    },
-    {
-      dimension: "Tools & Infrastruktur",
-      q: "Wie messen Sie Wirkung und ROI von KI in der Organisation?",
-      options: [
-        { score: 0, text: "Wir messen keine KI-Wirkung — höchstens qualitativ." },
-        { score: 1, text: "Wir sehen Adoptions-Kennzahlen (Sitze, Logins), keine Business-Outcomes." },
-        {
-          score: 2,
-          text: "Teams erfassen KI-Metriken uneinheitlich für sich.",
-        },
-        {
-          score: 3,
-          text: "Gemeinsame Kennzahlen (z. B. gesparte Zeit, Automatisierung, Qualität).",
-        },
-        {
-          score: 4,
-          text: "KI-Wirkung wird auf Führungsebene mit klaren KPIs berichtet.",
-        },
-        {
-          score: 5,
-          text: "KI-Ergebnisse fließen in OKRs, Personalkapazität und Investitionsentscheidungen.",
-        },
-      ],
-    },
-    {
-      dimension: "Prozesse & Betrieb",
-      q: "In welchem Maß haben Sie Abläufe um KI herum neu gedacht — statt KI nur anzudocken?",
-      options: [
-        {
-          score: 0,
-          text: "Prozesse sind unverändert — KI wird wie eine Suchmaschine genutzt.",
-        },
-        {
-          score: 1,
-          text: "Einzelne haben persönliche Workflows mit KI leicht angepasst.",
-        },
-        {
-          score: 2,
-          text: "Es gab Experimente, die meisten Prozesse sind aber unverändert.",
-        },
-        {
-          score: 3,
-          text: "Kernprozesse (z. B. Vertrieb, Support, Entwicklung) sind mit KI neu gestaltet.",
-        },
-        {
-          score: 4,
-          text: "Querschnittliche Prozesse sind KI-nativ; Menschen übernehmen Ausnahmen.",
-        },
-        {
-          score: 5,
-          text: "Systematisches Audit: die meisten Prozesse sind KI-first ausgelegt.",
-        },
-      ],
-    },
-    {
-      dimension: "Produkt",
-      q: "Wie tief ist KI in Ihr Kernprodukt oder Ihre Kernleistung eingebettet?",
-      options: [
-        { score: 0, text: "KI ist nicht Teil des Produkts." },
-        { score: 1, text: "Ein kleines KI-Feature, das wenig genutzt wird." },
-        { score: 2, text: "KI sichtbar im Produkt und für manche Kund:innen wertvoll." },
-        {
-          score: 3,
-          text: "KI trägt merklich zum Kerndifferenzierungsversprechen bei.",
-        },
-        {
-          score: 4,
-          text: "KI ist zentral — die meisten Nutzer:innen interagieren regelmäßig damit.",
-        },
-        { score: 5, text: "KI ist das Produkt. Differenzierung und Vorteil sind KI-nativ." },
-      ],
-    },
-    {
-      dimension: "Governance & Risiko",
-      q: "Wie steuern Sie KI-Risiken, Sicherheit und verantwortungsvolle Nutzung?",
-      options: [
-        { score: 0, text: "Keine Richtlinien zu KI oder Datenweitergabe." },
-        { score: 1, text: "Informelle Normen, nichts Dokumentiertes." },
-        { score: 2, text: "Grundlegende Nutzungsleitlinien für Mitarbeitende." },
-        {
-          score: 3,
-          text: "Formale KI-Richtlinie inkl. Datenschutz und zulässiger Nutzung.",
-        },
-        {
-          score: 4,
-          text: "Aktives KI-Governance-Set: Richtlinien, Freigaben, Incident-Prozesse.",
-        },
-        {
-          score: 5,
-          text: "KI-Ethik-Rahmen, regelmäßige Audits, klar benannte Responsible-AI-Rolle.",
-        },
-      ],
-    },
-  ];
+  function fmt(template, vars) {
+    if (!template) return "";
+    return template.replace(/\{\{(\w+)\}\}/g, function (_, k) {
+      return vars[k] != null ? String(vars[k]) : "";
+    });
+  }
 
-  var levels = [
-    {
-      min: 0,
-      max: 20,
-      label: "KI-neugierig",
-      desc:
-        "Sie stehen am Anfang der KI-Reise. Das ist die Norm — die Lücke zwischen heutigem Stand und Chancen ist groß, aber gut schließbar.",
-    },
-    {
-      min: 21,
-      max: 40,
-      label: "KI-bewusst",
-      desc:
-        "Es gibt erste Bewegung, doch KI ist noch randständig. Einzelne Inseln der Nutzung — ohne zusammenhängende Strategie oder Kultur.",
-    },
-    {
-      min: 41,
-      max: 60,
-      label: "KI-aktiv",
-      desc:
-        "KI ist im Alltag angekommen: Tools, erste Kultur, echte Hebel. Jetzt geht es darum, Breite und Tiefe auszubauen.",
-    },
-    {
-      min: 61,
-      max: 80,
-      label: "KI-versiert",
-      desc:
-        "KI steckt merklich in Strategie, Tooling, Kultur und Ergebnissen — Sie sind vielen voraus. Nächster Schritt: systemischer Vorsprung.",
-    },
-    {
-      min: 81,
-      max: 100,
-      label: "KI-nativ",
-      desc:
-        "Sie operieren nah an der Grenze: KI prägt Bau, Betrieb und Wettbewerb. Die Aufgabe ist, diesen Vorsprung nachhaltig zu halten und auszubauen.",
-    },
-  ];
+  function questions() {
+    var d = pcData();
+    return d && d.questions ? d.questions : [];
+  }
 
-  var movesByLevel = {
-    "KI-neugierig": [
-      {
-        icon: "target",
-        title: "Einen starken Hebel-Prozess mit KI anpacken",
-        body:
-          "Nicht alles auf einmal. Ein repetitiver, zeitfressender Ablauf (Support-Triage, Erstentwürfe, Datenfassungen) — dafür einen funktionierenden KI-Prototyp bauen.",
-      },
-      {
-        icon: "users",
-        title: "Interne KI-Champions finden",
-        body:
-          "In jedem Unternehmen gibt es schon 1–3 Machende. Geben Sie Rückendeckung, Budget und eine Bühne zum Teilen — sie ziehen andere mit.",
-      },
-      {
-        icon: "book",
-        title: "Führung hands-on an KI heranführen",
-        body:
-          "Ein halber Tag Workshop: Jede Führungskraft baut selbst etwas mit KI — keine reine Demo. Kompetenz kommt vom Machen.",
-      },
-    ],
-    "KI-bewusst": [
-      {
-        icon: "map",
-        title: "KI-Roadmap mit klarer Verantwortung",
-        body:
-          "Benannte KI-Leitung, 90 Tage: Ist-Analyse, drei gezielte Hebel, Plan für das Quartal.",
-      },
-      {
-        icon: "tool",
-        title: "Toolstack standardisieren und ausrollen",
-        body:
-          "Wildwuchs reduzieren: ein gemeinsames KI-Set, SSO, Richtlinie, einfacher Zugang — sicher und ohne Reibung.",
-      },
-      {
-        icon: "chart",
-        title: "Erste KI-Erfolgskennzahl definieren",
-        body:
-          "Eine KPI, die KI messbar bewegen soll (Bearbeitungszeit Tickets, Output-Volumen, Review-Geschwindigkeit). Vorher/Nachher — die ROI-Geschichte.",
-      },
-    ],
-    "KI-aktiv": [
-      {
-        icon: "refresh",
-        title: "Prozess-Audit über alle Funktionen",
-        body:
-          "Pro Bereich die Top-5-Wiederkehrer-Abläufe. KI-Potenzial bewerten, Top-10 org-weit priorisieren — mit Ownern und Terminen.",
-      },
-      {
-        icon: "school",
-        title: "KI-Kompetenz-Baseline für die Organisation",
-        body:
-          "Skills erfassen, Schulungsbudget darauf ausrichten, KI in Feedback-Gespräche einbinden.",
-      },
-      {
-        icon: "api",
-        title: "Von Tools zu Integrationen",
-        body:
-          "APIs nutzen: Vorlagen, interne Copilots, maßgeschneiderte Assistenten — hier wächst Hebel multiplikativ.",
-      },
-    ],
-    "KI-versiert": [
-      {
-        icon: "robot",
-        title: "Ersten agentischen Workflow launchen",
-        body:
-          "Über Einzelprompts hinaus: mehrstufige Agenten, die einen Prozess Ende-zu-Ende automatisieren (z. B. Lead-Quali → Kontakt → CRM).",
-      },
-      {
-        icon: "shield",
-        title: "Formale KI-Governance aufsetzen",
-        body:
-          "Risiko-Owner, Responsible-AI-Richtlinie, Freigabeprozess für neue KI-Tools vor Rollout.",
-      },
-      {
-        icon: "bulb",
-        title: "KI in die Kernwertschöpfung des Produkts verankern",
-        body:
-          "Wo kann KI das Produkt für Kund:innen 10× verbessern — nicht nur als Feature, sondern als Mechanismus der Wertschöpfung.",
-      },
-    ],
-    "KI-nativ": [
-      {
-        icon: "trophy",
-        title: "KI-Playbook dokumentieren und teilen",
-        body:
-          "Was funktioniert, intern festhalten (Kultur) und nach außen zeigen (Talent, Markt).",
-      },
-      {
-        icon: "trending",
-        title: "Evals und Feedback in jedes KI-System",
-        body:
-          "Evaluation wie Production Software: Tests, Monitoring, Incident Response.",
-      },
-      {
-        icon: "world",
-        title: "Fine-Tuning oder domänenspezifische Modelle prüfen",
-        body:
-          "Standardmodelle sind kommodifiziert — Ihre Daten und Expertise nicht. RAG oder Fine-Tuning für echten Vorsprung.",
-      },
-    ],
-  };
+  function levels() {
+    var d = pcData();
+    return d && d.levels ? d.levels : [];
+  }
+
+  function dimensions() {
+    var d = pcData();
+    return d && d.DIMENSIONS ? d.DIMENSIONS : [];
+  }
+
+  function stageLabels() {
+    var d = pcData();
+    return d && d.STAGE_LABEL ? d.STAGE_LABEL : [];
+  }
+
+  function movesForLevel(label) {
+    var d = pcData();
+    if (!d || !d.movesByLevel) return [];
+    return d.movesByLevel[label] || [];
+  }
 
   var MOVE_ICONS = {
     target:
@@ -439,15 +103,16 @@
   }
 
   function renderLiveAnnouncement() {
-    var q = questions[current];
-    var part =
-      "Frage " +
-      (current + 1) +
-      " von 9. Dimension: " +
-      q.dimension +
-      ". " +
-      q.q;
-    updateLiveRegion(part);
+    var qs = questions();
+    var q = qs[current];
+    if (!q) return;
+    updateLiveRegion(
+      fmt(t("pulscheck.modal.liveQuestion"), {
+        n: current + 1,
+        dim: q.dimension,
+        q: q.q,
+      }),
+    );
   }
 
   function setProgress() {
@@ -458,9 +123,13 @@
   }
 
   function render(noFocus) {
-    var q = questions[current];
-    el("pulscheck-q-counter").textContent =
-      "Frage " + (current + 1) + " von 9";
+    var qs = questions();
+    var q = qs[current];
+    if (!q) return;
+    var labels = stageLabels();
+    el("pulscheck-q-counter").textContent = fmt(t("pulscheck.modal.questionCounter"), {
+      n: current + 1,
+    });
     el("pulscheck-q-dim").textContent = q.dimension;
     el("pulscheck-dim-tag").textContent = q.dimension;
     el("pulscheck-q-text").textContent = q.q;
@@ -479,7 +148,7 @@
       );
       btn.innerHTML =
         '<span class="pulscheck-opt-label">' +
-        STAGE_LABEL[opt.score] +
+        labels[opt.score] +
         '</span><span class="pulscheck-opt-text">' +
         opt.text +
         "</span>";
@@ -491,7 +160,7 @@
 
     var nextBtn = el("pulscheck-btn-next");
     nextBtn.textContent =
-      current === 8 ? "Zum Ergebnis" : "Weiter";
+      current === 8 ? t("pulscheck.modal.nextFinal") : t("pulscheck.modal.next");
     var answered = answers[current] !== null;
     nextBtn.disabled = !answered;
     nextBtn.classList.toggle("is-active", answered);
@@ -545,17 +214,9 @@
   }
 
   function buildMailto(scaled, levelLabel) {
-    var subject =
-      "KI Puls-Check — " + levelLabel + " (" + scaled + "/100)";
-    var body =
-      "Hallo Apex Partners,\n\n" +
-      "mein KI Puls-Check Ergebnis: " +
-      scaled +
-      "/100 (" +
-      levelLabel +
-      ").\n\n" +
-      "Ich möchte mein KI Puls-Check Ergebnis gern kurz mit Ihnen besprechen.\n\n" +
-      "Viele Grüße";
+    var mailto = pcData() && pcData().mailto ? pcData().mailto : {};
+    var subject = fmt(mailto.subject, { label: levelLabel, score: scaled });
+    var body = fmt(mailto.body, { label: levelLabel, score: scaled });
     return (
       "mailto:kontakt@apexpartners.tech?subject=" +
       encodeURIComponent(subject) +
@@ -565,14 +226,15 @@
   }
 
   function fillResultsData() {
+    var qs = questions();
     var totalScore = answers.reduce(function (sum, ansIdx, qi) {
-      return sum + (ansIdx !== null ? questions[qi].options[ansIdx].score : 0);
+      return sum + (ansIdx !== null ? qs[qi].options[ansIdx].score : 0);
     }, 0);
     var scaled = Math.round((totalScore / (9 * 5)) * 100);
     var level =
-      levels.find(function (l) {
+      levels().find(function (l) {
         return scaled >= l.min && scaled <= l.max;
-      }) || levels[0];
+      }) || levels()[0];
 
     el("pulscheck-res-label").textContent = level.label;
     el("pulscheck-res-desc").textContent = level.desc;
@@ -594,11 +256,11 @@
 
     var dimScores = {};
     var dimMax = {};
-    DIMENSIONS.forEach(function (d) {
+    dimensions().forEach(function (d) {
       dimScores[d] = 0;
       dimMax[d] = 0;
     });
-    questions.forEach(function (q, qi) {
+    qs.forEach(function (q, qi) {
       dimMax[q.dimension] += 5;
       if (answers[qi] !== null) {
         dimScores[q.dimension] += q.options[answers[qi]].score;
@@ -607,7 +269,7 @@
 
     var grid = el("pulscheck-dim-grid");
     grid.innerHTML = "";
-    DIMENSIONS.forEach(function (d) {
+    dimensions().forEach(function (d) {
       var pct = Math.round((dimScores[d] / dimMax[d]) * 100);
       var card = document.createElement("div");
       card.className = "pulscheck-dim-card";
@@ -631,7 +293,7 @@
       });
     }, delayBars);
 
-    var moves = movesByLevel[level.label] || movesByLevel["KI-neugierig"];
+    var moves = movesForLevel(level.label);
     el("pulscheck-moves").innerHTML = moves
       .map(function (m) {
         return (
@@ -651,11 +313,10 @@
       buildMailto(scaled, level.label),
     );
     updateLiveRegion(
-      "KI Puls-Check: " +
-      scaled +
-      " von 100 Punkten. Einordnung: " +
-      level.label +
-      ".",
+      fmt(t("pulscheck.modal.liveResult"), {
+        score: scaled,
+        label: level.label,
+      }),
     );
   }
 
@@ -804,4 +465,13 @@
   }
 
   render(true);
+
+  document.addEventListener("languagechange", function () {
+    var results = el("pulscheck-results");
+    if (results && !results.hidden) {
+      fillResultsData();
+    } else {
+      render(true);
+    }
+  });
 })();

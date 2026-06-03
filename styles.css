@@ -256,6 +256,145 @@ button {
   transform: translateY(-1px);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.lang-dropdown {
+  position: relative;
+}
+
+.lang-dropdown__trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 32px;
+  padding: 0 6px 0 4px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.lang-dropdown__current {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 13px;
+  line-height: 0;
+}
+
+.lang-flag {
+  display: block;
+  width: 20px;
+  height: 13px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.lang-flag[hidden] {
+  display: none;
+}
+
+.lang-dropdown__chevron {
+  flex-shrink: 0;
+  color: rgba(15, 45, 74, 0.22);
+  opacity: 1;
+  transition: transform 0.15s;
+}
+
+.site-header.site-header--surface-dark .lang-dropdown__chevron {
+  color: rgba(255, 255, 255, 0.16);
+}
+
+.site-header.site-header--surface-light .lang-dropdown__chevron {
+  color: rgba(15, 45, 74, 0.12);
+}
+
+.lang-dropdown.is-open .lang-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown__menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 120;
+  min-width: 118px;
+  margin: 0;
+  padding: 4px;
+  list-style: none;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 45, 74, 0.1);
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px) saturate(120%);
+  -webkit-backdrop-filter: blur(14px) saturate(120%);
+  box-shadow:
+    0 10px 32px rgba(15, 45, 74, 0.14),
+    0 2px 8px rgba(15, 45, 74, 0.06);
+}
+
+.site-header.site-header--surface-dark .lang-dropdown__menu {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(15, 45, 74, 0.96);
+  box-shadow:
+    0 10px 32px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.lang-dropdown__option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.site-header.site-header--surface-dark .lang-dropdown__option {
+  color: rgba(248, 250, 252, 0.88);
+}
+
+.lang-dropdown__option:hover {
+  background: rgba(15, 45, 74, 0.06);
+}
+
+.site-header.site-header--surface-dark .lang-dropdown__option:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.lang-dropdown__option.is-selected {
+  background: rgba(15, 45, 74, 0.05);
+}
+
+.site-header.site-header--surface-dark .lang-dropdown__option.is-selected {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.lang-dropdown__trigger:focus-visible,
+.lang-dropdown__option:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.site-header.site-header--surface-dark .lang-dropdown__trigger:focus-visible,
+.site-header.site-header--surface-dark .lang-dropdown__option:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.65);
+}
+
 .nav-toggle {
   display: flex;
   flex-direction: column;
@@ -330,7 +469,11 @@ button {
 .hero {
   position: relative;
   overflow: hidden;
-  padding: calc(var(--nav-h) + 112px) 0 104px;
+  --hero-bottom-inset: 104px;
+  --hero-logo-band-pad: 28px;
+  /* bottom-inset + früheres band padding-block → symmetrisch oben/unten um die Logos */
+  --hero-logo-zone-pad: calc(var(--hero-bottom-inset) + var(--hero-logo-band-pad));
+  padding: calc(var(--nav-h) + 112px) 0 0;
 }
 
 .hero-grid {
@@ -340,6 +483,7 @@ button {
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: var(--hero-grid-step) var(--hero-grid-step);
+  background-position: 0 0;
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
   mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
   pointer-events: none;
@@ -515,7 +659,7 @@ button {
 .hero-video-play-icon {
   position: relative;
   z-index: 1;
-  margin-left: 5px;
+  display: block;
 }
 
 .hero-video-frame.is-playing .hero-video-play {
@@ -603,8 +747,24 @@ button {
 .hero-pills-wrap {
   /* Basisabstand + --hero-rule-snap (per JS auf 80px-Raster aus .hero-Top) */
   margin-top: calc(var(--hero-pills-mt-base, 0px) + var(--hero-rule-snap, 0px));
-  padding-top: 52px;
-  border-top: 1px solid var(--border);
+  display: grid;
+  /* 1.1fr oben / 1fr unten: leichte optische Korrektur (SVG-Leerraum) */
+  grid-template-rows: 1.05fr auto 1fr;
+  align-items: center;
+  min-height: var(--hero-logo-zone-height, 312px);
+  position: relative;
+  border-top: none;
+}
+
+.hero-pills-wrap::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+  pointer-events: none;
 }
 
 .hero-pills {
@@ -613,7 +773,6 @@ button {
   align-items: center;
   justify-content: center;
   gap: 10px 12px;
-  margin-top: 40px;
 }
 
 .hero-pill {
@@ -631,11 +790,12 @@ button {
 .hero-logo-band {
   position: relative;
   z-index: 1;
+  grid-row: 2;
   width: 100%;
   margin-inline: auto;
   margin-top: 0;
   margin-bottom: 0;
-  padding-block: 28px;
+  padding-block: 0;
   overflow: hidden;
   mask-image: linear-gradient(
     90deg,
@@ -737,11 +897,13 @@ button {
 
 @media (max-width: 599px) {
   .hero {
-    padding: calc(var(--nav-h) + 88px) 0 72px;
+    --hero-bottom-inset: 72px;
+    --hero-logo-band-pad: 22px;
+    padding: calc(var(--nav-h) + 88px) 0 0;
   }
 
   .hero-logo-band {
-    padding-block: 22px;
+    padding-block: 0;
     mask-image: none;
     -webkit-mask-image: none;
     overflow-x: auto;
@@ -801,14 +963,6 @@ button {
     .hero-logo-set img {
       height: var(--hero-logo-h, clamp(36px, 5.5vw, 44px));
     }
-  }
-
-  .hero-pills-wrap .hero-pills {
-    margin-top: 32px;
-  }
-
-  .hero-pills-wrap {
-    padding-top: 29px;
   }
 }
 
@@ -968,7 +1122,7 @@ button {
 
 .step-card h3 {
   font-family: var(--font-serif);
-  font-size: clamp(1.2rem, 2vw, 1.35rem);
+  font-size: clamp(1.65rem, 3.2vw, 2rem);
   font-weight: 400;
   margin: 0 0 12px;
   line-height: 1.28;
@@ -977,9 +1131,21 @@ button {
 
 .step-card p {
   margin: 0;
-  font-size: 15px;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
   line-height: 1.55;
   color: var(--muted);
+}
+
+.principles-pills {
+  margin-top: clamp(40px, 5vw, 56px);
+}
+
+.principles-section .hero-pill {
+  background: #ffffff;
+  border-color: rgba(15, 45, 74, 0.14);
+  color: var(--navy);
+  box-shadow: 0 1px 3px rgba(15, 45, 74, 0.07);
 }
 
 /* Use Cases */
@@ -1904,11 +2070,6 @@ button {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .pulscheck-preview-card {
-    animation: pulscheck-preview-float 7s ease-in-out infinite;
-    will-change: transform;
-  }
-
   .pulscheck-preview-badge {
     animation: pulscheck-badge-glow 4s ease-in-out infinite;
   }
@@ -1957,7 +2118,7 @@ button {
   }
 
   .pulscheck-preview-opt {
-    animation: pulscheck-opt-idle 12s ease-in-out infinite;
+    animation: pulscheck-opt-idle 12s linear infinite;
   }
 
   .pulscheck-preview-opt:nth-child(1) {
@@ -1973,7 +2134,7 @@ button {
   }
 
   .pulscheck-preview-opt .pulscheck-preview-radio {
-    animation: pulscheck-opt-idle-radio 12s ease-in-out infinite;
+    animation: pulscheck-opt-idle-radio 12s linear infinite;
   }
 
   .pulscheck-preview-opt:nth-child(1) .pulscheck-preview-radio {
@@ -1986,17 +2147,6 @@ button {
 
   .pulscheck-preview-opt:nth-child(3) .pulscheck-preview-radio {
     animation-delay: 8s;
-  }
-}
-
-@keyframes pulscheck-preview-float {
-  0%,
-  100% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-9px) rotate(0.5deg);
   }
 }
 
@@ -2084,15 +2234,7 @@ button {
 
 @keyframes pulscheck-opt-idle {
   0%,
-  100%,
-  88% {
-    border-color: rgba(15, 45, 74, 0.12);
-    background: rgba(255, 255, 255, 0.92);
-    box-shadow: none;
-  }
-
-  8%,
-  22% {
+  33.32% {
     border-color: var(--navy);
     background: rgba(15, 45, 74, 0.06);
     box-shadow:
@@ -2100,22 +2242,28 @@ button {
       0 0 0 4px rgba(15, 45, 74, 0.07),
       0 8px 20px rgba(15, 45, 74, 0.08);
   }
+
+  33.33%,
+  100% {
+    border-color: rgba(15, 45, 74, 0.12);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: none;
+  }
 }
 
 @keyframes pulscheck-opt-idle-radio {
   0%,
-  100%,
-  88% {
-    border-color: rgba(15, 45, 74, 0.28);
-    background: transparent;
-    transform: scale(1);
-  }
-
-  8%,
-  22% {
+  33.32% {
     border-color: var(--navy);
     background: radial-gradient(circle at 50% 50%, var(--navy) 0, var(--navy) 32%, transparent 33%);
     transform: scale(1.12);
+  }
+
+  33.33%,
+  100% {
+    border-color: rgba(15, 45, 74, 0.28);
+    background: transparent;
+    transform: scale(1);
   }
 }
 
