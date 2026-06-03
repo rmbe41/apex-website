@@ -5,6 +5,8 @@
   var SUPPORTED = ["de", "en"];
   var currentLang = "de";
   var translations;
+  /** German use-case copy: captured once from index.html (single source of truth). */
+  var deUseCasesCapture = null;
 
   function buildDe() {
     return {
@@ -728,17 +730,86 @@
     };
   }
 
+  function trimText(el) {
+    return el ? String(el.textContent).replace(/\s+/g, " ").trim() : "";
+  }
+
+  /** Read German use-case strings from the DOM (index.html is the source of truth). */
+  function captureUseCasesFromDom() {
+    var root = document.getElementById("use-cases");
+    if (!root) return null;
+
+    var tablist = root.querySelector(".use-cases-tabs");
+    var tabsAriaEl = tablist || root.querySelector("[data-i18n-aria]");
+
+    var section = {
+      label: trimText(root.querySelector('[data-i18n="useCases.label"]')),
+      title: trimText(root.querySelector('[data-i18n="useCases.title"]')),
+      lead: trimText(root.querySelector('[data-i18n="useCases.lead"]')),
+      navLabel: trimText(root.querySelector('[data-i18n="useCases.navLabel"]')),
+      tabsAria: tabsAriaEl ? tabsAriaEl.getAttribute("aria-label") || "Use Cases" : "Use Cases",
+    };
+
+    var labels = {
+      challenge: trimText(root.querySelector('[data-i18n="useCases.labels.challenge"]')),
+      build: trimText(root.querySelector('[data-i18n="useCases.labels.build"]')),
+      outcome: trimText(root.querySelector('[data-i18n="useCases.labels.outcome"]')),
+      suitable: trimText(root.querySelector('[data-i18n="useCases.labels.suitable"]')),
+    };
+
+    var tabs = [];
+    root.querySelectorAll(".use-cases-tab").forEach(function (tab) {
+      tabs.push(trimText(tab));
+    });
+
+    function panelField(panel, index, field) {
+      var el = panel.querySelector('[data-i18n="useCases.' + index + "." + field + '"]');
+      return trimText(el);
+    }
+
+    var panels = [];
+    root.querySelectorAll(".use-case-panel").forEach(function (panel, index) {
+      var buildItems = [];
+      var list = panel.querySelector("[data-i18n-list]");
+      if (list) {
+        list.querySelectorAll("li").forEach(function (li) {
+          buildItems.push(trimText(li));
+        });
+      }
+      panels.push({
+        title: panelField(panel, index, "title"),
+        tagline: panelField(panel, index, "tagline"),
+        challenge: panelField(panel, index, "challenge"),
+        buildItems: buildItems,
+        outcome: panelField(panel, index, "outcome"),
+        suitable: panelField(panel, index, "suitable"),
+      });
+    });
+
+    return { section: section, labels: labels, tabs: tabs, panels: panels };
+  }
+
   function buildUseCasesDe() {
-    return buildUseCasesFromPanels("de", UC_PANELS_DE, UC_TABS_DE);
+    if (!deUseCasesCapture) {
+      return buildUseCasesFromPanels("de", [], [], null, null);
+    }
+    return buildUseCasesFromPanels(
+      "de",
+      deUseCasesCapture.panels,
+      deUseCasesCapture.tabs,
+      deUseCasesCapture.section,
+      deUseCasesCapture.labels,
+    );
   }
 
   function buildUseCasesEn() {
-    return buildUseCasesFromPanels("en", UC_PANELS_EN, UC_TABS_EN);
+    return buildUseCasesFromPanels("en", UC_PANELS_EN, UC_TABS_EN, null, null);
   }
 
-  function buildUseCasesFromPanels(lang, panels, tabs) {
+  function buildUseCasesFromPanels(lang, panels, tabs, sectionDe, labelsDe) {
     var labels =
-      lang === "de"
+      labelsDe ||
+      (lang === "de"
         ? {
             challenge: "Herausforderung",
             build: "Was wir gemeinsam aufbauen",
@@ -750,9 +821,10 @@
             build: "What we build together",
             outcome: "Typical outcomes",
             suitable: "Best suited for",
-          };
+          });
     var section =
-      lang === "de"
+      sectionDe ||
+      (lang === "de"
         ? {
             label: "Use Cases",
             title: "Was wir gemeinsam aufbauen.",
@@ -768,7 +840,7 @@
               "An overview of the areas where we support you — from strategy through to implementation.",
             navLabel: "Areas",
             tabsAria: "Use cases",
-          };
+          });
     var out = {
       label: section.label,
       title: section.title,
@@ -793,18 +865,6 @@
     return out;
   }
 
-  var UC_TABS_DE = [
-    "Context Layer",
-    "Unternehmenssteuerung",
-    "Vertrieb & Kundengewinnung",
-    "HR & Recruiting",
-    "Kundenservice",
-    "Finanzen",
-    "Recht & Regulatorik",
-    "Marketing",
-    "Daten & Analytics",
-  ];
-
   var UC_TABS_EN = [
     "Context layer",
     "Corporate management",
@@ -817,150 +877,6 @@
     "Data & analytics",
   ];
 
-  var UC_PANELS_DE = [
-    {
-      title: "Context Layer",
-      tagline: "Der Grundstein für angewandte KI in Ihrem Unternehmen.",
-      challenge:
-        "KI ist nur so nützlich wie die Informationen, auf die sie zugreifen kann. In den meisten Unternehmen ist dieses Wissen über Systeme, Abteilungen und Personen verstreut – und damit für KI nicht nutzbar. Das ändern wir.",
-      buildItems: [
-        "Unternehmensweite Suche über alle relevanten Systeme und Ablagen",
-        "Wissensstrukturen, die Zusammenhänge zwischen Projekten, Kunden und Themen abbilden",
-        "Automatisierte Dokumentation, die Wissen erfasst bevor es die Organisation verlässt",
-        "Eine einheitliche Wissensbasis als Grundlage für alle KI-Systeme",
-      ],
-      outcome:
-        "Schnellerer Informationszugang, präzisere interne Assistenten, Wissen bleibt im Unternehmen – unabhängig von Fluktuation.",
-      suitable:
-        "Unternehmen mit verteilten Teams, gewachsenen Systemlandschaften oder laufenden KI-Projekten mit unbefriedigenden Ergebnissen.",
-    },
-    {
-      title: "Unternehmenssteuerung",
-      tagline: "Fundierte Entscheidungen. Auf Basis aller verfügbaren Informationen.",
-      challenge:
-        "Führungskräfte entscheiden täglich auf Basis unvollständiger Informationen. KI schließt diese Lücke systematisch.",
-      buildItems: [
-        "Führungsassistenten, die Kennzahlen überwachen, Abweichungen erklären und Handlungsoptionen aufzeigen",
-        "Szenarioanalysen für operative und strategische Entscheidungen – nachvollziehbar und quantifiziert",
-        "Frühwarnsysteme auf Basis betrieblicher und marktbezogener Signale",
-        "Strategische Entscheidungsvorlagen auf Basis automatisch aggregierter Daten – ohne manuellen Rechercheaufwand",
-      ],
-      outcome:
-        "Solidere Entscheidungsgrundlagen, kürzere Wege von Daten zu Handlungsempfehlungen, strategische Weichen werden früher gestellt.",
-      suitable:
-        "Geschäftsführung, Vorstand, C-Level sowie Strategie- und Operationsteams mit komplexen Steuerungsanforderungen.",
-    },
-    {
-      title: "Vertrieb & Kundengewinnung",
-      tagline: "Mehr Umsatz pro Mitarbeiter. Weniger Aufwand pro Abschluss.",
-      challenge:
-        "Vertriebsteams verbringen einen erheblichen Teil ihrer Zeit mit Datenpflege, Recherche und Nachverfolgung – abseits des eigentlichen Verkaufens. KI übernimmt diese Last.",
-      buildItems: [
-        "Vertriebsassistenten, die Erstkontakte übernehmen, Folgekommunikation koordinieren und Interessenten qualifizieren",
-        "CRM-Automatisierung mit kontextbezogenen nächsten Schritten und aktuellen Kundendaten",
-        "Frühzeitige Risikoerkennung in der Pipeline – nicht erst am Quartalsende",
-        "Automatisierte Gesprächsvorbereitung auf Basis interner und öffentlicher Daten",
-      ],
-      outcome: "Höheres Kontaktvolumen, weniger CRM-Pflegeaufwand, zuverlässigere Umsatzprognosen.",
-      suitable: "B2B-Vertrieb, Innendienstteams, Unternehmen mit längeren oder komplexen Verkaufszyklen.",
-    },
-    {
-      title: "HR & Recruiting",
-      tagline: "Schnellere Besetzungen. Fundiertere Entscheidungen.",
-      challenge:
-        "Offene Stellen bleiben länger unbesetzt als nötig – nicht weil Kandidaten fehlen, sondern weil Vorauswahl, Koordination und Einarbeitung das Personalteam unverhältnismäßig binden.",
-      buildItems: [
-        "Automatisiertes Lebenslauf-Screening mit Ranking nach individuellen Anforderungsprofilen",
-        "Interview-Assistenten mit strukturierten Fragen und Bewertungsdokumentation",
-        "Personalisierte Einarbeitungsassistenten für die ersten Wochen neuer Mitarbeitender",
-        "Interne HR-Agenten für Standardanfragen sowie Kompetenzanalyse zur Identifikation von Lücken",
-      ],
-      outcome:
-        "Kürzere Zeit bis zur Stellenbesetzung, bessere Vergleichbarkeit von Bewerbern, Personalteams mit mehr Kapazität für strategische Arbeit.",
-      suitable:
-        "Unternehmen in Wachstumsphasen, Personalabteilungen mit hohem Bewerbungsvolumen, Branchen mit spezifischen Anforderungsprofilen.",
-    },
-    {
-      title: "Kundenservice",
-      tagline: "Mehr Anfragen lösen. Mit gleichem oder kleinerem Team.",
-      challenge:
-        "Serviceaufwand wächst proportional zum Kundenstamm. Mit KI lassen sich diese beiden Kurven entkoppeln – ohne Qualitätseinbußen.",
-      buildItems: [
-        "KI-Serviceassistenten für wiederkehrende Standardanfragen",
-        "Intelligente Eingangssteuerung nach Priorität, Kategorie und Zuständigkeit",
-        "Automatische Erkennung kritischer Kundensituationen mit sofortiger Weiterleitung",
-        "Kundenzufriedenheitsbewertung zur Früherkennung gefährdeter Beziehungen und Abwanderungsprognose",
-      ],
-      outcome:
-        "Erheblicher Anteil der Anfragen ohne manuellen Eingriff gelöst, schnellere Reaktionszeiten, Serviceteams fokussieren auf Fälle mit echtem Mehrwert.",
-      suitable:
-        "Unternehmen mit hohem Anfragevolumen, kritischen Kundenbeziehungen oder wachsendem Kundenstamm bei gleichbleibendem Team.",
-    },
-    {
-      title: "Finanzen",
-      tagline: "Weniger manuelle Prozesse. Bessere Entscheidungsgrundlagen.",
-      challenge: "Finanzabteilungen verlieren durch repetitive Aufgaben Kapazität für das, was zählt – Analyse und Steuerung.",
-      buildItems: [
-        "Automatisierte Rechnungsverarbeitung und Buchungsabgleich",
-        "Kontinuierliche Ausgabenanalyse mit Einsparpotenzialerkennung",
-        "Liquiditäts- und Umsatzprognosen auf Basis historischer und aktueller Daten",
-        "Automatisierung von Einkaufs- und Freigabeprozessen sowie strukturierte Vertragsanalyse",
-      ],
-      outcome:
-        "Reduzierter manueller Aufwand, schnellere Monatsabschlüsse, mehr Kapazität für strategische Finanzsteuerung.",
-      suitable:
-        "Mittelständische Unternehmen, Organisationen mit repetitiven Finanzprozessen, Finanzverantwortliche vor oder nach Restrukturierungen.",
-    },
-    {
-      title: "Recht & Regulatorik",
-      tagline: "Rechtssicherheit ohne den üblichen Zeitverzug.",
-      challenge:
-        "In regulierten Umgebungen ist sorgfältige juristische Abwicklung unverhandelbar – aber sie muss nicht langsam sein.",
-      buildItems: [
-        "Automatisierte Vertragsprüfung mit Klauselextraktion und Risikobewertung",
-        "Abgleich interner Richtlinien gegen regulatorische Anforderungen",
-        "Dokumentation für Datenschutz und branchenspezifische Regulatorik",
-        "Prüfungsassistenten für Nachweise und Prüfpfade",
-        "Interner Rechtsassistent für juristische Standardfragen – ohne die Rechtsabteilung zu belasten",
-      ],
-      outcome:
-        "Vertragsprüfung in einem Bruchteil der bisherigen Zeit, frühere Risikoerkennung, juristische Kapazitäten für komplexe Fragestellungen frei.",
-      suitable:
-        "Unternehmen unter hohem regulatorischen Druck, deren Rechts- oder Compliance-Abteilungen einen Großteil ihrer Kapazität für wiederkehrende Prüfaufgaben aufwenden.",
-    },
-    {
-      title: "Marketing",
-      tagline: "Konsistente Markenkommunikation. In größerem Maßstab.",
-      challenge:
-        "Hochwertige Inhalte zu produzieren kostet Zeit – unabhängig von Teamgröße oder Budget. KI verändert das Verhältnis zwischen Aufwand und Ergebnis grundlegend.",
-      buildItems: [
-        "Inhaltserstellung für Suchmaschinenoptimierung, Werbung, soziale Medien und E-Mail – in der Sprache Ihrer Marke",
-        "Personalisierungslogik nach Zielgruppe, Kanal und Kaufphase",
-        "Automatisiertes Testen von Inhaltsvarianten mit systematischer Auswertung",
-        "Konsistente Markensprache und Sichtbarkeitsanalyse in KI-gestützten Suchumgebungen",
-      ],
-      outcome:
-        "Höherer Content-Output je Mitarbeitendem, präzisere Zielgruppenansprache, mehr Kapazität für Konzeption und Strategie.",
-      suitable:
-        "Unternehmen mit ambitionierten Kommunikationszielen, Marketingabteilungen unter Ressourcendruck, Organisationen mit mehreren Zielgruppen oder Märkten.",
-    },
-    {
-      title: "Daten & Analytics",
-      tagline: "Datenbasierte Entscheidungen – für alle, nicht nur für Spezialisten.",
-      challenge:
-        "Viele Unternehmen verfügen über eine gute Datenbasis, aber der Zugang bleibt auf wenige Personen beschränkt. KI öffnet diesen Zugang – ohne Qualitätseinbußen.",
-      buildItems: [
-        "Sprachbasierte Datenbankabfragen – Fragen in natürlicher Sprache, Antworten aus dem System",
-        "Automatisiertes Berichtswesen, das sich an veränderte Anforderungen anpasst",
-        "Erklärende Auswertungen: nicht nur was passiert ist, sondern warum",
-        "Automatische Abweichungserkennung sowie Datenbereinigung für verlässliche Datenqualität",
-      ],
-      outcome:
-        "Fachabteilungen beantworten Datenfragen eigenständig, Auswertungen breiter zugänglich, Datenspezialisten fokussieren auf komplexe Aufgaben.",
-      suitable:
-        "Unternehmen mit bestehenden Auswertungssystemen, Fachabteilungen mit regelmäßigem Analysebedarf, Organisationen mit wachsender Datenlandschaft.",
-    },
-  ];
 
   var UC_PANELS_EN = [
     {
@@ -1108,10 +1024,12 @@
     },
   ];
 
-  translations = {
-    de: buildDe(),
-    en: buildEn(),
-  };
+  function initTranslations() {
+    translations = {
+      de: buildDe(),
+      en: buildEn(),
+    };
+  }
 
   function resolve(obj, path) {
     if (!path) return undefined;
@@ -1301,6 +1219,8 @@
   loadStoredLang();
 
   function onReady() {
+    deUseCasesCapture = captureUseCasesFromDom();
+    initTranslations();
     apply();
     initLangToggle();
   }
