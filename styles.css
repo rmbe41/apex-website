@@ -281,20 +281,29 @@ button {
 }
 
 .lang-dropdown__current {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 13px;
+  display: block;
+  flex-shrink: 0;
+  width: 22px;
+  height: 15px;
+  line-height: 0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.lang-flag-wrap {
+  display: block;
+  flex-shrink: 0;
+  width: 22px;
+  height: 15px;
+  border-radius: 4px;
+  overflow: hidden;
   line-height: 0;
 }
 
 .lang-flag {
   display: block;
-  width: 20px;
-  height: 13px;
-  border-radius: 3px;
-  overflow: hidden;
+  width: 22px;
+  height: 15px;
 }
 
 .lang-flag[hidden] {
@@ -445,6 +454,49 @@ button {
   margin-top: 8px;
   background: var(--navy);
   color: #ffffff;
+}
+
+@media (max-width: 899px) {
+  .header-inner {
+    gap: 0;
+    padding-left: 20px;
+    padding-right: 12px;
+  }
+
+  .header-actions {
+    display: contents;
+  }
+
+  .logo-link {
+    flex: 0 0 auto;
+    min-width: 0;
+  }
+
+  .logo-link img {
+    height: 26px;
+    width: auto;
+  }
+
+  .lang-dropdown {
+    margin-left: auto;
+    margin-right: 14px;
+  }
+
+  .lang-dropdown__trigger {
+    height: 28px;
+    padding: 0 2px;
+    gap: 2px;
+  }
+
+  .lang-dropdown__chevron {
+    width: 8px;
+    height: 8px;
+  }
+
+  .nav-toggle {
+    padding: 8px 6px 8px 4px;
+    flex-shrink: 0;
+  }
 }
 
 @media (min-width: 900px) {
@@ -821,8 +873,6 @@ button {
   display: flex;
   width: max-content;
   animation: hero-logo-marquee 58s linear infinite;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
   will-change: transform;
 }
 
@@ -831,6 +881,7 @@ button {
   align-items: center;
   gap: clamp(36px, 5vw, 72px);
   padding-inline-end: clamp(36px, 5vw, 72px);
+  line-height: 0;
 }
 
 .hero-logo-set img {
@@ -842,9 +893,6 @@ button {
   object-fit: contain;
   object-position: center;
   opacity: 0.82;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
 }
 
 .hero-logo-set img.hero-logo--aareal {
@@ -904,13 +952,30 @@ button {
 
   .hero-logo-band {
     padding-block: 0;
-    mask-image: none;
-    -webkit-mask-image: none;
     overflow-x: auto;
     overflow-y: hidden;
     -webkit-overflow-scrolling: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    /* Logos beim Ein-/Auslaufen weich ausblenden (kein harter Clip) */
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 8%,
+      black 18%,
+      black 82%,
+      rgba(0, 0, 0, 0.45) 92%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(0, 0, 0, 0.45) 8%,
+      black 18%,
+      black 82%,
+      rgba(0, 0, 0, 0.45) 92%,
+      transparent 100%
+    );
   }
 
   .hero-logo-band::before,
@@ -919,19 +984,31 @@ button {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: min(14%, 56px);
+    width: min(22%, 80px);
     z-index: 2;
     pointer-events: none;
   }
 
   .hero-logo-band::before {
     left: 0;
-    background: linear-gradient(90deg, #071525 0%, transparent 100%);
+    background: linear-gradient(
+      90deg,
+      #071525 0%,
+      var(--navy-deep) 45%,
+      rgba(10, 31, 51, 0.35) 75%,
+      transparent 100%
+    );
   }
 
   .hero-logo-band::after {
     right: 0;
-    background: linear-gradient(270deg, #071525 0%, transparent 100%);
+    background: linear-gradient(
+      270deg,
+      #071525 0%,
+      var(--navy-deep) 45%,
+      rgba(10, 31, 51, 0.35) 75%,
+      transparent 100%
+    );
   }
 
   .hero-logo-band::-webkit-scrollbar {
@@ -944,25 +1021,21 @@ button {
     will-change: auto;
   }
 
-  /* 2× rendern, zoom 0.5 → gleiche Optik, schärfer auf Retina; keine transform an <img> */
+  /* Kein zoom/scale/filter/mix-blend — Safari-Rechteck um halbtransparente PNG-Flächen */
   .hero-logo-set img {
     --hero-logo-h: clamp(36px, 5.5vw, 44px);
-    height: calc(var(--hero-logo-h) * 2);
-    zoom: 0.5;
+    height: var(--hero-logo-h);
+    margin-block: 0;
     transform: none;
+    mix-blend-mode: normal;
     -webkit-transform: none;
-    -webkit-backface-visibility: visible;
-    backface-visibility: visible;
+    filter: none;
+    -webkit-filter: none;
+    opacity: 1;
   }
 
   .hero-logo-set img.hero-logo--aareal {
     --hero-logo-h: clamp(28px, 4.2vw, 34px);
-  }
-
-  @supports not (zoom: 1) {
-    .hero-logo-set img {
-      height: var(--hero-logo-h, clamp(36px, 5.5vw, 44px));
-    }
   }
 }
 

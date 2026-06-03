@@ -47,10 +47,10 @@
               aria-label="Sprache wählen"
             >
               <span class="lang-dropdown__current" id="lang-toggle-icon" aria-hidden="true">
-                <svg class="lang-flag lang-flag--de" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                  <rect width="22" height="7.33" fill="#000"/>
-                  <rect width="22" height="7.33" y="7.33" fill="#D00"/>
-                  <rect width="22" height="7.34" y="14.66" fill="#FFCE00"/>
+                <svg class="lang-flag lang-flag--de" viewBox="0 0 22 15" fill="none" aria-hidden="true">
+                  <rect width="22" height="5" fill="#000"/>
+                  <rect width="22" height="5" y="5" fill="#D00"/>
+                  <rect width="22" height="5" y="10" fill="#FFCE00"/>
                 </svg>
                 <svg class="lang-flag lang-flag--en" viewBox="0 0 22 15" fill="none" aria-hidden="true" hidden>
                   <rect width="22" height="15" fill="#B22234"/>
@@ -93,17 +93,20 @@
             <ul class="lang-dropdown__menu" id="lang-menu" role="listbox" hidden>
               <li role="presentation">
                 <button type="button" class="lang-dropdown__option" data-lang="de" role="option" aria-selected="true">
-                  <svg class="lang-flag" viewBox="0 0 22 22" fill="none" aria-hidden="true">
-                    <rect width="22" height="7.33" fill="#000"/>
-                    <rect width="22" height="7.33" y="7.33" fill="#D00"/>
-                    <rect width="22" height="7.34" y="14.66" fill="#FFCE00"/>
-                  </svg>
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="5" fill="#000"/>
+                      <rect width="22" height="5" y="5" fill="#D00"/>
+                      <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                    </svg>
+                  </span>
                   <span data-i18n="lang.de">Deutsch</span>
                 </button>
               </li>
               <li role="presentation">
                 <button type="button" class="lang-dropdown__option" data-lang="en" role="option" aria-selected="false">
-                  <svg class="lang-flag" viewBox="0 0 22 15" fill="none" aria-hidden="true">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
                     <rect width="22" height="15" fill="#B22234"/>
                     <rect width="22" height="1.154" y="1.154" fill="#FFF"/>
                     <rect width="22" height="1.154" y="3.462" fill="#FFF"/>
@@ -135,7 +138,8 @@
                     <circle cx="4.7" cy="6.6" r="0.38" fill="#FFF"/>
                     <circle cx="6.3" cy="6.6" r="0.38" fill="#FFF"/>
                     <circle cx="7.9" cy="6.6" r="0.38" fill="#FFF"/>
-                  </svg>
+                    </svg>
+                  </span>
                   <span data-i18n="lang.en">English</span>
                 </button>
               </li>
@@ -226,24 +230,24 @@
             <div class="hero-logo-band" id="hero-logo-band" role="region" data-i18n-aria="hero.customersAria" aria-label="Kunden und Partner">
               <div class="hero-logo-track" id="hero-logo-track">
                 <div class="hero-logo-set">
-                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Dominos.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-EIT.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-GD.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Hive.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Pflege.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Raixa.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Schneider.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Dominos.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-EIT.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-GD.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Hive.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Pflege.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Raixa.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Schneider.svg?v=2" alt="" decoding="async" fetchpriority="low" />
                 </div>
                 <div class="hero-logo-set" aria-hidden="true">
-                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Dominos.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-EIT.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-GD.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Hive.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Pflege.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Raixa.svg" alt="" decoding="async" fetchpriority="low" />
-                  <img src="assets/customers/Customer-Schneider.svg" alt="" decoding="async" fetchpriority="low" />
+                  <img class="hero-logo--aareal" src="assets/customers/Customer-Aareal.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Dominos.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-EIT.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-GD.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Hive.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Pflege.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Raixa.svg?v=2" alt="" decoding="async" fetchpriority="low" />
+                  <img src="assets/customers/Customer-Schneider.svg?v=2" alt="" decoding="async" fetchpriority="low" />
                 </div>
               </div>
             </div>
@@ -435,24 +439,24 @@
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.0.challenge">KI ist nur so nützlich wie die Informationen, auf die sie zugreifen kann. In den meisten Unternehmen ist dieses Wissen über Systeme, Abteilungen und Personen verstreut – und damit für KI nicht nutzbar. Das ändern wir.</p>
+                <p data-i18n="useCases.0.challenge">KI ist nur so nützlich wie die Informationen, auf die sie zugreifen kann. In den meisten Unternehmen ist dieses Wissen über Systeme, Abteilungen, Dokumente und Personen verstreut und damit für KI nicht nutzbar. Das ändern wir.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.0.buildItems">
                   <li>Unternehmensweite Suche über alle relevanten Systeme und Ablagen</li>
-                  <li>Wissensstrukturen, die Zusammenhänge zwischen Projekten, Kunden und Themen abbilden</li>
+                  <li>Wissensstrukturen, die Zusammenhänge zwischen Projekten und Domänen abbilden</li>
                   <li>Automatisierte Dokumentation, die Wissen erfasst bevor es die Organisation verlässt</li>
                   <li>Eine einheitliche Wissensbasis als Grundlage für alle KI-Systeme</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.0.outcome">Schnellerer Informationszugang, präzisere interne Assistenten, Wissen bleibt im Unternehmen – unabhängig von Fluktuation.</p>
+                <p data-i18n="useCases.0.outcome">Schnellerer Informationszugang, präzisere KI Agenten, Wissen bleibt im Unternehmen unabhängig von Fluktuation.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.0.suitable">Unternehmen mit verteilten Teams, gewachsenen Systemlandschaften oder laufenden KI-Projekten mit unbefriedigenden Ergebnissen.</p>
+                <p data-i18n="useCases.0.suitable">Unternehmen mit verteilten Teams, komplexen Systemlandschaften oder laufenden KI-Projekten mit unbefriedigenden Ergebnissen.</p>
               </div>
               </div>
             </article>
@@ -465,7 +469,7 @@
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.1.challenge">Führungskräfte entscheiden täglich auf Basis unvollständiger Informationen. KI schließt diese Lücke systematisch.</p>
+                <p data-i18n="useCases.1.challenge">Führungskräfte entscheiden täglich auf Basis unvollständiger Informationen. KI schließt diese Lücke.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
@@ -473,16 +477,16 @@
                   <li>Führungsassistenten, die Kennzahlen überwachen, Abweichungen erklären und Handlungsoptionen aufzeigen</li>
                   <li>Szenarioanalysen für operative und strategische Entscheidungen – nachvollziehbar und quantifiziert</li>
                   <li>Frühwarnsysteme auf Basis betrieblicher und marktbezogener Signale</li>
-                  <li>Strategische Entscheidungsvorlagen auf Basis automatisch aggregierter Daten – ohne manuellen Rechercheaufwand</li>
+                  <li>Strategische Entscheidungsvorlagen auf Basis aggregierter Daten ohne manuellen Rechercheaufwand</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.1.outcome">Solidere Entscheidungsgrundlagen, kürzere Wege von Daten zu Handlungsempfehlungen, strategische Weichen werden früher gestellt.</p>
+                <p data-i18n="useCases.1.outcome">Solidere Entscheidungsbasis, kürzere Wege von Daten zu Handlungsempfehlungen, strategische Weichen werden früher gestellt.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.1.suitable">Geschäftsführung, Vorstand, C-Level sowie Strategie- und Operationsteams mit komplexen Steuerungsanforderungen.</p>
+                <p data-i18n="useCases.1.suitable">Geschäftsführung, Vorstand, C-Level sowie Strategie- und Operations Teams mit komplexen Steuerungskontext.</p>
               </div>
               </div>
             </article>
@@ -490,29 +494,29 @@
             <article class="use-case-panel" role="tabpanel" id="uc-panel-2" aria-labelledby="uc-tab-2" hidden>
               <div class="use-case-header">
               <h3 class="use-case-title" data-i18n="useCases.2.title">Vertrieb &amp; Kundengewinnung</h3>
-              <p class="use-case-tagline"><em data-i18n="useCases.2.tagline">Mehr Umsatz pro Mitarbeiter. Weniger Aufwand pro Abschluss.</em></p>
+              <p class="use-case-tagline"><em data-i18n="useCases.2.tagline">Mehr Umsatz je Mitarbeitenden. Weniger Aufwand je Abschluss.</em></p>
               </div>
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.2.challenge">Vertriebsteams verbringen einen erheblichen Teil ihrer Zeit mit Datenpflege, Recherche und Nachverfolgung – abseits des eigentlichen Verkaufens. KI übernimmt diese Last.</p>
+                <p data-i18n="useCases.2.challenge">Vertriebsteams verbringen zu viel Zeit mit Datenpflege, Recherche und Nachverfolgung, abseits des eigentlichen Verkaufens. KI übernimmt diese Last.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.2.buildItems">
-                  <li>Vertriebsassistenten, die Erstkontakte übernehmen, Folgekommunikation koordinieren und Interessenten qualifizieren</li>
+                  <li>Vertriebsassistenten, die Erstkontakte übernehmen, Folgekommunikation koordinieren & Interessenten qualifizieren</li>
                   <li>CRM-Automatisierung mit kontextbezogenen nächsten Schritten und aktuellen Kundendaten</li>
-                  <li>Frühzeitige Risikoerkennung in der Pipeline – nicht erst am Quartalsende</li>
+                  <li>Frühzeitige Risikoerkennung in der Pipeline, nicht erst am Quartalsende</li>
                   <li>Automatisierte Gesprächsvorbereitung auf Basis interner und öffentlicher Daten</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.2.outcome">Höheres Kontaktvolumen, weniger CRM-Pflegeaufwand, zuverlässigere Umsatzprognosen.</p>
+                <p data-i18n="useCases.2.outcome">Höheres Outreach Volumen, weniger CRM-Pflege, zuverlässigere Umsatzprognosen.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.2.suitable">B2B-Vertrieb, Innendienstteams, Unternehmen mit längeren oder komplexen Verkaufszyklen.</p>
+                <p data-i18n="useCases.2.suitable">B2B-Vertrieb, Innendienst Teams, Unternehmen mit komplexen Verkaufszyklen.</p>
               </div>
               </div>
             </article>
@@ -525,15 +529,15 @@
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.3.challenge">Offene Stellen bleiben länger unbesetzt als nötig – nicht weil Kandidaten fehlen, sondern weil Vorauswahl, Koordination und Einarbeitung das Personalteam unverhältnismäßig binden.</p>
+                <p data-i18n="useCases.3.challenge">Offene Stellen bleiben länger unbesetzt als nötig. Nicht weil Kandidaten fehlen, sondern weil Vorauswahl, Koordination und Einarbeitung das Personalteam binden.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.3.buildItems">
-                  <li>Automatisiertes Lebenslauf-Screening mit Ranking nach individuellen Anforderungsprofilen</li>
+                  <li>Automatisiertes CV-Screening mit Ranking nach individuellen Anforderungsprofilen</li>
                   <li>Interview-Assistenten mit strukturierten Fragen und Bewertungsdokumentation</li>
-                  <li>Personalisierte Einarbeitungsassistenten für die ersten Wochen neuer Mitarbeitender</li>
-                  <li>Interne HR-Agenten für Standardanfragen sowie Kompetenzanalyse zur Identifikation von Lücken</li>
+                  <li>Personalisierte Einarbeitungsassistenten für neue Mitarbeitendenden</li>
+                  <li>Interne HR-Agenten für Standardanfragen sowie Analyse zur Identifikation von Lücken</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
@@ -550,29 +554,29 @@
             <article class="use-case-panel" role="tabpanel" id="uc-panel-4" aria-labelledby="uc-tab-4" hidden>
               <div class="use-case-header">
               <h3 class="use-case-title" data-i18n="useCases.4.title">Kundenservice</h3>
-              <p class="use-case-tagline"><em data-i18n="useCases.4.tagline">Mehr Anfragen lösen. Mit gleichem oder kleinerem Team.</em></p>
+              <p class="use-case-tagline"><em data-i18n="useCases.4.tagline">Mehr Anfragen lösen. Mit dem gleichen Team.</em></p>
               </div>
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.4.challenge">Serviceaufwand wächst proportional zum Kundenstamm. Mit KI lassen sich diese beiden Kurven entkoppeln – ohne Qualitätseinbußen.</p>
+                <p data-i18n="useCases.4.challenge">Serviceaufwand wächst proportional zum Kundenstamm. Mit KI lassen sich diese beiden entkoppeln, ohne Qualitätseinbußen.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.4.buildItems">
-                  <li>KI-Serviceassistenten für wiederkehrende Standardanfragen</li>
-                  <li>Intelligente Eingangssteuerung nach Priorität, Kategorie und Zuständigkeit</li>
+                  <li>KI-Service Agenten für wiederkehrende Standardanfragen</li>
+                  <li>Intelligente Ticket Steuerung nach Priorität, Kategorie und Zuständigkeit</li>
                   <li>Automatische Erkennung kritischer Kundensituationen mit sofortiger Weiterleitung</li>
-                  <li>Kundenzufriedenheitsbewertung zur Früherkennung gefährdeter Beziehungen und Abwanderungsprognose</li>
+                  <li>Kundenbefragungen zur Früherkennung gefährdeter Beziehungen & Abwanderungsprognose</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.4.outcome">Erheblicher Anteil der Anfragen ohne manuellen Eingriff gelöst, schnellere Reaktionszeiten, Serviceteams fokussieren auf Fälle mit echtem Mehrwert.</p>
+                <p data-i18n="useCases.4.outcome">Kunden Anfragen ohne manuellen Eingriff gelöst, schnellere Reaktionszeiten, Serviceteams fokussieren auf Fälle mit echtem Mehrwert.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.4.suitable">Unternehmen mit hohem Anfragevolumen, kritischen Kundenbeziehungen oder wachsendem Kundenstamm bei gleichbleibendem Team.</p>
+                <p data-i18n="useCases.4.suitable">Firmen mit hohem Ticket Volumen, kritischen Kundenbeziehungen oder wachsendem Kundenstamm bei gleichbleibendem Team.</p>
               </div>
               </div>
             </article>
@@ -580,20 +584,20 @@
             <article class="use-case-panel" role="tabpanel" id="uc-panel-5" aria-labelledby="uc-tab-5" hidden>
               <div class="use-case-header">
               <h3 class="use-case-title" data-i18n="useCases.5.title">Finanzen</h3>
-              <p class="use-case-tagline"><em data-i18n="useCases.5.tagline">Weniger manuelle Prozesse. Bessere Entscheidungsgrundlagen.</em></p>
+              <p class="use-case-tagline"><em data-i18n="useCases.5.tagline">Weniger manuelle Finance Operations. Bessere Entscheidungen.</em></p>
               </div>
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.5.challenge">Finanzabteilungen verlieren durch repetitive Aufgaben Kapazität für das, was zählt – Analyse und Steuerung.</p>
+                <p data-i18n="useCases.5.challenge">Finanzabteilungen verlieren durch repetitive Aufgaben Kapazität für das, was zählt: Analyse & Steuerung.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.5.buildItems">
-                  <li>Automatisierte Rechnungsverarbeitung und Buchungsabgleich</li>
+                  <li>Automatisierte Rechnungs- und Buchungsverarbeitung</li>
                   <li>Kontinuierliche Ausgabenanalyse mit Einsparpotenzialerkennung</li>
-                  <li>Liquiditäts- und Umsatzprognosen auf Basis historischer und aktueller Daten</li>
-                  <li>Automatisierung von Einkaufs- und Freigabeprozessen sowie strukturierte Vertragsanalyse</li>
+                  <li>Liquiditäts- und Umsatzprognosen durch kontinuierliche Datenbasis</li>
+                  <li>Automatisierung von Einkaufs- und Freigabeprozessen inklusive Vertragsanalyse</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
@@ -602,7 +606,7 @@
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.5.suitable">Mittelständische Unternehmen, Organisationen mit repetitiven Finanzprozessen, Finanzverantwortliche vor oder nach Restrukturierungen.</p>
+                <p data-i18n="useCases.5.suitable">CFO Abteilung, Organisationen mit repetitiven Finanzprozessen, Finanzverantwortliche vor oder nach Restrukturierungen.</p>
               </div>
               </div>
             </article>
@@ -610,30 +614,30 @@
             <article class="use-case-panel" role="tabpanel" id="uc-panel-6" aria-labelledby="uc-tab-6" hidden>
               <div class="use-case-header">
               <h3 class="use-case-title" data-i18n="useCases.6.title">Recht &amp; Regulatorik</h3>
-              <p class="use-case-tagline"><em data-i18n="useCases.6.tagline">Rechtssicherheit ohne den üblichen Zeitverzug.</em></p>
+              <p class="use-case-tagline"><em data-i18n="useCases.6.tagline">Rechtssicherheit ohne den üblichen Zeitaufwand.</em></p>
               </div>
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.6.challenge">In regulierten Umgebungen ist sorgfältige juristische Abwicklung unverhandelbar – aber sie muss nicht langsam sein.</p>
+                <p data-i18n="useCases.6.challenge">In regulierten Märkten zählt juristische Präzision und trotzdem muss das Tempo stimmen.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.6.buildItems">
-                  <li>Automatisierte Vertragsprüfung mit Klauselextraktion und Risikobewertung</li>
+                  <li>Automatisierte Vertragsprüfung mit Klauselextraktion & Risikobewertung</li>
                   <li>Abgleich interner Richtlinien gegen regulatorische Anforderungen</li>
-                  <li>Dokumentation für Datenschutz und branchenspezifische Regulatorik</li>
+                  <li>Dokumentation für Datenschutz und branchenspezifischer Regulatorik</li>
                   <li>Prüfungsassistenten für Nachweise und Prüfpfade</li>
-                  <li>Interner Rechtsassistent für juristische Standardfragen – ohne die Rechtsabteilung zu belasten</li>
+                  <li>Interner Rechtsassistent für juristische Standardfragen</li>
                 </ul>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.6.outcome">Vertragsprüfung in einem Bruchteil der bisherigen Zeit, frühere Risikoerkennung, juristische Kapazitäten für komplexe Fragestellungen frei.</p>
+                <p data-i18n="useCases.6.outcome">Vertragsprüfung in einem Bruchteil der Zeit, frühere Risikoerkennung, freie juristische Kapazität für komplexe Fragestellungen.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.6.suitable">Unternehmen unter hohem regulatorischen Druck, deren Rechts- oder Compliance-Abteilungen einen Großteil ihrer Kapazität für wiederkehrende Prüfaufgaben aufwenden.</p>
+                <p data-i18n="useCases.6.suitable">Unternehmen unter hohem regulatorischen Druck, deren Rechts- oder Compliance Abteilungen ihre Kapazität für wiederkehrende Aufgaben nutzen.</p>
               </div>
               </div>
             </article>
@@ -646,12 +650,12 @@
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.7.challenge">Hochwertige Inhalte zu produzieren kostet Zeit – unabhängig von Teamgröße oder Budget. KI verändert das Verhältnis zwischen Aufwand und Ergebnis grundlegend.</p>
+                <p data-i18n="useCases.7.challenge">Hochwertige Inhalte zu produzieren kostet Zeit. KI verändert das Verhältnis zwischen Aufwand und Ergebnis grundlegend.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.7.buildItems">
-                  <li>Inhaltserstellung für Suchmaschinenoptimierung, Werbung, soziale Medien und E-Mail – in der Sprache Ihrer Marke</li>
+                  <li>Strategische Content Erstellungs in der Sprache Ihrer Marke für SEO & GEO, Werbung und mehr</li>
                   <li>Personalisierungslogik nach Zielgruppe, Kanal und Kaufphase</li>
                   <li>Automatisiertes Testen von Inhaltsvarianten mit systematischer Auswertung</li>
                   <li>Konsistente Markensprache und Sichtbarkeitsanalyse in KI-gestützten Suchumgebungen</li>
@@ -659,11 +663,11 @@
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.7.outcome">Höherer Content-Output je Mitarbeitendem, präzisere Zielgruppenansprache, mehr Kapazität für Konzeption und Strategie.</p>
+                <p data-i18n="useCases.7.outcome">Höherer Content-Output, präzisere Zielgruppenansprache, mehr Kapazität für Konzeption & Strategie.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.7.suitable">Unternehmen mit ambitionierten Kommunikationszielen, Marketingabteilungen unter Ressourcendruck, Organisationen mit mehreren Zielgruppen oder Märkten.</p>
+                <p data-i18n="useCases.7.suitable">Unternehmen mit hohen Kommunikationszielen, Marketing Teams unter Druck, Organisationen mit mehreren Zielgruppen oder Märkten.</p>
               </div>
               </div>
             </article>
@@ -671,17 +675,17 @@
             <article class="use-case-panel" role="tabpanel" id="uc-panel-8" aria-labelledby="uc-tab-8" hidden>
               <div class="use-case-header">
               <h3 class="use-case-title" data-i18n="useCases.8.title">Daten &amp; Analytics</h3>
-              <p class="use-case-tagline"><em data-i18n="useCases.8.tagline">Datenbasierte Entscheidungen – für alle, nicht nur für Spezialisten.</em></p>
+              <p class="use-case-tagline"><em data-i18n="useCases.8.tagline">Datenbasierte Entscheidungen für alle, nicht nur für Spezialisten.</em></p>
               </div>
               <div class="use-case-body">
               <div class="use-case-block use-case-block--challenge">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span><span data-i18n="useCases.labels.challenge">Herausforderung</span></p>
-                <p data-i18n="useCases.8.challenge">Viele Unternehmen verfügen über eine gute Datenbasis, aber der Zugang bleibt auf wenige Personen beschränkt. KI öffnet diesen Zugang – ohne Qualitätseinbußen.</p>
+                <p data-i18n="useCases.8.challenge">Viele Unternehmen verfügen über eine gute Datenbasis, aber der Zugang bleibt wenigen beschränkt. KI öffnet diesen Zugang ohne Qualitätseinbußen.</p>
               </div>
               <div class="use-case-block use-case-block--build">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span><span data-i18n="useCases.labels.build">Was wir gemeinsam aufbauen</span></p>
                 <ul class="feature-list" data-i18n-list="useCases.8.buildItems">
-                  <li>Sprachbasierte Datenbankabfragen – Fragen in natürlicher Sprache, Antworten aus dem System</li>
+                  <li>Fragen & Antworten in natürlicher Sprache aus Ihren Systemen und Wissen</li>
                   <li>Automatisiertes Berichtswesen, das sich an veränderte Anforderungen anpasst</li>
                   <li>Erklärende Auswertungen: nicht nur was passiert ist, sondern warum</li>
                   <li>Automatische Abweichungserkennung sowie Datenbereinigung für verlässliche Datenqualität</li>
@@ -689,11 +693,11 @@
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></span><span data-i18n="useCases.labels.outcome">Typische Ergebnisse</span></p>
-                <p data-i18n="useCases.8.outcome">Fachabteilungen beantworten Datenfragen eigenständig, Auswertungen breiter zugänglich, Datenspezialisten fokussieren auf komplexe Aufgaben.</p>
+                <p data-i18n="useCases.8.outcome">Fachabteilungen beantworten Fragen eigenständig, Auswertungen breiter zugänglich, mehr Datenspezialisten Kapazität.</p>
               </div>
               <div class="use-case-block use-case-block--outcome">
                 <p class="use-case-label"><span class="use-case-label-icon" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg></span><span data-i18n="useCases.labels.suitable">Geeignet für</span></p>
-                <p data-i18n="useCases.8.suitable">Unternehmen mit bestehenden Auswertungssystemen, Fachabteilungen mit regelmäßigem Analysebedarf, Organisationen mit wachsender Datenlandschaft.</p>
+                <p data-i18n="useCases.8.suitable">Unternehmen mit bestehenden Analytics Tools, Abteilungen mit regelmäßigem Analysebedarf, Organisationen mit wachsender Datenlandschaft.</p>
               </div>
               </div>
             </article>
@@ -1160,7 +1164,7 @@
 
         var mobileMq = window.matchMedia("(max-width: 599px)");
         var reduceMq = window.matchMedia("(prefers-reduced-motion: reduce)");
-        var durationMs = 48000;
+        var durationMs = 32000;
         var rafId = null;
         var loopWidth = 0;
         var startTs = null;
