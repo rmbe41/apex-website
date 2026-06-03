@@ -1751,7 +1751,7 @@ button {
   scroll-margin-top: calc(var(--nav-h) + 12px);
 }
 
-/* Dezent abgesetzt: weißer Grund, ohne Gitter */
+/* Sektion: weißer Grund + Gitter (::before); Panel selbst ohne Gitter */
 .pulscheck-band.band--light {
   position: relative;
   overflow: hidden;
@@ -1760,6 +1760,21 @@ button {
   border-top: 1px solid rgba(15, 45, 74, 0.1);
   border-bottom: 1px solid rgba(15, 45, 74, 0.07);
   background: #ffffff;
+}
+
+.pulscheck-band.band--light::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 45, 74, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 45, 74, 0.035) 1px, transparent 1px);
+  background-size: var(--hero-grid-step) var(--hero-grid-step);
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, black 22%, transparent 80%);
+  mask-image: radial-gradient(ellipse 90% 75% at 50% 50%, black 22%, transparent 80%);
 }
 
 .pulscheck-band .container {
@@ -1815,7 +1830,7 @@ button {
   opacity: 0;
   background: radial-gradient(
     ellipse 55% 50% at 34% 46%,
-    rgba(15, 45, 74, 0.04) 0%,
+    rgba(15, 45, 74, 0.02) 0%,
     transparent 72%
   );
 }
@@ -1839,7 +1854,7 @@ button {
   left: -8%;
   width: min(72%, 520px);
   height: min(58%, 420px);
-  background: radial-gradient(circle, rgba(15, 45, 74, 0.05) 0%, transparent 72%);
+  background: radial-gradient(circle, rgba(15, 45, 74, 0.03) 0%, transparent 72%);
 }
 
 .pulscheck-ambient-orb--b {
@@ -2214,6 +2229,21 @@ button {
   transform-origin: center center;
 }
 
+/* Versetzte Kontur hinter der Karte (Stack-Effekt) */
+.pulscheck-preview::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 12px;
+  right: 10px;
+  bottom: -12px;
+  left: -10px;
+  border-radius: calc(var(--radius-md) + 5px);
+  border: 1px solid rgba(15, 45, 74, 0.04);
+  background: transparent;
+}
+
 @media (min-width: 721px) {
   .pulscheck-preview {
     margin-inline-start: 0;
@@ -2226,10 +2256,10 @@ button {
   width: 100%;
   background: #ffffff;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(15, 45, 74, 0.1);
+  border: 1px solid rgba(15, 45, 74, 0.06);
   padding: clamp(32px, 3.8vw, 44px) clamp(34px, 4vw, 46px);
   box-shadow:
-    0 12px 36px rgba(15, 45, 74, 0.08),
+    0 10px 28px rgba(15, 45, 74, 0.05),
     0 1px 0 rgba(255, 255, 255, 0.9) inset;
   transform-origin: 50% 55%;
 }
