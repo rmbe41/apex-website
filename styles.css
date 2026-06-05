@@ -1649,6 +1649,238 @@ button {
   background: linear-gradient(90deg, #5a8fb0, #b8d4e8);
 }
 
+/* Team — experience & founder quote */
+.team-section {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.team-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: var(--hero-grid-step) var(--hero-grid-step);
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 72%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 72%);
+  pointer-events: none;
+}
+
+.team-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.team-header {
+  margin-bottom: clamp(32px, 4.5vw, 48px);
+}
+
+.team-header .section-label {
+  margin-bottom: 16px;
+}
+
+.team-title {
+  margin: 0 auto 18px;
+  max-width: 22ch;
+  text-align: center;
+}
+
+.team-intro {
+  margin: 0 auto;
+  max-width: 40rem;
+  font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.team-logo-panel {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 12px 40px rgba(0, 0, 0, 0.18);
+  --team-dash-color: var(--border);
+  --team-dash-length: 5px;
+  --team-dash-gap: 12px;
+  --team-dash-period: calc(var(--team-dash-length) + var(--team-dash-gap));
+}
+
+.team-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+@media (min-width: 640px) {
+  .team-logo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.team-logo-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(100px, 14vw, 140px);
+  padding: clamp(24px, 3.5vw, 36px) clamp(18px, 2.8vw, 28px);
+}
+
+.team-logo-cell::before,
+.team-logo-cell::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.team-logo-cell::after {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: repeating-linear-gradient(
+    to bottom,
+    var(--team-dash-color) 0 var(--team-dash-length),
+    transparent var(--team-dash-length) var(--team-dash-period)
+  );
+}
+
+.team-logo-cell::before {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: repeating-linear-gradient(
+    to right,
+    var(--team-dash-color) 0 var(--team-dash-length),
+    transparent var(--team-dash-length) var(--team-dash-period)
+  );
+}
+
+.team-logo-cell:nth-child(2n)::after {
+  display: none;
+}
+
+.team-logo-cell:nth-child(n + 7)::before {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .team-logo-cell:nth-child(2n)::after {
+    display: block;
+  }
+
+  .team-logo-cell:nth-child(4n)::after {
+    display: none;
+  }
+
+  .team-logo-cell:nth-child(n + 7)::before {
+    display: block;
+  }
+
+  .team-logo-cell:nth-child(n + 5)::before {
+    display: none;
+  }
+}
+
+.team-logo-cell img {
+  width: auto;
+  max-width: 94%;
+  height: clamp(36px, 6vw, 56px);
+  object-fit: contain;
+  opacity: 0.78;
+}
+
+.team-logo-cell--md img {
+  height: clamp(40px, 6.5vw, 62px);
+}
+
+.team-logo-cell--lg img {
+  height: clamp(46px, 7.2vw, 68px);
+  opacity: 0.88;
+}
+
+.team-logo-cell--xl img {
+  height: clamp(54px, 8.5vw, 82px);
+  opacity: 0.92;
+}
+
+/* Founder quote — above contact CTA */
+.founder-quote-section {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding-top: clamp(120px, 16vw, 168px);
+  padding-bottom: clamp(120px, 16vw, 168px);
+}
+
+.founder-quote-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(15, 45, 74, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 45, 74, 0.04) 1px, transparent 1px);
+  background-size: var(--hero-grid-step) var(--hero-grid-step);
+  background-position: 0 0;
+  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 72%);
+  mask-image: radial-gradient(ellipse 90% 70% at 50% 0%, black 20%, transparent 72%);
+  pointer-events: none;
+}
+
+.founder-quote-section > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.founder-quote {
+  margin: 0 auto;
+  max-width: 48rem;
+}
+
+.founder-quote blockquote {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.founder-quote blockquote p {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.4vw, 2.35rem);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.founder-quote blockquote p::before {
+  content: "\201C";
+}
+
+.founder-quote blockquote p::after {
+  content: "\201D";
+}
+
+.founder-quote figcaption {
+  margin-top: clamp(18px, 2.5vw, 24px);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+}
+
 /* CTA footer section */
 .cta-final {
   padding: 100px 0 120px;
@@ -1796,9 +2028,9 @@ button {
 /* Grafik + Text — Layered Pulse Surface (Glow + Milchglas) */
 .pulscheck-panel {
   --pulscheck-panel-inset-x: clamp(40px, 5.5vw, 60px);
-  --pulscheck-panel-inset-top: clamp(40px, 5.5vw, 60px);
-  --pulscheck-panel-inset-bottom: clamp(64px, 8.5vw, 92px);
-  --pulscheck-panel-gap: clamp(1.75rem, 3vw, 2.5rem);
+  --pulscheck-panel-inset-top: clamp(36px, 4.95vw, 54px);
+  --pulscheck-panel-inset-bottom: clamp(58px, 7.65vw, 83px);
+  --pulscheck-panel-gap: clamp(1.575rem, 2.7vw, 2.25rem);
   position: relative;
   overflow: hidden;
   isolation: isolate;
@@ -1975,8 +2207,8 @@ button {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: clamp(3rem, 5.5vw, 4.25rem);
-  margin: 0 0 clamp(1.5rem, 3vw, 2.25rem);
+  min-height: clamp(2.7rem, 4.95vw, 3.825rem);
+  margin: 0 0 clamp(1.35rem, 2.7vw, 2.025rem);
 }
 
 .pulscheck-panel-arrow {
@@ -2034,6 +2266,18 @@ button {
 }
 
 @media (min-width: 721px) {
+  .pulscheck-two-col::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc((100% - var(--pulscheck-panel-gap)) * 1.22 / 2 + var(--pulscheck-panel-gap) / 2);
+    width: 1px;
+    background: rgba(15, 45, 74, 0.06);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
   .pulscheck-col--visual {
     justify-content: center;
     padding-right: calc(var(--pulscheck-panel-gap) / 2);
@@ -2042,13 +2286,12 @@ button {
 
   .pulscheck-col--copy {
     padding-left: calc(var(--pulscheck-panel-gap) / 2);
-    border-left: 1px solid rgba(15, 45, 74, 0.06);
   }
 }
 
 .pulscheck-meta {
   list-style: none;
-  margin: 0 0 1.35rem;
+  margin: 0 0 1.2rem;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
@@ -2092,7 +2335,7 @@ button {
 }
 
 .pulscheck-col--copy .pulscheck-lead {
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.35rem;
   font-size: clamp(1.0625rem, 2.15vw, 1.1875rem);
   line-height: 1.62;
   color: var(--text);
@@ -2103,7 +2346,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   gap: 7px 8px;
-  margin: 0 0 1.65rem;
+  margin: 0 0 1.5rem;
   max-width: 34rem;
 }
 
@@ -2125,8 +2368,8 @@ button {
 }
 
 .pulscheck-cta {
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
+  margin-top: 0.45rem;
+  padding-top: 0.45rem;
 }
 
 .pulscheck-cta .pulscheck-open-btn {
@@ -2225,7 +2468,7 @@ button {
   user-select: none;
   width: 100%;
   max-width: 100%;
-  transform: scale(1.06);
+  transform: scale(0.9);
   transform-origin: center center;
 }
 
@@ -2240,7 +2483,7 @@ button {
   bottom: -12px;
   left: -10px;
   border-radius: calc(var(--radius-md) + 5px);
-  border: 1px solid rgba(15, 45, 74, 0.04);
+  border: 2px solid rgba(15, 45, 74, 0.18);
   background: transparent;
 }
 
@@ -2248,7 +2491,7 @@ button {
   .pulscheck-preview {
     margin-inline-start: 0;
     max-width: 440px;
-    transform: scale(1.12);
+    transform: scale(0.95);
   }
 }
 
@@ -2256,10 +2499,10 @@ button {
   width: 100%;
   background: #ffffff;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(15, 45, 74, 0.06);
+  border: 4px solid var(--navy);
   padding: clamp(32px, 3.8vw, 44px) clamp(34px, 4vw, 46px);
   box-shadow:
-    0 10px 28px rgba(15, 45, 74, 0.05),
+    0 10px 28px rgba(15, 45, 74, 0.12),
     0 1px 0 rgba(255, 255, 255, 0.9) inset;
   transform-origin: 50% 55%;
 }
@@ -2735,6 +2978,156 @@ button {
 
 body.pulscheck-modal-open {
   overflow: hidden;
+}
+
+.booking-modal[hidden] {
+  display: none !important;
+}
+
+.booking-modal:not([hidden]) {
+  display: flex;
+}
+
+.booking-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
+    max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  box-sizing: border-box;
+}
+
+.booking-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 21, 37, 0.62);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.booking-modal:not([hidden]) .booking-modal-backdrop {
+  animation: pulscheck-backdrop-in 0.28s ease forwards;
+}
+
+.booking-modal-shell {
+  position: relative;
+  z-index: 1;
+  width: min(960px, calc(100% - 32px));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-modal:not([hidden]) .booking-modal-shell {
+  animation: pulscheck-panel-in 0.32s cubic-bezier(0.33, 1, 0.68, 1) forwards;
+}
+
+.booking-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  max-height: min(92vh, 760px);
+  padding: clamp(52px, 6vw, 60px) clamp(32px, 4.5vw, 48px) clamp(32px, 4.5vw, 48px);
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0a1f33;
+  box-shadow:
+    0 32px 80px rgba(7, 21, 37, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booking-modal-close {
+  position: absolute;
+  top: clamp(14px, 2vw, 18px);
+  right: clamp(14px, 2vw, 18px);
+  z-index: 3;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: rgba(248, 250, 252, 0.88);
+  background: rgba(15, 45, 74, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(7, 21, 37, 0.35);
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.15s,
+    transform 0.15s;
+}
+
+.booking-modal-close:hover {
+  background: rgba(15, 45, 74, 0.9);
+  color: #fafafa;
+  border-color: rgba(255, 255, 255, 0.22);
+  transform: scale(1.04);
+}
+
+.booking-modal-close:focus-visible {
+  outline: 2px solid #fafafa;
+  outline-offset: 2px;
+}
+
+.booking-cal-inline {
+  width: 100%;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+.booking-cal-inline > * {
+  min-height: 0 !important;
+}
+
+.booking-cal-inline iframe {
+  display: block;
+  width: 100% !important;
+  min-height: 0 !important;
+  border: 0;
+}
+
+.booking-cal-inline a[href*="cal.eu"],
+.booking-cal-inline a[href*="cal.com"] {
+  display: none !important;
+}
+
+@media (max-width: 720px) {
+  .booking-modal {
+    padding: max(12px, env(safe-area-inset-top)) 12px max(16px, env(safe-area-inset-bottom));
+    align-items: center;
+  }
+
+  .booking-modal-shell {
+    width: 100%;
+  }
+
+  .booking-modal-panel {
+    max-height: min(94vh, none);
+    padding: clamp(48px, 12vw, 56px) clamp(20px, 5vw, 28px) clamp(24px, 5vw, 32px);
+    border-radius: 20px;
+  }
+}
+
+body.booking-modal-open {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booking-modal:not([hidden]) .booking-modal-backdrop,
+  .booking-modal:not([hidden]) .booking-modal-shell {
+    animation: none;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3234,6 +3627,110 @@ body.pulscheck-modal-open {
   margin: 0;
 }
 
+.pulscheck-lead-capture {
+  margin-bottom: 1.75rem;
+  padding: 1.25rem 1.35rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.pulscheck-lead-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 0 0.5rem;
+  font-family: var(--font-sans);
+}
+
+.pulscheck-lead-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 1rem;
+}
+
+.pulscheck-lead-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.pulscheck-lead-row {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.pulscheck-lead-input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.pulscheck-lead-input:focus {
+  outline: none;
+  border-color: rgba(15, 45, 74, 0.45);
+}
+
+.pulscheck-lead-input:disabled {
+  opacity: 0.65;
+}
+
+.pulscheck-lead-submit {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.pulscheck-lead-submit:disabled {
+  opacity: 0.7;
+  transform: none;
+}
+
+.pulscheck-lead-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.pulscheck-lead-note {
+  font-size: 12px;
+  color: var(--muted-2);
+  margin: 0.65rem 0 0;
+  line-height: 1.45;
+}
+
+.pulscheck-lead-error {
+  font-size: 13px;
+  color: #b42318;
+  margin: 0.65rem 0 0;
+  line-height: 1.45;
+}
+
+.pulscheck-lead-success {
+  text-align: center;
+}
+
+.pulscheck-lead-success p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.55;
+}
+
 .pulscheck-results-actions {
   display: flex;
   flex-direction: column;
@@ -3246,25 +3743,6 @@ body.pulscheck-modal-open {
   justify-content: center;
 }
 
-.pulscheck-btn-restart {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--muted);
-  background: #fff;
-  transition:
-    border-color 0.15s,
-    color 0.15s;
-}
-
-.pulscheck-btn-restart:hover {
-  border-color: rgba(15, 45, 74, 0.35);
-  color: var(--text);
-}
-
 @media (prefers-reduced-motion: reduce) {
   .pulscheck #pulscheck-ring-dash {
     transition: none !important;
@@ -3274,6 +3752,14 @@ body.pulscheck-modal-open {
 @media (max-width: 520px) {
   .pulscheck-dim-grid {
     grid-template-columns: 1fr;
+  }
+
+  .pulscheck-lead-row {
+    flex-direction: column;
+  }
+
+  .pulscheck-lead-submit {
+    width: 100%;
   }
 
   .pulscheck-card {

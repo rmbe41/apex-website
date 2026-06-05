@@ -49,7 +49,7 @@
         metaQuestions: "9 Fragen",
         metaBrowser: "Nur im Browser",
         leadHtml:
-          "Der <strong>KI Puls-Check</strong>: neun Fragen, sechs Dimensionen — etwa zehn Minuten. Ihre Antworten werden nur in diesem Browser ausgewertet und nicht übertragen.",
+          "Der <strong>KI Puls-Check</strong>: neun Fragen, sechs Dimensionen — etwa zehn Minuten. Ihre Antworten werden lokal ausgewertet. Optional können Sie Ihr Ergebnis per E-Mail erhalten.",
         dimsAria: "Bewertete Dimensionen",
         cta: "KI-Puls Check starten",
         preview: {
@@ -71,7 +71,18 @@
           scoreMax: "von 100",
           nextStepsTitle: "Empfohlene nächste Schritte",
           contactBtn: "Ergebnis besprechen",
-          restartBtn: "KI Puls-Check erneut starten",
+          leadTitle: "Ergebnis per E-Mail",
+          leadDesc:
+            "Optional: Wir senden Ihnen Ihre Auswertung inkl. Dimensionen — zum Nachlesen und Teilen.",
+          leadEmailLabel: "E-Mail-Adresse",
+          leadEmailPlaceholder: "name@unternehmen.de",
+          leadSubmit: "Senden",
+          leadSubmitting: "Wird gesendet…",
+          leadPrivacy: "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter.",
+          leadSuccess: "Vielen Dank — wir senden Ihre Auswertung in Kürze.",
+          leadErrorInvalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+          leadErrorGeneric: "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
+          leadSubject: "KI Puls-Check Lead — {{label}} ({{score}}/100)",
           liveQuestion: "Frage {{n}} von 9. Dimension: {{dim}}. {{q}}",
           liveResult: "KI Puls-Check: {{score}} von 100 Punkten. Einordnung: {{label}}.",
         },
@@ -92,6 +103,18 @@
         step3Body:
           "Ihre Daten bleiben in Europa. Die Infrastruktur bleibt unter Ihrer Kontrolle. Kein Lock-in, keine versteckten Abhängigkeiten.",
       },
+      team: {
+        label: "Das Team",
+        title: "Die Experten für Ihr Projekt",
+        intro:
+          "Apex Partners wurde von Robin Betz gegründet mit Experten aus führenden Institutionen, je nach Projekt zusammengestellt.",
+        logosAria: "Erfahrung aus führenden Institutionen und Unternehmen",
+      },
+      founderQuote: {
+        quote:
+          "Zunächst verstehen wir Ihr Unternehmen. Dann konzipieren wir passende KI-Systeme und setzen diese mit Ihnen um. Sie profitieren von unserer Erfahrung: Was funktioniert, was nicht, und der kürzeste Weg zum Ergebnis.",
+        author: "Apex Partners Gründer — Robin Betz",
+      },
       contact: {
         label: "Kontakt",
         titleHtml: "Ein Gespräch.<br />Ein nächster Schritt.",
@@ -100,6 +123,12 @@
         cta: "Erstgespräch vereinbaren",
         mailtoHref:
           "mailto:kontakt@apexpartners.tech?subject=Mandatsanfrage%20%E2%80%93%20Erstgespr%C3%A4ch",
+      },
+      booking: {
+        modal: {
+          closeAria: "Terminbuchung schließen",
+          dialogTitle: "Erstgespräch vereinbaren",
+        },
       },
       footer: {
         tagline:
@@ -162,7 +191,7 @@
         metaQuestions: "9 questions",
         metaBrowser: "Browser only",
         leadHtml:
-          "The <strong>AI Pulse Check</strong>: nine questions, six dimensions — about ten minutes. Your answers are evaluated only in this browser and are not transmitted.",
+          "The <strong>AI Pulse Check</strong>: nine questions, six dimensions — about ten minutes. Your answers are evaluated locally. Optionally, you can receive your results by email.",
         dimsAria: "Dimensions assessed",
         cta: "Start AI Pulse Check",
         preview: {
@@ -184,7 +213,18 @@
           scoreMax: "out of 100",
           nextStepsTitle: "Recommended next steps",
           contactBtn: "Discuss your results",
-          restartBtn: "Restart AI Pulse Check",
+          leadTitle: "Results by email",
+          leadDesc:
+            "Optional: we'll send your full assessment including dimension scores — to review and share.",
+          leadEmailLabel: "Email address",
+          leadEmailPlaceholder: "name@company.com",
+          leadSubmit: "Send",
+          leadSubmitting: "Sending…",
+          leadPrivacy: "Only used to send your results. No newsletter.",
+          leadSuccess: "Thank you — we'll send your assessment shortly.",
+          leadErrorInvalid: "Please enter a valid email address.",
+          leadErrorGeneric: "Could not send. Please try again.",
+          leadSubject: "AI Pulse Check lead — {{label}} ({{score}}/100)",
           liveQuestion: "Question {{n}} of 9. Dimension: {{dim}}. {{q}}",
           liveResult: "AI Pulse Check: {{score}} out of 100 points. Classification: {{label}}.",
         },
@@ -205,6 +245,18 @@
         step3Body:
           "Your data stays in Europe. The infrastructure stays under your control. No lock-in, no hidden dependencies.",
       },
+      team: {
+        label: "The team",
+        title: "The experts for your project",
+        intro:
+          "Apex Partners was founded by Robin Betz, drawing on experts from leading institutions — assembled for each engagement.",
+        logosAria: "Experience from leading institutions and companies",
+      },
+      founderQuote: {
+        quote:
+          "First, we understand your company. Then we design the right AI systems and implement them with you. You benefit from our experience: what works, what does not, and the shortest path to results.",
+        author: "Founder of Apex Partners — Robin Betz",
+      },
       contact: {
         label: "Contact",
         titleHtml: "One conversation.<br />One next step.",
@@ -213,6 +265,12 @@
         cta: "Book an initial consultation",
         mailtoHref:
           "mailto:kontakt@apexpartners.tech?subject=Engagement%20inquiry%20%E2%80%93%20Initial%20consultation",
+      },
+      booking: {
+        modal: {
+          closeAria: "Close booking",
+          dialogTitle: "Book an initial consultation",
+        },
       },
       footer: {
         tagline:
@@ -1082,6 +1140,11 @@
     document.querySelectorAll("[data-i18n-href]").forEach(function (el) {
       var val = get(el.getAttribute("data-i18n-href"));
       if (val != null) el.setAttribute("href", val);
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+      var val = get(el.getAttribute("data-i18n-placeholder"));
+      if (val != null) el.setAttribute("placeholder", val);
     });
 
     document.querySelectorAll("[data-i18n-list]").forEach(function (el) {

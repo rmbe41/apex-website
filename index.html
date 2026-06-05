@@ -145,7 +145,15 @@
               </li>
             </ul>
           </div>
-          <a class="header-cta" href="#kontakt" data-i18n="nav.cta">Erstgespräch vereinbaren</a>
+          <a
+            class="header-cta"
+            href="#"
+            data-booking-open
+            aria-haspopup="dialog"
+            aria-controls="booking-modal"
+            data-i18n="nav.cta"
+            >Erstgespräch vereinbaren</a
+          >
           <button
             class="nav-toggle"
             type="button"
@@ -164,7 +172,15 @@
       <a href="#use-cases" data-i18n="nav.useCases">Use Cases</a>
       <a href="#wie" data-i18n="nav.howItWorks">Wie es funktioniert</a>
       <a href="#kontakt" data-i18n="nav.contact">Kontakt</a>
-      <a class="header-cta" href="#kontakt" data-i18n="nav.cta">Erstgespräch vereinbaren</a>
+      <a
+        class="header-cta"
+        href="#"
+        data-booking-open
+        aria-haspopup="dialog"
+        aria-controls="booking-modal"
+        data-i18n="nav.cta"
+        >Erstgespräch vereinbaren</a
+      >
     </nav>
 
     <main id="top">
@@ -184,7 +200,15 @@
                 messbar im Ergebnis, maßgeschneidert für den Mittelstand.
               </p>
               <div class="hero-actions">
-                <a class="btn-primary" href="#kontakt" data-i18n="hero.cta">Erstgespräch vereinbaren</a>
+                <a
+                  class="btn-primary"
+                  href="#"
+                  data-booking-open
+                  aria-haspopup="dialog"
+                  aria-controls="booking-modal"
+                  data-i18n="hero.cta"
+                  >Erstgespräch vereinbaren</a
+                >
                 <a class="btn-ghost btn-ghost--stroke" href="#pulscheck" data-i18n="hero.pulscheck">KI Puls-Check</a>
               </div>
             </div>
@@ -760,6 +784,46 @@
         </div>
       </section>
 
+      <section class="section band band--dark section--tight-top team-section" id="team">
+        <div class="container">
+          <header class="team-header">
+            <p class="section-label" data-i18n="team.label">Das Team</p>
+            <h2 class="section-title team-title" data-i18n="team.title">Die Experten für Ihr Projekt</h2>
+            <p class="team-intro" data-i18n="team.intro">
+              Apex Partners wurde von Robin Betz gegründet mit Experten aus führenden Institutionen, je nach Projekt zusammengestellt.
+            </p>
+          </header>
+          <div class="team-logo-panel" data-i18n-aria="team.logosAria" aria-label="Erfahrung aus führenden Institutionen und Unternehmen">
+            <div class="team-logo-grid">
+              <div class="team-logo-cell team-logo-cell--xl">
+                <img src="assets/logos/TUM.svg" alt="Technische Universität München" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell team-logo-cell--md">
+                <img src="assets/logos/Stanford.svg" alt="Stanford University" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell">
+                <img src="assets/logos/CBS.svg" alt="Copenhagen Business School" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell team-logo-cell--lg">
+                <img src="assets/logos/YC.svg" alt="Y Combinator" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell team-logo-cell--lg">
+                <img src="assets/logos/Google.svg" alt="Google" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell">
+                <img src="assets/logos/Siemens.svg" alt="Siemens" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell">
+                <img src="assets/logos/BCG.svg" alt="Boston Consulting Group" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+              <div class="team-logo-cell">
+                <img src="assets/logos/KPMG.svg" alt="KPMG" width="200" height="100" loading="lazy" decoding="async" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <div
         class="pulscheck-modal"
         id="pulscheck-modal"
@@ -842,25 +906,107 @@
                 <h4 class="pulscheck-next-title" data-i18n="pulscheck.modal.nextStepsTitle">Empfohlene nächste Schritte</h4>
                 <div id="pulscheck-moves"></div>
               </div>
+              <div class="pulscheck-lead-capture" id="pulscheck-lead-capture">
+                <div class="pulscheck-lead-inner" id="pulscheck-lead-form-wrap">
+                  <h4 class="pulscheck-lead-title" data-i18n="pulscheck.modal.leadTitle">Ergebnis per E-Mail</h4>
+                  <p class="pulscheck-lead-desc" data-i18n="pulscheck.modal.leadDesc">
+                    Optional: Wir senden Ihnen Ihre Auswertung inkl. Dimensionen — zum Nachlesen und Teilen.
+                  </p>
+                  <form class="pulscheck-lead-form" id="pulscheck-lead-form" novalidate>
+                    <label class="pulscheck-lead-label" for="pulscheck-lead-email" data-i18n="pulscheck.modal.leadEmailLabel">E-Mail-Adresse</label>
+                    <div class="pulscheck-lead-row">
+                      <input
+                        type="email"
+                        class="pulscheck-lead-input"
+                        id="pulscheck-lead-email"
+                        name="email"
+                        required
+                        autocomplete="email"
+                        inputmode="email"
+                        spellcheck="false"
+                        data-i18n-placeholder="pulscheck.modal.leadEmailPlaceholder"
+                        placeholder="name@unternehmen.de"
+                      />
+                      <button type="submit" class="btn-primary pulscheck-lead-submit" id="pulscheck-lead-submit" data-i18n="pulscheck.modal.leadSubmit">
+                        Senden
+                      </button>
+                    </div>
+                    <input type="text" name="_honey" class="pulscheck-lead-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
+                    <p class="pulscheck-lead-note" data-i18n="pulscheck.modal.leadPrivacy">Nur für den Versand Ihrer Ergebnisse. Kein Newsletter.</p>
+                    <p class="pulscheck-lead-error" id="pulscheck-lead-error" hidden role="alert"></p>
+                  </form>
+                </div>
+                <div class="pulscheck-lead-success" id="pulscheck-lead-success" hidden>
+                  <p data-i18n="pulscheck.modal.leadSuccess">Vielen Dank — wir senden Ihre Auswertung in Kürze.</p>
+                </div>
+              </div>
               <div class="pulscheck-results-actions">
                 <a class="btn-primary pulscheck-mailto" id="pulscheck-btn-contact" href="#" data-i18n="pulscheck.modal.contactBtn">Ergebnis besprechen</a>
-                <button type="button" class="pulscheck-btn-restart" id="pulscheck-btn-restart" data-i18n="pulscheck.modal.restartBtn">KI Puls-Check erneut starten</button>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <div
+        class="booking-modal"
+        id="booking-modal"
+        hidden
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="booking-dialog-title"
+      >
+        <div class="booking-modal-backdrop" data-booking-close aria-hidden="true"></div>
+        <div class="booking-modal-shell">
+          <div class="booking-modal-panel">
+            <button
+              type="button"
+              class="booking-modal-close"
+              id="booking-modal-close"
+              data-i18n-aria="booking.modal.closeAria"
+              aria-label="Terminbuchung schließen"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <p id="booking-dialog-title" class="pulscheck-sr-only" data-i18n="booking.modal.dialogTitle">Erstgespräch vereinbaren</p>
+            <div class="booking-cal-inline" id="my-cal-inline-30min"></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section band band--light section--tight-top founder-quote-section">
+        <div class="container">
+          <figure class="founder-quote">
+            <blockquote>
+              <p data-i18n="founderQuote.quote">
+                Zunächst verstehen wir Ihr Unternehmen. Dann konzipieren wir passende KI-Systeme und setzen diese mit Ihnen um.
+                Sie profitieren von unserer Erfahrung: Was funktioniert, was nicht, und der kürzeste Weg zum Ergebnis.
+              </p>
+            </blockquote>
+            <figcaption data-i18n="founderQuote.author">Apex Partners Gründer — Robin Betz</figcaption>
+          </figure>
+        </div>
+      </section>
+
       <section class="cta-final band band--dark" id="kontakt">
         <div class="container">
-          <p class="section-label">Kontakt</p>
-          <h2 class="section-title">
+          <p class="section-label" data-i18n="contact.label">Kontakt</p>
+          <h2 class="section-title" data-i18n-html="contact.titleHtml">
             Ein Gespräch.<br />
             Ein nächster Schritt.
           </h2>
-          <p class="section-lead">
-            Wir hören zuerst zu und verstehen Ihren Kontext. Dann entscheiden wir gemeinsam, ob und wie wir weiterarbeiten.          </p>
-          <a class="btn-primary" href="mailto:kontakt@apexpartners.tech?subject=Mandatsanfrage%20%E2%80%93%20Erstgespr%C3%A4ch"
+          <p class="section-lead" data-i18n="contact.lead">
+            Wir hören zuerst zu und verstehen Ihren Kontext. Dann entscheiden wir gemeinsam, ob und wie wir weiterarbeiten.
+          </p>
+          <a
+            class="btn-primary"
+            href="#"
+            data-booking-open
+            aria-haspopup="dialog"
+            aria-controls="booking-modal"
+            data-i18n="contact.cta"
             >Erstgespräch vereinbaren</a
           >
         </div>
@@ -1212,7 +1358,13 @@
         refresh();
       })();
     </script>
-    <script src="i18n.js"></script>
-    <script src="pulscheck.js"></script>
+    <script>
+      window.APEX_PULSCHECK_LEAD = {
+        endpoint: "https://formsubmit.co/ajax/kontakt@apexpartners.tech",
+      };
+    </script>
+    <script src="i18n.js?v=2"></script>
+    <script src="pulscheck.js?v=2"></script>
+    <script src="booking.js?v=2"></script>
   </body>
 </html>

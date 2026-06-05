@@ -85,6 +85,8 @@
   var current = 0;
   var answers = Array(9).fill(null);
   var pendingTimer = null;
+  var lastResults = null;
+  var leadSubmitting = false;
 
   function clearPending() {
     if (pendingTimer) {
@@ -225,7 +227,7 @@
     );
   }
 
-  function fillResultsData() {
+  function computeResults() {
     var qs = questions();
     var totalScore = answers.reduce(function (sum, ansIdx, qi) {
       return sum + (ansIdx !== null ? qs[qi].options[ansIdx].score : 0);
@@ -235,6 +237,160 @@
       levels().find(function (l) {
         return scaled >= l.min && scaled <= l.max;
       }) || levels()[0];
+
+    var dimScores = {};
+    var dimMax = {};
+    dimensions().forEach(function (d) {
+      dimScores[d] = 0;
+      dimMax[d] = 0;
+    });
+    qs.forEach(function (q, qi) {
+      dimMax[q.dimension] += 5;
+      if (answers[qi] !== null) {
+        dimScores[q.dimension] += q.options[answers[qi]].score;
+      }
+    });
+
+    return {
+      scaled: scaled,
+      level: level,
+      dimScores: dimScores,
+      dimMax: dimMax,
+    };
+  }
+
+  function leadEndpoint() {
+    return window.APEX_PULSCHECK_LEAD && window.APEX_PULSCHECK_LEAD.endpoint;
+  }
+
+  function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  }
+
+  function setLeadError(message) {
+    var err = el("pulscheck-lead-error");
+    if (!err) return;
+    if (message) {
+      err.textContent = message;
+      err.hidden = false;
+    } else {
+      err.textContent = "";
+      err.hidden = true;
+    }
+  }
+
+  function setLeadSubmitting(active) {
+    leadSubmitting = active;
+    var btn = el("pulscheck-lead-submit");
+    var input = el("pulscheck-lead-email");
+    if (btn) {
+      btn.disabled = active;
+      btn.textContent = active
+        ? t("pulscheck.modal.leadSubmitting")
+        : t("pulscheck.modal.leadSubmit");
+    }
+    if (input) input.disabled = active;
+  }
+
+  function resetLeadCapture() {
+    var formWrap = el("pulscheck-lead-form-wrap");
+    var success = el("pulscheck-lead-success");
+    var form = el("pulscheck-lead-form");
+    if (form) form.reset();
+    setLeadError("");
+    setLeadSubmitting(false);
+    if (formWrap) formWrap.hidden = false;
+    if (success) success.hidden = true;
+  }
+
+  function buildLeadPayload(email) {
+    var result = lastResults;
+    var lang = window.ApexI18n ? window.ApexI18n.getLang() : "de";
+    var dimLines = dimensions()
+      .map(function (d) {
+        return d + ": " + result.dimScores[d] + "/" + result.dimMax[d];
+      })
+      .join("\n");
+
+    return {
+      _subject: fmt(t("pulscheck.modal.leadSubject"), {
+        score: result.scaled,
+        label: result.level.label,
+      }),
+      _replyto: email,
+      email: email,
+      score: result.scaled,
+      classification: result.level.label,
+      summary: result.level.desc,
+      dimensions: dimLines,
+      language: lang,
+      source: "pulscheck",
+      _template: "table",
+      _captcha: "false",
+    };
+  }
+
+  function submitLeadCapture(email) {
+    var endpoint = leadEndpoint();
+    if (!endpoint || !lastResults) {
+      return Promise.reject(new Error("missing-endpoint"));
+    }
+
+    return fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(buildLeadPayload(email)),
+    }).then(function (res) {
+      if (!res.ok) throw new Error("submit-failed");
+      return res.json().catch(function () {
+        return {};
+      });
+    });
+  }
+
+  function onLeadSubmit(e) {
+    e.preventDefault();
+    if (leadSubmitting) return;
+
+    var form = el("pulscheck-lead-form");
+    var honey = form && form.querySelector('[name="_honey"]');
+    if (honey && honey.value) return;
+
+    var input = el("pulscheck-lead-email");
+    var email = input ? input.value.trim() : "";
+    setLeadError("");
+
+    if (!isValidEmail(email)) {
+      setLeadError(t("pulscheck.modal.leadErrorInvalid"));
+      if (input) input.focus({ preventScroll: true });
+      return;
+    }
+
+    setLeadSubmitting(true);
+    submitLeadCapture(email)
+      .then(function () {
+        var formWrap = el("pulscheck-lead-form-wrap");
+        var success = el("pulscheck-lead-success");
+        if (formWrap) formWrap.hidden = true;
+        if (success) success.hidden = false;
+        setLeadSubmitting(false);
+      })
+      .catch(function () {
+        setLeadSubmitting(false);
+        setLeadError(t("pulscheck.modal.leadErrorGeneric"));
+      });
+  }
+
+  function fillResultsData() {
+    var result = computeResults();
+    lastResults = result;
+    var scaled = result.scaled;
+    var level = result.level;
+    var dimScores = result.dimScores;
+    var dimMax = result.dimMax;
 
     el("pulscheck-res-label").textContent = level.label;
     el("pulscheck-res-desc").textContent = level.desc;
@@ -253,19 +409,6 @@
         }, 120);
       }
     }
-
-    var dimScores = {};
-    var dimMax = {};
-    dimensions().forEach(function (d) {
-      dimScores[d] = 0;
-      dimMax[d] = 0;
-    });
-    qs.forEach(function (q, qi) {
-      dimMax[q.dimension] += 5;
-      if (answers[qi] !== null) {
-        dimScores[q.dimension] += q.options[answers[qi]].score;
-      }
-    });
 
     var grid = el("pulscheck-dim-grid");
     grid.innerHTML = "";
@@ -318,6 +461,7 @@
         label: level.label,
       }),
     );
+    resetLeadCapture();
   }
 
   function transitionToResults() {
@@ -360,21 +504,10 @@
     });
   }
 
-  function restart() {
-    clearPending();
-    current = 0;
-    answers = Array(9).fill(null);
-    var quiz = el("pulscheck-quiz");
-    var results = el("pulscheck-results");
-    results.hidden = true;
-    quiz.hidden = false;
-    quiz.classList.remove("pulscheck-quiz--out");
-    render(false);
-  }
-
   el("pulscheck-btn-next").addEventListener("click", goForwardManual);
   el("pulscheck-btn-back").addEventListener("click", goBack);
-  el("pulscheck-btn-restart").addEventListener("click", restart);
+  var leadForm = el("pulscheck-lead-form");
+  if (leadForm) leadForm.addEventListener("submit", onLeadSubmit);
 
   var modal = el("pulscheck-modal");
   var openBtn = el("pulscheck-open");
