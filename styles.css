@@ -2340,8 +2340,8 @@ button {
   align-items: center;
   justify-content: center;
   width: 100%;
-  min-height: clamp(2.7rem, 4.95vw, 3.825rem);
-  margin: 0 0 clamp(1.35rem, 2.7vw, 2.025rem);
+  padding-block: clamp(0.55rem, 1.35vw, 0.8rem);
+  margin: 0;
 }
 
 .pulscheck-panel-arrow {
