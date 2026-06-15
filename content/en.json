@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Apex Partners | AI systems for mid-market companies",
-    "description": "Functional AI systems for core processes — discreet, measurable, tailored for mid-market companies."
+    "title": "Apex Partners | AI systems for mid-market companies & scaleups",
+    "description": "Functional AI systems for core processes — discreet, measurable, tailored for mid-market companies & scaleups."
   },
   "nav": {
     "logoAria": "Apex Partners homepage",
@@ -16,9 +16,9 @@
     "menuClose": "Close menu"
   },
   "hero": {
-    "eyebrow": "AI systems for mid-market companies",
+    "eyebrow": "AI systems for mid-market companies & scaleups",
     "titleHtml": "Your expertise.<br />Scaled through <em>AI</em>.",
-    "lead": "Functional AI systems for your business in a matter of weeks. Discreet in delivery, measurable in results, tailored for mid-market companies.",
+    "lead": "Functional AI systems for your business in a matter of weeks. Discreet in delivery, measurable in results, tailored for mid-market companies & scaleups.",
     "cta": "Book an initial consultation",
     "pulscheck": "AI Pulse Check",
     "videoPlayAria": "Play video about Apex Partners",
@@ -667,7 +667,7 @@
         "Procurement and approval automation plus structured contract analysis"
       ],
       "outcome": "Reduced manual effort, faster month-end close, more capacity for strategic finance steering.",
-      "suitable": "Mid-market companies, organizations with repetitive finance processes, finance leaders before or after restructuring."
+      "suitable": "Mid-market companies & scaleups, organizations with repetitive finance processes, finance leaders before or after restructuring."
     },
     "6": {
       "title": "Legal & regulatory",
@@ -767,7 +767,7 @@
     }
   },
   "footer": {
-    "tagline": "AI systems for mid-market companies — from first exploration to everyday use.",
+    "tagline": "AI systems for mid-market companies & scaleups — from first exploration to everyday use.",
     "legalName": "Apex Partners",
     "legalEntity": "A brand of Robin Betz Unternehmensberatung",
     "legalRep": "represented by Robin Miguel Betz",

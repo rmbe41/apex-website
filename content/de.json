@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Apex Partners | KI-Systeme für den Mittelstand",
-    "description": "Funktionale KI-Systeme für Kernprozesse — diskret, messbar, maßgeschneidert für den Mittelstand."
+    "title": "Apex Partners | KI-Systeme für Mittelstand & Scaleups",
+    "description": "Funktionale KI-Systeme für Kernprozesse — diskret, messbar, maßgeschneidert für Mittelstand & Scaleups."
   },
   "nav": {
     "logoAria": "Apex Partners Startseite",
@@ -16,9 +16,9 @@
     "menuClose": "Menü schließen"
   },
   "hero": {
-    "eyebrow": "KI-Systeme für den Mittelstand",
+    "eyebrow": "KI-Systeme für Mittelstand & Scaleups",
     "titleHtml": "Ihre Erfahrung.<br />Skaliert durch <em>KI</em>.",
-    "lead": "Funktionale KI-Systeme für Ihr Unternehmen in wenigen Wochen. Diskret in der Umsetzung, messbar im Ergebnis, maßgeschneidert für den Mittelstand.",
+    "lead": "Funktionale KI-Systeme für Ihr Unternehmen in wenigen Wochen. Diskret in der Umsetzung, messbar im Ergebnis, maßgeschneidert für Mittelstand & Scaleups.",
     "cta": "Erstgespräch vereinbaren",
     "pulscheck": "KI Puls-Check",
     "videoPlayAria": "Film über Apex Partners abspielen",
@@ -721,7 +721,7 @@
     }
   },
   "footer": {
-    "tagline": "KI-Systeme für den Mittelstand — von der ersten Sichtung bis zur selbstverständlichen Nutzung im Alltag.",
+    "tagline": "KI-Systeme für Mittelstand & Scaleups — von der ersten Sichtung bis zur selbstverständlichen Nutzung im Alltag.",
     "legalName": "Apex Partners",
     "legalEntity": "Marke der Robin Betz Unternehmensberatung",
     "legalRep": "vertreten durch Robin Miguel Betz",
