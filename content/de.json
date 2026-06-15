@@ -645,7 +645,7 @@
     "titleHtml": "Ein Gespräch.<br />Ein nächster Schritt.",
     "lead": "Wir hören zuerst zu und verstehen Ihren Kontext. Dann entscheiden wir gemeinsam, ob und wie wir weiterarbeiten.",
     "cta": "Erstgespräch vereinbaren",
-    "mailtoHref": "mailto:kontakt@apexpartners.tech?subject=Mandatsanfrage%20%E2%80%93%20Erstgespr%C3%A4ch"
+    "mailtoHref": "mailto:info@apexpartners.tech?subject=Mandatsanfrage%20%E2%80%93%20Erstgespr%C3%A4ch"
   },
   "booking": {
     "modal": {
@@ -660,10 +660,10 @@
     "legalRep": "vertreten durch Robin Miguel Betz",
     "legalAddress": "Rottmannstraße 20, 80333 München",
     "privacyTitle": "Datenschutz",
-    "privacyHtml": "Beim optionalen Versand Ihres KI Puls-Check-Ergebnisses verarbeiten wir Ihre E-Mail-Adresse sowie Ihre Antworten und Auswertung, um Ihnen die Ergebnis-Mail zuzusenden und Sie bei Rückfragen zu erreichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme auf Ihre Anfrage). Empfänger: Resend (E-Mail-Versand, USA) auf Basis von Standardvertragsklauseln. Speicherdauer: bis zur Erledigung Ihrer Anfrage, längstens 12 Monate. Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Beschwerde bei einer Aufsichtsbehörde. Kontakt: <a href=\"mailto:kontakt@apexpartners.tech\">kontakt@apexpartners.tech</a>.",
+    "privacyHtml": "Beim optionalen Versand Ihres KI Puls-Check-Ergebnisses verarbeiten wir Ihre E-Mail-Adresse sowie Ihre Antworten und Auswertung, um Ihnen die Ergebnis-Mail zuzusenden und Sie bei Rückfragen zu erreichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme auf Ihre Anfrage). Empfänger: Resend (E-Mail-Versand, USA) auf Basis von Standardvertragsklauseln. Speicherdauer: bis zur Erledigung Ihrer Anfrage, längstens 12 Monate. Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Beschwerde bei einer Aufsichtsbehörde. Kontakt: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a>.",
     "privacyLink": "Datenschutz",
     "copyright": "© 2026 Apex Partners",
-    "email": "kontakt@apexpartners.tech"
+    "email": "info@apexpartners.tech"
   },
   "lang": {
     "choose": "Sprache wählen",

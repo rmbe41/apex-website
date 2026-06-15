@@ -8,7 +8,7 @@ Anleitung für den optionalen E-Mail-Versand nach dem Puls-Check: **Vercel** hos
 Browser (Puls-Check abgeschlossen)
   → POST /api/pulscheck-lead          (Vercel Serverless Function)
   → Resend API                        (Ergebnis-Mail an Nutzer)
-  → Resend API                        (Benachrichtigung an kontakt@apexpartners.tech)
+  → Resend API                        (Benachrichtigung an info@apexpartners.tech)
 ```
 
 | Komponente | Rolle |
@@ -37,7 +37,7 @@ window.APEX_PULSCHECK_LEAD = { endpoint: "/api/pulscheck-lead" };
    - Berechtigung: **Sending access** (für den Start ausreichend)
    - Key kopieren (`re_...`) — wird nur einmal angezeigt
 4. Absender prüfen:
-   - Standard: `Apex Partners <kontakt@apexpartners.tech>`
+   - Standard: `Apex Partners <info@apexpartners.tech>`
    - Domain muss verifiziert sein, sonst schlagen Sends fehl
 
 ---
@@ -60,8 +60,8 @@ Optional (haben sinnvolle Defaults im Code):
 
 | Name | Default |
 |------|---------|
-| `PULSCHECK_FROM_EMAIL` | `Apex Partners <kontakt@apexpartners.tech>` |
-| `PULSCHECK_NOTIFY_EMAIL` | `kontakt@apexpartners.tech` |
+| `PULSCHECK_FROM_EMAIL` | `Apex Partners <info@apexpartners.tech>` |
+| `PULSCHECK_NOTIFY_EMAIL` | `info@apexpartners.tech` |
 | `PULSCHECK_SITE_URL` | `https://apexpartners.tech` |
 
 4. **Save** → danach **Redeploy** auslösen (Deployments → … → Redeploy), damit die Variable aktiv ist.
@@ -153,7 +153,7 @@ Production-Test:
 - [ ] Ungültige E-Mail → `400` + `invalid-email`
 - [ ] Honeypot befüllt → `200` + `{ "ok": true }` (keine Mail)
 - [ ] Gültiger Submit → Nutzer erhält HTML-Ergebnis-Mail
-- [ ] `kontakt@apexpartners.tech` erhält Lead-Benachrichtigung; Reply-To = Lead
+- [ ] `info@apexpartners.tech` erhält Lead-Benachrichtigung; Reply-To = Lead
 - [ ] Englische Site → englische Mail
 - [ ] Datenschutz-Link im Formular → `#datenschutz` im Footer
 

@@ -691,7 +691,7 @@
     "titleHtml": "One conversation.<br />One next step.",
     "lead": "We listen first and understand your context. Then we decide together whether and how to move forward.",
     "cta": "Book an initial consultation",
-    "mailtoHref": "mailto:kontakt@apexpartners.tech?subject=Engagement%20inquiry%20%E2%80%93%20Initial%20consultation"
+    "mailtoHref": "mailto:info@apexpartners.tech?subject=Engagement%20inquiry%20%E2%80%93%20Initial%20consultation"
   },
   "booking": {
     "modal": {
@@ -706,10 +706,10 @@
     "legalRep": "represented by Robin Miguel Betz",
     "legalAddress": "Rottmannstraße 20, 80333 Munich, Germany",
     "privacyTitle": "Privacy",
-    "privacyHtml": "When you optionally request your AI Pulse Check results by email, we process your email address and your answers and assessment to send the results and respond to follow-up questions. Legal basis: Art. 6(1)(b) GDPR (pre-contractual steps at your request). Recipient: Resend (email delivery, USA) under standard contractual clauses. Retention: until your request is handled, up to 12 months. You have rights of access, rectification, erasure, restriction, objection, and complaint to a supervisory authority. Contact: <a href=\"mailto:kontakt@apexpartners.tech\">kontakt@apexpartners.tech</a>.",
+    "privacyHtml": "When you optionally request your AI Pulse Check results by email, we process your email address and your answers and assessment to send the results and respond to follow-up questions. Legal basis: Art. 6(1)(b) GDPR (pre-contractual steps at your request). Recipient: Resend (email delivery, USA) under standard contractual clauses. Retention: until your request is handled, up to 12 months. You have rights of access, rectification, erasure, restriction, objection, and complaint to a supervisory authority. Contact: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a>.",
     "privacyLink": "Privacy",
     "copyright": "© 2026 Apex Partners",
-    "email": "kontakt@apexpartners.tech"
+    "email": "info@apexpartners.tech"
   },
   "lang": {
     "choose": "Choose language",

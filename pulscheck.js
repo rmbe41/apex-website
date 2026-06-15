@@ -219,7 +219,7 @@
     var subject = fmt(mailto.subject, { label: levelLabel, score: scaled });
     var body = fmt(mailto.body, { label: levelLabel, score: scaled });
     return (
-      "mailto:kontakt@apexpartners.tech?subject=" +
+      "mailto:info@apexpartners.tech?subject=" +
       encodeURIComponent(subject) +
       "&body=" +
       encodeURIComponent(body)
