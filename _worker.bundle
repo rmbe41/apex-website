@@ -59,6 +59,7 @@ function copy(lang) {
       resultTitle: "Your AI Pulse Check result",
       scoreLabel: "out of 100",
       dimensionsTitle: "Dimension scores",
+      dimensionsHint: "Bars show your score per area as a percentage.",
       nextStepsTitle: "Recommendations",
       collaborationTitle: "How we work together",
       ctaLabel: "Discuss your results",
@@ -79,6 +80,7 @@ function copy(lang) {
     resultTitle: "Ihr KI Puls-Check Ergebnis",
     scoreLabel: "von 100",
     dimensionsTitle: "Dimensionen",
+    dimensionsHint: "Die Balken zeigen Ihre Auspr\xE4gung pro Bereich in Prozent.",
     nextStepsTitle: "Handlungsempfehlungen",
     collaborationTitle: "Zusammenarbeit",
     ctaLabel: "Ergebnis besprechen",
@@ -109,7 +111,7 @@ function buildResultHtml(data, siteUrl, lang) {
   const dimRows = dimensions.map(function(d) {
     const name = escapeHtml(d.name);
     const pct = Number(d.pct) || 0;
-    return `<tr><td style="padding:10px 0;border-bottom:1px solid #e8edf2;color:#0a1f33;font-size:14px;">${name}</td><td style="padding:10px 0;border-bottom:1px solid #e8edf2;color:#5a7184;font-size:14px;text-align:right;white-space:nowrap;">${escapeHtml(d.score)} / ${escapeHtml(d.max)}</td><td style="padding:10px 0 10px 16px;border-bottom:1px solid #e8edf2;width:120px;"><div style="height:6px;background:#e8edf2;border-radius:99px;overflow:hidden;"><div style="height:6px;width:${pct}%;background:#0a1f33;border-radius:99px;"></div></div></td></tr>`;
+    return `<tr><td style="padding:10px 0;border-bottom:1px solid #e8edf2;color:#0a1f33;font-size:14px;">${name}</td><td style="padding:10px 0;border-bottom:1px solid #e8edf2;color:#5a7184;font-size:14px;text-align:right;white-space:nowrap;">${escapeHtml(pct)} %</td><td style="padding:10px 0 10px 16px;border-bottom:1px solid #e8edf2;width:120px;"><div style="height:6px;background:#e8edf2;border-radius:99px;overflow:hidden;"><div style="height:6px;width:${pct}%;background:#0a1f33;border-radius:99px;"></div></div></td></tr>`;
   }).join("");
   const steps = nextSteps.map(function(step, index) {
     return `<tr><td style="padding:0 0 16px;vertical-align:top;color:#0a1f33;font-size:14px;line-height:1.55;"><strong style="display:block;margin-bottom:4px;">${index + 1}. ${escapeHtml(step.title)}</strong>${escapeHtml(step.body)}</td></tr>`;
@@ -146,7 +148,8 @@ function buildResultHtml(data, siteUrl, lang) {
                     <td align="center" style="font-size:15px;line-height:1.65;color:#5a7184;padding-top:10px;">${summary}</td>
                   </tr>
                 </table>
-                <div style="font-size:16px;font-weight:700;margin-bottom:12px;color:#0a1f33;">${t.dimensionsTitle}</div>
+                <div style="font-size:16px;font-weight:700;margin-bottom:6px;color:#0a1f33;">${t.dimensionsTitle}</div>
+                <div style="font-size:13px;line-height:1.5;color:#5a7184;margin-bottom:12px;">${t.dimensionsHint}</div>
                 <table role="presentation" width="100%" cellspacing="0" cellpadding="0">${dimRows}</table>
                 ${steps ? `<div style="font-size:16px;font-weight:700;margin:28px 0 12px;color:#0a1f33;">${t.nextStepsTitle}</div><table role="presentation" width="100%" cellspacing="0" cellpadding="0">${steps}</table>` : ""}
                 ${collabRows ? `<div style="font-size:16px;font-weight:700;margin:28px 0 12px;color:#0a1f33;">${t.collaborationTitle}</div><table role="presentation" width="100%" cellspacing="0" cellpadding="0">${collabRows}</table>` : collaboration ? `<div style="font-size:16px;font-weight:700;margin:28px 0 12px;color:#0a1f33;">${t.collaborationTitle}</div><div style="font-size:15px;line-height:1.65;color:#5a7184;">${collaboration}</div>` : ""}
@@ -184,7 +187,7 @@ function buildResultText(data, siteUrl, lang) {
     "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
   ];
   dimensions.forEach(function(d) {
-    lines.push(`${d.name}: ${d.score} / ${d.max}`);
+    lines.push(`${d.name}: ${Number(d.pct) || 0} %`);
   });
   if (nextSteps.length) {
     lines.push("");

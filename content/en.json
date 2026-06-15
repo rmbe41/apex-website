@@ -61,6 +61,8 @@
       "next": "Next",
       "nextFinal": "View results",
       "scoreMax": "out of 100",
+      "dimensionsTitle": "Dimensions",
+      "dimensionsHint": "Bars show your score per area as a percentage.",
       "nextStepsTitle": "Recommendations",
       "contactBtn": "Discuss your results",
       "leadTitle": "Results by email",

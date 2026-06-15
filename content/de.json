@@ -61,6 +61,8 @@
       "next": "Weiter",
       "nextFinal": "Zum Ergebnis",
       "scoreMax": "von 100",
+      "dimensionsTitle": "Dimensionen",
+      "dimensionsHint": "Die Balken zeigen Ihre Ausprägung pro Bereich in Prozent.",
       "nextStepsTitle": "Handlungsempfehlungen",
       "contactBtn": "Ergebnis besprechen",
       "leadTitle": "Ergebnis per E-Mail",

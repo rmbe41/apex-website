@@ -442,10 +442,8 @@
         '</div><div class="pulscheck-dim-bar-track"><div class="pulscheck-dim-bar-fill" style="width:0%" data-pct="' +
         pct +
         '"></div></div><div class="pulscheck-dim-score-label">' +
-        dimScores[d] +
-        " / " +
-        dimMax[d] +
-        "</div>";
+        pct +
+        " %</div>";
       grid.appendChild(card);
     });
 
