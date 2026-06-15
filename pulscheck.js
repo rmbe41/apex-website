@@ -47,6 +47,12 @@
     return d.movesByLevel[label] || [];
   }
 
+  function collaborationForLevel(label) {
+    var d = pcData();
+    if (!d || !d.collaborationByLevel) return [];
+    return d.collaborationByLevel[label] || [];
+  }
+
   var MOVE_ICONS = {
     target:
       '<circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>',
@@ -166,6 +172,9 @@
     nextBtn.disabled = !answered;
     nextBtn.classList.toggle("is-active", answered);
     el("pulscheck-btn-back").style.visibility = current === 0 ? "hidden" : "visible";
+
+    var quizEl = el("pulscheck-quiz");
+    if (quizEl) quizEl.classList.toggle("pulscheck-quiz--started", current > 0);
 
     renderLiveAnnouncement();
     if (!noFocus) {
@@ -316,13 +325,16 @@
     var nextSteps = movesForLevel(result.level.label).map(function (m) {
       return { title: m.title, body: m.body };
     });
+    var collaborationSteps = collaborationForLevel(result.level.label).map(function (c) {
+      return { title: c.title, body: c.body };
+    });
 
     return {
       email: email,
       score: result.scaled,
       classification: result.level.label,
       summary: result.level.desc,
-      collaboration: result.level.collaboration || "",
+      collaborationSteps: collaborationSteps,
       dimensions: dimRows,
       nextSteps: nextSteps,
       language: lang,
@@ -460,13 +472,28 @@
       .join("");
 
     var collabWrap = el("pulscheck-collaboration");
-    var collabBody = el("pulscheck-collaboration-body");
-    if (collabWrap && collabBody) {
-      if (level.collaboration) {
-        collabBody.textContent = level.collaboration;
+    var collabList = el("pulscheck-collaboration-items");
+    var collabItems = collaborationForLevel(level.label);
+    if (collabWrap && collabList) {
+      if (collabItems.length) {
+        collabList.innerHTML = collabItems
+          .map(function (item, index) {
+            return (
+              '<div class="pulscheck-move pulscheck-collab-move">' +
+              '<span class="pulscheck-collab-num" aria-hidden="true">' +
+              (index + 1) +
+              "</span>" +
+              '<div><p class="pulscheck-move-title">' +
+              item.title +
+              '</p><p class="pulscheck-move-body">' +
+              item.body +
+              "</p></div></div>"
+            );
+          })
+          .join("");
         collabWrap.hidden = false;
       } else {
-        collabBody.textContent = "";
+        collabList.innerHTML = "";
         collabWrap.hidden = true;
       }
     }
@@ -494,6 +521,7 @@
       results.hidden = false;
       if (!reduceMotion) quiz.classList.remove("pulscheck-quiz--out");
       fillResultsData();
+      results.scrollTop = 0;
       var labelEl = el("pulscheck-res-label");
       if (labelEl) {
         labelEl.setAttribute("tabindex", "-1");
@@ -588,6 +616,8 @@
     document.body.classList.add("pulscheck-modal-open");
     document.addEventListener("keydown", onModalKeydown);
     setOpenExpanded(true);
+    var results = el("pulscheck-results");
+    if (results) results.scrollTop = 0;
     requestAnimationFrame(function () {
       var qt = el("pulscheck-q-text");
       if (qt) qt.focus({ preventScroll: true });

@@ -2901,10 +2901,10 @@ button {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  padding: max(16px, env(safe-area-inset-top)) max(16px, env(safe-area-inset-right))
-    max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  padding: max(12px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right))
+    max(12px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left));
   box-sizing: border-box;
 }
 
@@ -2923,10 +2923,12 @@ button {
 .pulscheck-modal-panel {
   position: relative;
   z-index: 1;
-  width: min(736px, 100%);
-  max-height: min(92vh, 920px);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
+  width: min(840px, 100%);
+  height: min(920px, calc(100dvh - 24px));
+  max-height: calc(100dvh - max(12px, env(safe-area-inset-top)) - max(12px, env(safe-area-inset-bottom)));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   overscroll-behavior: contain;
 }
 
@@ -2995,10 +2997,105 @@ button {
 .pulscheck-modal-panel .pulscheck-card {
   max-width: none;
   margin: 0;
-  padding-top: clamp(1.75rem, 4vw, 2.75rem);
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(1.35rem, 3vw, 2rem) clamp(1.25rem, 3vw, 2rem) clamp(1.15rem, 2.5vw, 1.5rem);
+  padding-top: clamp(2.75rem, 5vw, 3.25rem);
   box-shadow:
     0 24px 64px rgba(15, 45, 74, 0.14),
     0 1px 0 rgba(255, 255, 255, 0.75) inset;
+}
+
+.pulscheck-modal-panel .pulscheck-quiz,
+.pulscheck-modal-panel .pulscheck-results {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pulscheck-modal-panel .pulscheck-results {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.pulscheck-modal-panel .pulscheck-badge {
+  flex-shrink: 0;
+  margin-bottom: 0.65rem;
+}
+
+.pulscheck-modal-panel .pulscheck-card-title {
+  flex-shrink: 0;
+  font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+  margin-bottom: 0.35rem;
+}
+
+.pulscheck-modal-panel .pulscheck-card-sub {
+  flex-shrink: 0;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+}
+
+.pulscheck-modal-panel .pulscheck-quiz--started .pulscheck-card-title,
+.pulscheck-modal-panel .pulscheck-quiz--started .pulscheck-card-sub {
+  display: none;
+}
+
+.pulscheck-modal-panel .pulscheck-progress {
+  flex-shrink: 0;
+  margin-bottom: 0.85rem;
+}
+
+.pulscheck-modal-panel .pulscheck-step-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pulscheck-modal-panel .pulscheck-q-text {
+  flex-shrink: 0;
+  margin-bottom: 0.65rem;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.4;
+}
+
+.pulscheck-modal-panel .pulscheck-options {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  gap: 8px;
+  margin-bottom: 0;
+  padding-right: 2px;
+  scrollbar-width: thin;
+}
+
+.pulscheck-modal-panel .pulscheck-option {
+  padding: 11px 13px;
+  min-height: 44px;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.pulscheck-modal-panel .pulscheck-option.is-selected {
+  padding: 10px 12px;
+}
+
+.pulscheck-modal-panel .pulscheck-nav-row {
+  flex-shrink: 0;
+  margin-top: 0.75rem;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
 }
 
 body.pulscheck-modal-open {
@@ -3668,6 +3765,16 @@ body.booking-modal-open {
   margin: 0;
 }
 
+.pulscheck-collab-num {
+  flex-shrink: 0;
+  width: 22px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: center;
+  margin-top: 2px;
+}
+
 .pulscheck-lead-capture {
   margin-bottom: 1.75rem;
   padding: 1.25rem 1.35rem;
@@ -3797,6 +3904,121 @@ body.booking-modal-open {
 @media (prefers-reduced-motion: reduce) {
   .pulscheck #pulscheck-ring-dash {
     transition: none !important;
+  }
+}
+
+@media (max-width: 720px) {
+  .pulscheck-modal {
+    padding: 0;
+  }
+
+  .pulscheck-modal-panel {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100dvh;
+  }
+
+  .pulscheck-modal-panel .pulscheck-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: max(3rem, calc(env(safe-area-inset-top) + 2.25rem)) max(1rem, env(safe-area-inset-right))
+      max(1rem, env(safe-area-inset-bottom)) max(1rem, env(safe-area-inset-left));
+  }
+
+  .pulscheck-modal-close {
+    top: max(10px, env(safe-area-inset-top));
+    right: max(10px, env(safe-area-inset-right));
+  }
+
+  .pulscheck-modal-panel .pulscheck-score-ring-wrap {
+    margin: 0.75rem 0 1rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-score-ring {
+    width: 112px;
+    height: 112px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-score-ring svg {
+    width: 112px;
+    height: 112px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-score-num {
+    font-size: 32px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-result-label {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+    margin-bottom: 8px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-result-desc {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-dim-grid {
+    gap: 8px;
+    margin-bottom: 1.25rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-dim-card {
+    padding: 10px 12px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-next-moves,
+  .pulscheck-modal-panel .pulscheck-collaboration,
+  .pulscheck-modal-panel .pulscheck-lead-capture {
+    margin-bottom: 1.25rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-move {
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-lead-capture {
+    padding: 1rem 1.05rem;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .pulscheck-modal-panel .pulscheck-card-title,
+  .pulscheck-modal-panel .pulscheck-card-sub {
+    display: none;
+  }
+
+  .pulscheck-modal-panel .pulscheck-badge {
+    margin-bottom: 0.45rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-progress {
+    margin-bottom: 0.55rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-q-text {
+    margin-bottom: 0.45rem;
+    font-size: 0.95rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-option {
+    padding: 8px 11px;
+    min-height: 40px;
+    font-size: 13px;
+  }
+
+  .pulscheck-modal-panel .pulscheck-nav-row {
+    margin-top: 0.45rem;
+    padding-top: 0.45rem;
+  }
+
+  .pulscheck-modal-panel .pulscheck-btn-back,
+  .pulscheck-modal-panel .pulscheck-btn-next {
+    padding: 10px 16px;
   }
 }
 

@@ -373,36 +373,31 @@
           "min": 0,
           "max": 20,
           "label": "AI Observer",
-          "desc": "AI exists at the conceptual level within your organization. This reflects the reality of the majority of companies across the German-speaking world. The real risk is not a late start, but the wrong start: an AI strategy workshop, a hackathon, a tool evaluation. None of these generate real impact. What counts is a real problem, a clearly defined process, and a measurable result within 30 days.",
-          "collaboration": "We systematically analyze your core processes for AI leverage, prioritized by effort and impact. Through a joint sprint, we develop your first Proof of Value that convinces internally. No concept. A result."
+          "desc": "AI exists at the conceptual level within your organization. This reflects the reality of the majority of companies across the German-speaking world. The real risk is not a late start, but the wrong start: an AI strategy workshop, a hackathon, a tool evaluation. None of these generate real impact. What counts is a real problem, a clearly defined process, and a measurable result within 30 days."
         },
         {
           "min": 21,
           "max": 40,
           "label": "AI Explorer",
-          "desc": "There is movement, but no clear direction. Individual tools are being used, initial conversations have taken place at leadership level. There are enthusiasts and there are skeptics. The core problem: symptoms are being automated, not causes. Because results fall short of expectations, internal backing erodes before it has been truly leveraged. More AI budgets are spent without impact in this phase than in any other. Not due to a lack of technology, but due to misplaced focus.",
-          "collaboration": "We identify one or two use cases with real leverage and develop them in a structured way: with a data check, success criteria, and a rollout logic that also brings middle management on board. We know the typical pitfalls of this phase from our own project experience."
+          "desc": "There is movement, but no clear direction. Individual tools are being used, initial conversations have taken place at leadership level. There are enthusiasts and there are skeptics. The core problem: symptoms are being automated, not causes. Because results fall short of expectations, internal backing erodes before it has been truly leveraged. More AI budgets are spent without impact in this phase than in any other. Not due to a lack of technology, but due to misplaced focus."
         },
         {
           "min": 41,
           "max": 60,
           "label": "AI Practitioner",
-          "desc": "You are in the most demanding phase of AI transformation. There are enough successes to continue, but too little coherence to scale. The typical picture: multiple teams using different tools according to their own methods, without cross-organizational exchange. There are AI projects, but no AI operating model. That is the decisive difference between tactical individual successes and structural competitive advantage. Most companies at this level believe they need more tools. They need more clarity.",
-          "collaboration": "We develop the operating model that turns individual projects into a coherent system: with governance structure, tooling logic, and a roadmap that carries both leadership and teams."
+          "desc": "You are in the most demanding phase of AI transformation. There are enough successes to continue, but too little coherence to scale. The typical picture: multiple teams using different tools according to their own methods, without cross-organizational exchange. There are AI projects, but no AI operating model. That is the decisive difference between tactical individual successes and structural competitive advantage. Most companies at this level believe they need more tools. They need more clarity."
         },
         {
           "min": 61,
           "max": 80,
           "label": "AI Driver",
-          "desc": "You are measurably better positioned than the competition. That is a solid starting point, but not a sustainable advantage. The central risk at this level is confusing activity with impact: many AI projects, few of which are difficult to replicate. Efficiency gains are caught up by competitors faster than most companies anticipate. What holds up structurally are proprietary data advantages, embedded decision logic, and systems that improve themselves through continuous use. At this level, the winners are not those who do the most, but those who prioritize most clearly.",
-          "collaboration": "We accompany you in making the leap from a good position to a structurally defensible advantage: with an honest inventory, a moat analysis, and a roadmap built on sustainable competitive strength."
+          "desc": "You are measurably better positioned than the competition. That is a solid starting point, but not a sustainable advantage. The central risk at this level is confusing activity with impact: many AI projects, few of which are difficult to replicate. Efficiency gains are caught up by competitors faster than most companies anticipate. What holds up structurally are proprietary data advantages, embedded decision logic, and systems that improve themselves through continuous use. At this level, the winners are not those who do the most, but those who prioritize most clearly."
         },
         {
           "min": 81,
           "max": 100,
           "label": "AI Pioneer",
-          "desc": "You operate at the technological frontier. That is precisely your risk. The models underpinning your systems are evolving faster than your IT cycles. What represents a knowledge advantage today will be industry standard in 18 months. What endures structurally are culture, data, talent, and decision architecture — but only if these have been built with consistency. The most dangerous phase for a pioneer is complacency. Companies regarded as digital leaders just a few years ago are, in many cases, part of the mainstream today.",
-          "collaboration": "We work with you on what truly matters at this level: an advantage that sustains itself. From talent architecture to proprietary model approaches, through to the question of whether and how your AI capabilities can themselves become a market offering."
+          "desc": "You operate at the technological frontier. That is precisely your risk. The models underpinning your systems are evolving faster than your IT cycles. What represents a knowledge advantage today will be industry standard in 18 months. What endures structurally are culture, data, talent, and decision architecture — but only if these have been built with consistency. The most dangerous phase for a pioneer is complacency. Companies regarded as digital leaders just a few years ago are, in many cases, part of the mainstream today."
         }
       ],
       "movesByLevel": {
@@ -514,6 +509,78 @@
             "icon": "world",
             "title": "Invest in external early-warning signals",
             "body": "Research partnerships, access to emerging models, and strategic networks within the AI community: those who recognize the next development wave early can help shape it."
+          }
+        ]
+      },
+      "collaborationByLevel": {
+        "AI Observer": [
+          {
+            "title": "AI Roadmap & Prioritization Framework",
+            "body": "Before investing in technology, we work with you to identify which processes offer the highest leverage and which starting point makes economic sense. The result is a clear priority list — not a strategy paper that ends up in a drawer."
+          },
+          {
+            "title": "Rapid Prototyping & Proof of Concept",
+            "body": "Within 30 days, we develop a first working result based on a real problem with a measurable goal. Only real results generate the internal buy-in needed for next steps."
+          },
+          {
+            "title": "AI Literacy Programs",
+            "body": "Not a hype event, but clarity: what can AI actually do, what can't it do, and where is your concrete entry point? For leadership teams and operational departments alike."
+          }
+        ],
+        "AI Explorer": [
+          {
+            "title": "Data Readiness Assessment",
+            "body": "The majority of AI projects don't fail because of the technology — they fail because the relevant data simply isn't accessible. We clarify this before you invest in a solution."
+          },
+          {
+            "title": "Business Case Development & ROI Modeling",
+            "body": "A pilot without a predefined benchmark isn't a pilot. We develop the success criteria that legitimize your initiative internally — and fund the next step down the line."
+          },
+          {
+            "title": "Adoption Management & Stakeholder Enablement",
+            "body": "Resistance rarely sits at C-level. We facilitate the alignment process with middle management: what do teams concretely need to actively embrace the change?"
+          }
+        ],
+        "AI Practitioner": [
+          {
+            "title": "Center of Excellence Design & Build",
+            "body": "We develop the organizational structure that turns individual projects into a coherent system: who decides what? Which tools are the standard? How are insights systematically shared?"
+          },
+          {
+            "title": "KPI Framework & Value Tracking",
+            "body": "What isn't measured won't be funded. We define the metrics that make AI impact visible and manageable across the organization."
+          },
+          {
+            "title": "Scaling Pilots: From MVP to Enterprise Rollout",
+            "body": "We develop the rollout logic that works even in complex organizational structures: with clear decision points, escalation paths, and an architecture built for sustainable scaling."
+          }
+        ],
+        "AI Driver": [
+          {
+            "title": "EU AI Act Gap Analysis & Compliance Roadmap",
+            "body": "Organizations that haven't addressed model accountability, data protection, and output quality in advance pay more than just a reputational cost when the first AI decision goes wrong. We identify your action items before mistakes go public."
+          },
+          {
+            "title": "RAG Implementation & Knowledge Management",
+            "body": "Your greatest AI asset isn't the tools you use — it's your own data. We build the architecture that makes your organizational knowledge structurally accessible, creating an advantage competitors can't simply replicate."
+          },
+          {
+            "title": "Continuous Improvement & Model Lifecycle Management",
+            "body": "Efficiency gains get copied quickly. What holds up structurally are systems that improve themselves through continuous use. We build the infrastructure for that."
+          }
+        ],
+        "AI Pioneer": [
+          {
+            "title": "Prompt Engineering & Model Fine-Tuning",
+            "body": "Generic models deliver generic results. We develop the specific adaptations that turn standard technology into a differentiated capability — built on your data and your concrete requirements."
+          },
+          {
+            "title": "MLOps, Deployment & Performance Monitoring",
+            "body": "The models underpinning your systems evolve faster than your IT cycles. We ensure your AI infrastructure doesn't just run reliably, but keeps pace with the state of the art."
+          },
+          {
+            "title": "Knowledge Transfer & Internal Capability Development",
+            "body": "What represents an advantage today is industry standard in 18 months — unless you've built the internal capabilities to shape the next wave yourself."
           }
         ]
       },

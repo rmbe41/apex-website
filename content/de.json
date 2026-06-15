@@ -373,40 +373,35 @@
           "min": 0,
           "max": 20,
           "label": "KI Beobachter",
-          "desc": "KI existiert im Unternehmen auf konzeptioneller Ebene. Das ist die Realität der Mehrheit der Unternehmen im deutschsprachigen Raum. Das eigentliche Risiko liegt nicht im späten Start, sondern im falschen Einstieg: ein KI-Strategieworkshop, ein Hackathon, eine Tool-Evaluierung. Keines davon erzeugt echte Wirkung. Was zählt, ist ein reales Problem, ein klar abgegrenzter Prozess und ein messbares Ergebnis innerhalb von 30 Tagen.",
-          "collaboration": "Gemeinsam analysieren wir Ihre Kernprozesse systematisch auf KI-Hebel, priorisiert nach Aufwand und Impact. Im Rahmen eines gemeinsamen Sprints entwickeln wir Ihren ersten Proof of Value, der intern überzeugt. Kein Konzept. Sondern ein Ergebnis."
+          "desc": "KI existiert im Unternehmen auf konzeptioneller Ebene. Das ist die Realität der Mehrheit der Unternehmen im deutschsprachigen Raum. Das eigentliche Risiko liegt nicht im späten Start, sondern im falschen Einstieg: ein KI-Strategieworkshop, ein Hackathon, eine Tool-Evaluierung. Keines davon erzeugt echte Wirkung. Was zählt, ist ein reales Problem, ein klar abgegrenzter Prozess und ein messbares Ergebnis innerhalb von 30 Tagen."
         },
         {
           "min": 21,
           "max": 40,
           "label": "KI Erkunder",
-          "desc": "Es gibt Bewegung, aber keinen klaren Kurs. Einzelne Tools werden genutzt, erste Gespräche auf Führungsebene haben stattgefunden. Es gibt Begeisterte und Enttäuschte. Das Kernproblem: Man automatisiert Symptome, nicht Ursachen. Weil die Ergebnisse hinter den Erwartungen bleiben, erodiert der interne Rückhalt, bevor er wirklich genutzt wurde. In dieser Phase werden mehr KI-Budgets ohne Wirkung eingesetzt als in jeder anderen. Nicht wegen mangelnder Technologie, sondern wegen falschen Fokus.",
-          "collaboration": "Gemeinsam identifizieren wir ein bis zwei Use Cases mit realem Hebel und entwickeln sie strukturiert: mit Datencheck, Erfolgskriterium und einer Rollout-Logik, die auch das mittlere Management einbindet. Die typischen Fallstricke dieser Phase kennen wir aus eigener Projekterfahrung."
+          "desc": "Es gibt Bewegung, aber keinen klaren Kurs. Einzelne Tools werden genutzt, erste Gespräche auf Führungsebene haben stattgefunden. Es gibt Begeisterte und Enttäuschte. Das Kernproblem: Man automatisiert Symptome, nicht Ursachen. Weil die Ergebnisse hinter den Erwartungen bleiben, erodiert der interne Rückhalt, bevor er wirklich genutzt wurde. In dieser Phase werden mehr KI-Budgets ohne Wirkung eingesetzt als in jeder anderen. Nicht wegen mangelnder Technologie, sondern wegen falschen Fokus."
         },
         {
           "min": 41,
           "max": 60,
           "label": "KI Praktiker",
-          "desc": "Sie befinden sich in der anspruchsvollsten Phase der KI-Transformation. Es gibt genug Erfolge, um fortzufahren, aber zu wenig Kohärenz, um zu skalieren. Das typische Bild: Mehrere Teams nutzen unterschiedliche Tools nach eigenen Methoden, ohne organisationsübergreifenden Austausch. Es existieren KI-Projekte, aber kein KI-Operating-Model. Das ist der entscheidende Unterschied zwischen taktischen Einzelerfolgen und strukturellem Wettbewerbsvorteil. Die meisten Unternehmen auf diesem Niveau glauben, sie benötigen mehr Tools. Sie benötigen mehr Klarheit.",
-          "collaboration": "Gemeinsam entwickeln wir mit Ihnen das Operating Model, das aus Einzelprojekten ein kohärentes System macht: mit Governance-Struktur, Tooling-Logik und einer Roadmap, die Führung und Teams gleichermaßen trägt."
+          "desc": "Sie befinden sich in der anspruchsvollsten Phase der KI-Transformation. Es gibt genug Erfolge, um fortzufahren, aber zu wenig Kohärenz, um zu skalieren. Das typische Bild: Mehrere Teams nutzen unterschiedliche Tools nach eigenen Methoden, ohne organisationsübergreifenden Austausch. Es existieren KI-Projekte, aber kein KI-Operating-Model. Das ist der entscheidende Unterschied zwischen taktischen Einzelerfolgen und strukturellem Wettbewerbsvorteil. Die meisten Unternehmen auf diesem Niveau glauben, sie benötigen mehr Tools. Sie benötigen mehr Klarheit."
         },
         {
           "min": 61,
           "max": 80,
-          "label": "KITreiber",
-          "desc": "Sie sind messbar besser aufgestellt als der Wettbewerb. Das ist eine solide Ausgangsposition, aber kein nachhaltiger Vorsprung. Das zentrale Risiko auf dieser Stufe ist die Verwechslung von Aktivität mit Wirkung: viele KI-Projekte, wenige davon schwer zu replizieren. Effizienzgewinne werden von Wettbewerbern schneller eingeholt, als viele Unternehmen antizipieren. Was strukturell Bestand hat, sind proprietäre Datenvorteile, eingebettete Entscheidungslogik und Systeme, die sich durch kontinuierliche Nutzung selbst verbessern. Auf dieser Stufe gewinnen nicht die, die am meisten unternehmen, sondern die, die am klarsten priorisieren.",
-          "collaboration": "Gemeinsam begleiten wir Sie beim Sprung von einer guten Position zu einem strukturell verteidigbaren Vorsprung: mit einer ehrlichen Bestandsaufnahme, einer Moat-Analyse und einer Roadmap, die auf nachhaltigem Vorteil aufgebaut ist."
+          "label": "KI Treiber",
+          "desc": "Sie sind messbar besser aufgestellt als der Wettbewerb. Das ist eine solide Ausgangsposition, aber kein nachhaltiger Vorsprung. Das zentrale Risiko auf dieser Stufe ist die Verwechslung von Aktivität mit Wirkung: viele KI-Projekte, wenige davon schwer zu replizieren. Effizienzgewinne werden von Wettbewerbern schneller eingeholt, als viele Unternehmen antizipieren. Was strukturell Bestand hat, sind proprietäre Datenvorteile, eingebettete Entscheidungslogik und Systeme, die sich durch kontinuierliche Nutzung selbst verbessern. Auf dieser Stufe gewinnen nicht die, die am meisten unternehmen, sondern die, die am klarsten priorisieren."
         },
         {
           "min": 81,
           "max": 100,
-          "label": "KI Beobachter",
-          "desc": "Sie operieren an der technologischen Grenze. Genau das ist Ihr Risiko. Die Modelle, auf denen Ihre Systeme beruhen, entwickeln sich schneller als Ihre IT-Zyklen. Was heute einen Wissensvorsprung darstellt, ist in 18 Monaten Industriestandard. Was strukturell Bestand hat, sind Kultur, Daten, Talente und Entscheidungsarchitektur — aber nur, wenn diese konsequent aufgebaut wurden. Die gefährlichste Phase für einen Vorreiter ist Selbstzufriedenheit. Unternehmen, die vor wenigen Jahren als digitale Vorreiter galten, sind heute vielfach Teil des Mittelfelds.",
-          "collaboration": "Gemeinsam arbeiten wir mit Ihnen an dem, was auf dieser Stufe wirklich zählt: einem Vorsprung, der sich selbst trägt. Von der Talent-Architektur über proprietäre Modellansätze bis zur Frage, ob und wie Ihre KI-Fähigkeiten selbst zur Marktleistung werden können."
+          "label": "KI Vorreiter",
+          "desc": "Sie operieren an der technologischen Grenze. Genau das ist Ihr Risiko. Die Modelle, auf denen Ihre Systeme beruhen, entwickeln sich schneller als Ihre IT-Zyklen. Was heute einen Wissensvorsprung darstellt, ist in 18 Monaten Industriestandard. Was strukturell Bestand hat, sind Kultur, Daten, Talente und Entscheidungsarchitektur — aber nur, wenn diese konsequent aufgebaut wurden. Die gefährlichste Phase für einen Vorreiter ist Selbstzufriedenheit. Unternehmen, die vor wenigen Jahren als digitale Vorreiter galten, sind heute vielfach Teil des Mittelfelds."
         }
       ],
       "movesByLevel": {
-        "KIBeobachter": [
+        "KI Beobachter": [
           {
             "icon": "target",
             "title": "Stellen Sie die richtigen Ausgangsfragen",
@@ -514,6 +509,78 @@
             "icon": "world",
             "title": "Investieren Sie in externe Frühwarnsignale",
             "body": "Forschungspartnerschaften, Zugänge zu neuen Modellen und strategische Netzwerke in der KI-Community: Wer die nächste Entwicklungswelle früh erkennt, kann sie mitgestalten."
+          }
+        ]
+      },
+      "collaborationByLevel": {
+        "KI Beobachter": [
+          {
+            "title": "KI-Roadmap & Priorisierungs-Framework",
+            "body": "Bevor Sie in Technologie investieren, klären wir gemeinsam, welche Prozesse den höchsten Hebel haben und welcher Einstieg sich ökonomisch rechtfertigt. Ergebnis ist eine klare Prioritätenliste — kein Strategiepapier, das in der Schublade verschwindet."
+          },
+          {
+            "title": "Rapid Prototyping & Proof of Concept",
+            "body": "In 30 Tagen entwickeln wir ein erstes funktionierendes Ergebnis auf Basis eines realen Problems mit messbarem Ziel. Nur echte Ergebnisse erzeugen den internen Rückhalt für weitere Schritte."
+          },
+          {
+            "title": "KI-Literacy-Programme",
+            "body": "Kein Begeisterungsformat, sondern Klarheit: Was kann KI leisten, was nicht, und wo liegt Ihr konkreter Einstiegspunkt? Für Führungsteams ebenso wie für operative Bereiche."
+          }
+        ],
+        "KI Erkunder": [
+          {
+            "title": "Data Readiness Assessment",
+            "body": "Der überwiegende Teil der KI-Projekte scheitert nicht an der Technologie, sondern daran, dass relevante Daten schlicht nicht zugänglich sind. Wir klären das, bevor Sie in eine Lösung investieren."
+          },
+          {
+            "title": "Business Case Development & ROI-Modellierung",
+            "body": "Ein Pilot ohne vorab definierten Maßstab ist kein Pilot. Wir entwickeln das Erfolgskriterium, das Ihre Initiative intern legitimiert — und später den nächsten Schritt finanziert."
+          },
+          {
+            "title": "Adoption Management & Stakeholder Enablement",
+            "body": "Der Widerstand sitzt selten im C-Level. Wir moderieren den Klärungsprozess mit dem mittleren Management: Was brauchen die Teams konkret, um den Wandel aktiv mitzutragen?"
+          }
+        ],
+        "KI Praktiker": [
+          {
+            "title": "Center of Excellence Design & Aufbau",
+            "body": "Wir entwickeln die Organisationsstruktur, die aus Einzelprojekten ein kohärentes System macht: Wer entscheidet was? Welche Tools gelten als Standard? Wie werden Erkenntnisse systematisch geteilt?"
+          },
+          {
+            "title": "KPI-Framework & Value Tracking",
+            "body": "Was nicht gemessen wird, wird nicht weiter finanziert. Wir definieren die Kennzahlen, die KI-Wirkung intern sichtbar und steuerbar machen."
+          },
+          {
+            "title": "Piloten skalieren: von MVP zu Enterprise Rollout",
+            "body": "Wir entwickeln die Rollout-Logik, die auch in komplexen Unternehmensstrukturen funktioniert: mit klaren Entscheidungspunkten, Eskalationswegen und einer Architektur für nachhaltige Skalierung."
+          }
+        ],
+        "KI Treiber": [
+          {
+            "title": "EU AI Act Gap-Analyse & Compliance Roadmap",
+            "body": "Wer Datenschutz, Modellverantwortlichkeit und Output-Qualität nicht vorab geregelt hat, zahlt bei der ersten fehlerhaften KI-Entscheidung mehr als nur einen Reputationsschaden. Wir klären Ihren Handlungsbedarf, bevor Fehler öffentlich werden."
+          },
+          {
+            "title": "RAG-Implementierung & Knowledge Management",
+            "body": "Ihr größtes KI-Asset sind Ihre eigenen Daten. Wir bauen die Architektur, mit der Ihr Unternehmenswissen strukturell nutzbar wird — und damit einen Vorteil schafft, den Wettbewerber nicht einfach replizieren können."
+          },
+          {
+            "title": "Continuous Improvement & Modell-Lifecycle-Management",
+            "body": "Effizienzgewinne werden schnell kopiert. Was strukturell Bestand hat, sind Systeme, die sich durch kontinuierliche Nutzung selbst verbessern. Wir bauen die Infrastruktur dafür."
+          }
+        ],
+        "KI Vorreiter": [
+          {
+            "title": "Prompt Engineering & Model Fine-Tuning",
+            "body": "Generische Modelle liefern generische Ergebnisse. Wir entwickeln die spezifischen Anpassungen, die aus Standardtechnologie eine differenzierte Fähigkeit machen — auf Basis Ihrer Daten und Ihrer konkreten Anforderungen."
+          },
+          {
+            "title": "MLOps, Deployment & Performance Monitoring",
+            "body": "Die Modelle, auf denen Ihre Systeme beruhen, entwickeln sich schneller als Ihre IT-Zyklen. Wir stellen sicher, dass Ihre KI-Infrastruktur nicht nur stabil läuft, sondern mit dem Stand der Technik Schritt hält."
+          },
+          {
+            "title": "Wissenstransfer & Interne Kompetenzentwicklung",
+            "body": "Was heute einen Vorsprung darstellt, ist in 18 Monaten Industriestandard — außer Sie haben die internen Fähigkeiten aufgebaut, die nächste Entwicklungswelle selbst mitzugestalten."
           }
         ]
       },
