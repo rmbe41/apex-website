@@ -1,98 +1,178 @@
-# KI Puls-Check Lead Magnet — Go-Live
+# KI Puls-Check Lead Magnet — Go-Live (Vercel + Resend)
 
-This guide covers Resend, Cloudflare Pages secrets, deployment verification, and testing for `/api/pulscheck-lead`.
+Anleitung für den optionalen E-Mail-Versand nach dem Puls-Check: **Vercel** hostet Website und API, **Resend** verschickt die Mails.
 
-## 1. Resend setup
+## Architektur
 
-1. Create an account at [resend.com](https://resend.com).
-2. Add and verify domain **`apexpartners.tech`**:
+```
+Browser (Puls-Check abgeschlossen)
+  → POST /api/pulscheck-lead          (Vercel Serverless Function)
+  → Resend API                        (Ergebnis-Mail an Nutzer)
+  → Resend API                        (Benachrichtigung an kontakt@apexpartners.tech)
+```
+
+| Komponente | Rolle |
+|------------|--------|
+| **Vercel** | Statische Website (`index.html`, Assets) + API-Route `/api/pulscheck-lead` |
+| **Resend** | Transaktionaler E-Mail-Versand (HTML-Ergebnis + interne Lead-Mail) |
+| **Cloudflare** | Nicht nötig für dieses Feature |
+
+Frontend-Endpunkt (bereits konfiguriert in `index.html`):
+
+```js
+window.APEX_PULSCHECK_LEAD = { endpoint: "/api/pulscheck-lead" };
+```
+
+---
+
+## 1. Resend einrichten
+
+1. Account auf [resend.com](https://resend.com) anlegen.
+2. Domain **`apexpartners.tech`** hinzufügen und verifizieren:
    - Resend → Domains → Add domain
-   - Add the DNS records Resend shows (SPF, DKIM; add DMARC if recommended)
-   - Wait until status is **Verified**
-3. Create an API key:
+   - DNS-Einträge setzen (SPF, DKIM; DMARC empfohlen)
+   - Status **Verified** abwarten
+3. API Key erzeugen:
    - Resend → API Keys → Create API Key
-   - Scope: **Sending access** (or full access for initial setup)
-   - Copy the key (`re_...`) — it is shown only once
-4. Confirm sender address:
-   - Default in [`wrangler.toml`](../wrangler.toml): `Apex Partners <kontakt@apexpartners.tech>`
-   - The domain must be verified before mail sends successfully
+   - Berechtigung: **Sending access** (für den Start ausreichend)
+   - Key kopieren (`re_...`) — wird nur einmal angezeigt
+4. Absender prüfen:
+   - Standard: `Apex Partners <kontakt@apexpartners.tech>`
+   - Domain muss verifiziert sein, sonst schlagen Sends fehl
 
-## 2. Cloudflare Pages secrets
+---
 
-In **Cloudflare Dashboard → Workers & Pages → apexraw (or your project) → Settings → Environment variables**:
+## 2. API Key in Vercel hinterlegen
 
-| Variable | Production | Preview | Encrypted |
-|----------|------------|---------|-----------|
-| `RESEND_API_KEY` | `re_...` | same or separate | Yes |
+**Nicht** ins Git-Repo committen. **Nicht** in `wrangler.toml` oder öffentliche Config-Dateien.
 
-Optional overrides (already set in `wrangler.toml` `[vars]`):
+### Production & Preview
 
-| Variable | Default |
-|----------|---------|
+1. [vercel.com](https://vercel.com) → dein Projekt (apex-website / apexraw)
+2. **Settings** → **Environments** (Environment Variables)
+3. Variable anlegen:
+
+| Name | Wert | Environments |
+|------|------|--------------|
+| `RESEND_API_KEY` | `re_...` | Production, Preview |
+
+Optional (haben sinnvolle Defaults im Code):
+
+| Name | Default |
+|------|---------|
 | `PULSCHECK_FROM_EMAIL` | `Apex Partners <kontakt@apexpartners.tech>` |
 | `PULSCHECK_NOTIFY_EMAIL` | `kontakt@apexpartners.tech` |
 | `PULSCHECK_SITE_URL` | `https://apexpartners.tech` |
 
-CLI alternative (after `npx wrangler login`):
+4. **Save** → danach **Redeploy** auslösen (Deployments → … → Redeploy), damit die Variable aktiv ist.
+
+### Lokal (optional)
+
+Nur nötig für `npx vercel dev`. Für Production reicht der Key in Vercel.
+
+`.env.local` im **Projektroot** (nicht unter `docs/`), siehe [`.env.local.example`](../.env.local.example):
 
 ```bash
-npx wrangler pages secret put RESEND_API_KEY --project-name apexraw
+cp .env.local.example .env.local
+# oder: npx vercel env pull
 ```
 
-## 3. Deploy and verify Functions
+---
 
-The frontend and API live in the same repo:
+## 3. API-Route auf Vercel
 
-- Static site: repo root (`index.html`, assets, …)
-- Pages Function: [`functions/api/pulscheck-lead.js`](../functions/api/pulscheck-lead.js) → `POST /api/pulscheck-lead`
+Die Serverless Function liegt unter [`api/pulscheck-lead.js`](../api/pulscheck-lead.js) (gemeinsame Logik in [`lib/pulscheck-lead.js`](../lib/pulscheck-lead.js)):
 
-After push to the production branch:
+```
+api/pulscheck-lead.js   →   POST /api/pulscheck-lead
+                            OPTIONS /api/pulscheck-lead  (CORS Preflight)
+```
 
-1. Open the deployment in Cloudflare → **View details**
-2. Confirm build log contains **Compiled Worker successfully** and **Uploading Functions**
-3. If you see `No routes found when building Functions directory`, check that handlers use `export async function onRequestPost` (not bare `function`)
-
-Quick production check:
+Nach Push auf `main` deployt Vercel automatisch. Danach prüfen:
 
 ```bash
 curl -s -o /dev/null -w "%{http_code}\n" -X OPTIONS \
   https://www.apexpartners.tech/api/pulscheck-lead \
   -H "Origin: https://www.apexpartners.tech"
-# Expected: 204 (not 404)
+# Erwartung: 204
 ```
 
-**Current status:** If the API returns `404 NOT_FOUND`, Functions are not deployed yet — redeploy after confirming the `functions/` folder is in the connected branch and project root matches the repo root.
+**404?** → API-Datei fehlt unter `api/` oder Deployment noch nicht durchgelaufen.
 
-## 4. Local development
+**500 + `"error":"missing-config"`?** → `RESEND_API_KEY` in Vercel setzen und redeployen.
+
+---
+
+## 4. Deploy
+
+1. Änderungen auf den mit Vercel verbundenen Branch pushen (z. B. `main`).
+2. Vercel baut automatisch:
+   - statische Dateien aus dem Repo-Root
+   - Serverless Functions aus `api/`
+3. Deployment-Log prüfen: keine Build-Fehler in `api/`.
+
+Manuelles Deploy (optional):
 
 ```bash
-cp .dev.vars.example .dev.vars
-# Edit .dev.vars and set RESEND_API_KEY
-
-npx wrangler pages dev . --port 8788
+npx vercel --prod
 ```
 
-Open `http://localhost:8788`, complete the Puls-Check, submit an email.
+---
 
-Run automated validation tests:
+## 5. Lokal testen
 
 ```bash
-./scripts/test-pulscheck-api.sh http://localhost:8788
+# .env.local mit RESEND_API_KEY anlegen
+npx vercel dev
 ```
 
-## 5. End-to-end test checklist
+Standard-URL: `http://localhost:3000`
 
+1. Puls-Check durchspielen
+2. E-Mail im Ergebnis-Formular absenden
+3. Automatisierte API-Tests:
+
+```bash
+./scripts/test-pulscheck-api.sh http://localhost:3000 http://localhost:3000
+```
+
+Production-Test:
+
+```bash
+./scripts/test-pulscheck-api.sh https://www.apexpartners.tech https://www.apexpartners.tech
+```
+
+---
+
+## 6. End-to-End-Checkliste
+
+- [ ] Domain in Resend verifiziert
+- [ ] `RESEND_API_KEY` in Vercel (Production) gesetzt + redeployed
+- [ ] `api/pulscheck-lead.js` deployed (kein 404)
 - [ ] OPTIONS `/api/pulscheck-lead` → `204`
-- [ ] Invalid email → `400` + `invalid-email`
-- [ ] Invalid score → `400` + `invalid-score`
-- [ ] Honeypot filled → `200` + `{ "ok": true }` (no mail sent)
-- [ ] Valid payload + `RESEND_API_KEY` → user receives HTML result mail
-- [ ] Valid payload → `kontakt@apexpartners.tech` receives text notification; Reply-To is the lead
-- [ ] Switch site to EN → English subject and body in result mail
-- [ ] Lead form shows privacy link → `#datenschutz` in footer
+- [ ] Ungültige E-Mail → `400` + `invalid-email`
+- [ ] Honeypot befüllt → `200` + `{ "ok": true }` (keine Mail)
+- [ ] Gültiger Submit → Nutzer erhält HTML-Ergebnis-Mail
+- [ ] `kontakt@apexpartners.tech` erhält Lead-Benachrichtigung; Reply-To = Lead
+- [ ] Englische Site → englische Mail
+- [ ] Datenschutz-Link im Formular → `#datenschutz` im Footer
 
-## 6. Marketing use
+---
 
-- Direct link: `https://apexpartners.tech/#pulscheck`
-- Flow: quiz → on-screen result → optional email capture → automated result mail + internal lead notification
-- Follow-up: reply to the internal notification or contact the lead manually
+## 7. Marketing
+
+- Direktlink: `https://apexpartners.tech/#pulscheck`
+- Ablauf: Quiz → Ergebnis on-screen → optional E-Mail → automatische Auswertung + interne Benachrichtigung
+- Follow-up: auf die interne Mail antworten oder Lead manuell kontaktieren
+
+---
+
+## Troubleshooting
+
+| Symptom | Ursache | Fix |
+|---------|---------|-----|
+| `404` auf `/api/pulscheck-lead` | Keine Vercel Function unter `api/` | Route anlegen / redeployen |
+| `missing-config` | Kein `RESEND_API_KEY` | In Vercel Env Vars setzen + redeploy |
+| `result-email-failed` | Resend lehnt ab | Domain/Absender in Resend prüfen, Resend-Logs checken |
+| Mail im Spam | DKIM/SPF/DMARC | DNS in Resend-Dashboard vervollständigen |
+| CORS-Fehler lokal | Origin nicht erlaubt | `localhost:3000` in ALLOWED_ORIGINS der API ergänzen |
