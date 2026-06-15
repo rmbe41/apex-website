@@ -1814,6 +1814,37 @@ button {
   opacity: 0.92;
 }
 
+@media (max-width: 599px) {
+  /* 2× rendern, zoom 0.5 → gleiche Optik, schärfer auf Retina; wie hero-logo-set */
+  .team-logo-cell img {
+    --team-logo-h: clamp(36px, 6vw, 56px);
+    height: calc(var(--team-logo-h) * 2);
+    zoom: 0.5;
+    transform: none;
+    -webkit-transform: none;
+    -webkit-backface-visibility: visible;
+    backface-visibility: visible;
+  }
+
+  .team-logo-cell--md img {
+    --team-logo-h: clamp(40px, 6.5vw, 62px);
+  }
+
+  .team-logo-cell--lg img {
+    --team-logo-h: clamp(46px, 7.2vw, 68px);
+  }
+
+  .team-logo-cell--xl img {
+    --team-logo-h: clamp(54px, 8.5vw, 82px);
+  }
+
+  @supports not (zoom: 1) {
+    .team-logo-cell img {
+      height: var(--team-logo-h, clamp(36px, 6vw, 56px));
+    }
+  }
+}
+
 /* Founder quote — above contact CTA */
 .founder-quote-section {
   position: relative;
