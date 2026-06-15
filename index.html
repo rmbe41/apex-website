@@ -934,7 +934,7 @@
                       </button>
                     </div>
                     <input type="text" name="_honey" class="pulscheck-lead-honey" tabindex="-1" autocomplete="off" aria-hidden="true" />
-                    <p class="pulscheck-lead-note" data-i18n="pulscheck.modal.leadPrivacy">Nur für den Versand Ihrer Ergebnisse. Kein Newsletter.</p>
+                    <p class="pulscheck-lead-note" data-i18n-html="pulscheck.modal.leadPrivacyHtml">Nur für den Versand Ihrer Ergebnisse. Kein Newsletter. <a href="#datenschutz">Datenschutzerklärung</a>.</p>
                     <p class="pulscheck-lead-error" id="pulscheck-lead-error" hidden role="alert"></p>
                   </form>
                 </div>
@@ -1032,7 +1032,7 @@
               Nutzung im Alltag.
             </p>
           </div>
-          <div class="footer-impressum">
+          <div class="footer-impressum" id="impressum">
             <p>
               <strong data-i18n="footer.legalName">Apex Partners</strong><br />
               <span data-i18n="footer.legalEntity">Marke der Robin Betz Unternehmensberatung</span><br />
@@ -1040,9 +1040,14 @@
               <span data-i18n="footer.legalAddress">Rottmannstraße 20, 80333 München</span>
             </p>
           </div>
+          <div class="footer-privacy" id="datenschutz">
+            <h3 class="footer-privacy-title" data-i18n="footer.privacyTitle">Datenschutz</h3>
+            <p class="footer-privacy-text" data-i18n-html="footer.privacyHtml"></p>
+          </div>
         </div>
         <div class="footer-bottom">
           <span data-i18n="footer.copyright">© 2026 Apex Partners</span>
+          <a href="#datenschutz" data-i18n="footer.privacyLink">Datenschutz</a>
           <a href="mailto:kontakt@apexpartners.tech" data-i18n="footer.email">kontakt@apexpartners.tech</a>
         </div>
       </div>

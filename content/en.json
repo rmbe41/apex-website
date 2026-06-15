@@ -70,6 +70,7 @@
       "leadSubmit": "Send",
       "leadSubmitting": "Sending…",
       "leadPrivacy": "Only used to send your results. No newsletter.",
+      "leadPrivacyHtml": "Only used to send your results. No newsletter. <a href=\"#datenschutz\">Privacy policy</a>.",
       "leadSuccess": "Thank you — we'll send your assessment shortly.",
       "leadErrorInvalid": "Please enter a valid email address.",
       "leadErrorGeneric": "Could not send. Please try again.",
@@ -704,6 +705,9 @@
     "legalEntity": "A brand of Robin Betz Unternehmensberatung",
     "legalRep": "represented by Robin Miguel Betz",
     "legalAddress": "Rottmannstraße 20, 80333 Munich, Germany",
+    "privacyTitle": "Privacy",
+    "privacyHtml": "When you optionally request your AI Pulse Check results by email, we process your email address and your answers and assessment to send the results and respond to follow-up questions. Legal basis: Art. 6(1)(b) GDPR (pre-contractual steps at your request). Recipient: Resend (email delivery, USA) under standard contractual clauses. Retention: until your request is handled, up to 12 months. You have rights of access, rectification, erasure, restriction, objection, and complaint to a supervisory authority. Contact: <a href=\"mailto:kontakt@apexpartners.tech\">kontakt@apexpartners.tech</a>.",
+    "privacyLink": "Privacy",
     "copyright": "© 2026 Apex Partners",
     "email": "kontakt@apexpartners.tech"
   },

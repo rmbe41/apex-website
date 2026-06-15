@@ -1956,6 +1956,34 @@ button {
   font-weight: 600;
 }
 
+.footer-privacy {
+  font-size: 13px;
+  color: var(--muted-2);
+  line-height: 1.65;
+  max-width: 36rem;
+}
+
+.footer-privacy-title {
+  margin: 0 0 0.5rem;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.footer-privacy-text {
+  margin: 0;
+}
+
+.footer-privacy-text a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-privacy-text a:hover {
+  color: var(--text);
+}
+
 .footer-bottom {
   margin-top: 40px;
   padding-top: 24px;
@@ -3723,6 +3751,16 @@ body.booking-modal-open {
   color: var(--muted-2);
   margin: 0.65rem 0 0;
   line-height: 1.45;
+}
+
+.pulscheck-lead-note a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.pulscheck-lead-note a:hover {
+  color: var(--navy);
 }
 
 .pulscheck-lead-error {

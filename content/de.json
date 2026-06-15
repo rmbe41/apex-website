@@ -70,6 +70,7 @@
       "leadSubmit": "Senden",
       "leadSubmitting": "Wird gesendet…",
       "leadPrivacy": "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter.",
+      "leadPrivacyHtml": "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter. <a href=\"#datenschutz\">Datenschutzerklärung</a>.",
       "leadSuccess": "Vielen Dank — wir senden Ihre Auswertung in Kürze.",
       "leadErrorInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "leadErrorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
@@ -658,6 +659,9 @@
     "legalEntity": "Marke der Robin Betz Unternehmensberatung",
     "legalRep": "vertreten durch Robin Miguel Betz",
     "legalAddress": "Rottmannstraße 20, 80333 München",
+    "privacyTitle": "Datenschutz",
+    "privacyHtml": "Beim optionalen Versand Ihres KI Puls-Check-Ergebnisses verarbeiten wir Ihre E-Mail-Adresse sowie Ihre Antworten und Auswertung, um Ihnen die Ergebnis-Mail zuzusenden und Sie bei Rückfragen zu erreichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme auf Ihre Anfrage). Empfänger: Resend (E-Mail-Versand, USA) auf Basis von Standardvertragsklauseln. Speicherdauer: bis zur Erledigung Ihrer Anfrage, längstens 12 Monate. Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Beschwerde bei einer Aufsichtsbehörde. Kontakt: <a href=\"mailto:kontakt@apexpartners.tech\">kontakt@apexpartners.tech</a>.",
+    "privacyLink": "Datenschutz",
     "copyright": "© 2026 Apex Partners",
     "email": "kontakt@apexpartners.tech"
   },

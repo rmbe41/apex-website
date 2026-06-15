@@ -217,10 +217,6 @@ export async function onRequestPost(context) {
   const origin = context.request.headers.get("Origin") || "";
   const { env } = context;
 
-  if (!env.RESEND_API_KEY) {
-    return jsonResponse({ ok: false, error: "missing-config" }, 500, origin);
-  }
-
   let body;
   try {
     body = await context.request.json();
@@ -246,6 +242,10 @@ export async function onRequestPost(context) {
   }
   if (!classification || !summary) {
     return jsonResponse({ ok: false, error: "invalid-payload" }, 400, origin);
+  }
+
+  if (!env.RESEND_API_KEY) {
+    return jsonResponse({ ok: false, error: "missing-config" }, 500, origin);
   }
 
   const fromEmail = env.PULSCHECK_FROM_EMAIL || "Apex Partners <kontakt@apexpartners.tech>";

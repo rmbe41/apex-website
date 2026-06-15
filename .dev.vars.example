@@ -1,0 +1,4 @@
+# Copy to .dev.vars for local Pages Functions (wrangler pages dev).
+# Never commit .dev.vars — it contains secrets.
+
+RESEND_API_KEY=re_your_api_key_here
