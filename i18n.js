@@ -39,14 +39,26 @@
     if (!translations) return;
     var t = translations[currentLang];
     document.documentElement.lang = currentLang;
-    document.title = t.meta.title;
 
     var metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", t.meta.description);
+    var legalPage = document.body.getAttribute("data-legal-page");
+    var legalMeta = legalPage ? resolve(t, "legal." + legalPage + ".meta") : null;
+
+    if (legalMeta) {
+      document.title = legalMeta.title;
+      if (metaDesc) metaDesc.setAttribute("content", legalMeta.description);
+    } else {
+      document.title = t.meta.title;
+      if (metaDesc) metaDesc.setAttribute("content", t.meta.description);
+    }
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var val = get(el.getAttribute("data-i18n"));
-      if (val != null) el.textContent = val;
+      if (val != null) {
+        var label = el.querySelector(".legal-page__back-label");
+        if (label) label.textContent = val;
+        else el.textContent = val;
+      }
     });
 
     document.querySelectorAll("[data-i18n-html]").forEach(function (el) {

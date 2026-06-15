@@ -72,7 +72,7 @@
       "leadSubmit": "Senden",
       "leadSubmitting": "Wird gesendet…",
       "leadPrivacy": "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter.",
-      "leadPrivacyHtml": "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter. <a href=\"#datenschutz\">Datenschutzerklärung</a>.",
+      "leadPrivacyHtml": "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter. <a href=\"datenschutz.html\">Datenschutzerklärung</a>.",
       "leadSuccess": "Vielen Dank — wir senden Ihre Auswertung in Kürze.",
       "leadErrorInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "leadErrorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
@@ -724,12 +724,7 @@
   },
   "footer": {
     "tagline": "KI-Systeme für Mittelstand & Scaleups — von der ersten Sichtung bis zur selbstverständlichen Nutzung im Alltag.",
-    "legalName": "Apex Partners",
-    "legalEntity": "Marke der Robin Betz Unternehmensberatung",
-    "legalRep": "vertreten durch Robin Miguel Betz",
-    "legalAddress": "Rottmannstraße 20, 80333 München",
-    "privacyTitle": "Datenschutz",
-    "privacyHtml": "Beim optionalen Versand Ihres KI Puls-Check-Ergebnisses verarbeiten wir Ihre E-Mail-Adresse sowie Ihre Antworten und Auswertung, um Ihnen die Ergebnis-Mail zuzusenden und Sie bei Rückfragen zu erreichen. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahme auf Ihre Anfrage). Empfänger: Resend (E-Mail-Versand, USA) auf Basis von Standardvertragsklauseln. Speicherdauer: bis zur Erledigung Ihrer Anfrage, längstens 12 Monate. Sie haben Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Beschwerde bei einer Aufsichtsbehörde. Kontakt: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a>.",
+    "imprintLink": "Impressum",
     "privacyLink": "Datenschutz",
     "copyright": "© 2026 Apex Partners",
     "email": "info@apexpartners.tech"
@@ -740,5 +735,25 @@
     "en": "English",
     "switchToEn": "Auf Englisch wechseln",
     "switchToDe": "Auf Deutsch wechseln"
+  },
+  "legal": {
+    "back": "Zurück",
+    "backHome": "Zur Startseite",
+    "impressum": {
+      "meta": {
+        "title": "Impressum | Apex Partners",
+        "description": "Impressum und Anbieterkennzeichnung von Apex Partners."
+      },
+      "title": "Impressum",
+      "bodyHtml": "<h2>Angaben gemäß § 5 TMG</h2>\n<p><strong>Apex Partners</strong><br>Marke der Robin Betz Unternehmensberatung<br>Inhaber: Robin Miguel Villavecchia Betz<br>Rottmannstraße 20<br>80333 München<br>Deutschland</p>\n<p><strong>Kontakt</strong><br>E-Mail: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a></p>\n<p><strong>Inhaltlich verantwortlich</strong><br>Robin Miguel Villavecchia Betz, Rottmannstraße 20, 80333 München</p>\n<p><strong>EU-Streitschlichtung</strong><br><a href=\"https://ec.europa.eu/consumers/odr/\" rel=\"noopener noreferrer\" target=\"_blank\">https://ec.europa.eu/consumers/odr/</a></p>\n<p><strong>Verbraucherstreitbeilegung</strong><br>Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. Apex Partners richtet sich ausschließlich an gewerbliche Kunden.</p>"
+    },
+    "privacy": {
+      "meta": {
+        "title": "Datenschutz | Apex Partners",
+        "description": "Datenschutzerklärung von Apex Partners."
+      },
+      "title": "Datenschutzerklärung",
+      "bodyHtml": "<h2>1. Verantwortlicher</h2>\n<p>Robin Betz Unternehmensberatung (Marke: Apex Partners)<br>Inhaber: Robin Miguel Villavecchia Betz, Rottmannstraße 20, 80333 München<br>E-Mail: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a></p>\n<h2>2. Datenerfassung beim Besuch der Website</h2>\n<p>Beim Aufruf unserer Website erfasst unser Hosting-Anbieter automatisch technische Verbindungsdaten: IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL sowie Datum und Uhrzeit des Abrufs. Diese Daten dienen ausschließlich dem sicheren Betrieb der Website, werden nicht mit anderen Datenquellen zusammengeführt und nach spätestens 30 Tagen automatisch gelöscht.</p>\n<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am fehlerfreien Betrieb).</p>\n<p>Hosting-Anbieter: Vercel Inc., 340 Pine Street, Suite 701, San Francisco, CA 94104, USA. Datenschutzerklärung: <a href=\"https://vercel.com/legal/privacy-policy\" rel=\"noopener noreferrer\" target=\"_blank\">https://vercel.com/legal/privacy-policy</a>. Da Vercel in den USA ansässig ist, kann es zu einer Übertragung personenbezogener Daten in die USA kommen. Die Übermittlung erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO. Der Auftragsverarbeitungsvertrag mit Vercel ist abrufbar unter <a href=\"https://vercel.com/legal/dpa\" rel=\"noopener noreferrer\" target=\"_blank\">https://vercel.com/legal/dpa</a>.</p>\n<p>Unsere Domain wird über IONOS (1&amp;1 IONOS SE, Elgendorfer Str. 57, 56410 Montabaur) registriert und verwaltet. Datenschutzerklärung: <a href=\"https://www.ionos.de/terms-gtc/datenschutzerklaerung/\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.ionos.de/terms-gtc/datenschutzerklaerung/</a></p>\n<h2>3. KI Puls-Check</h2>\n<p>Der KI Puls-Check läuft vollständig im Browser. Ihre Antworten werden ausschließlich lokal auf Ihrem Gerät ausgewertet und nicht an unsere Server übertragen oder gespeichert.</p>\n<p><strong>Optionaler E-Mail-Versand der Ergebnisse:</strong> Wenn Sie freiwillig Ihre E-Mail-Adresse angeben, verwenden wir diese ausschließlich für den einmaligen Versand Ihrer Auswertung. Die Adresse wird nicht für Marketingzwecke genutzt, nicht gespeichert und nicht an Dritte weitergegeben.</p>\n<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung). Widerruf jederzeit möglich: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a></p>\n<p>E-Mails werden über Resend Inc., 2261 Market Street #5020, San Francisco, CA 94114, USA versendet. Datenschutzerklärung: <a href=\"https://resend.com/legal/privacy-policy\" rel=\"noopener noreferrer\" target=\"_blank\">https://resend.com/legal/privacy-policy</a>. Da Resend in den USA ansässig ist, kann es zu einer Übertragung personenbezogener Daten in die USA kommen. Die Übermittlung erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO. Der Auftragsverarbeitungsvertrag mit Resend ist abrufbar unter <a href=\"https://resend.com/legal/dpa\" rel=\"noopener noreferrer\" target=\"_blank\">https://resend.com/legal/dpa</a>.</p>\n<h2>4. Kontaktaufnahme und Terminbuchung</h2>\n<p>Wenn Sie uns per E-Mail kontaktieren oder ein Erstgespräch vereinbaren, verarbeiten wir Ihre Angaben (Name, E-Mail-Adresse, ggf. Unternehmen und Anliegen) zur Bearbeitung Ihrer Anfrage und zur Vorbereitung einer möglichen Zusammenarbeit. Daten werden nach Abschluss des Vorgangs oder nach 6 Monaten ohne weiteren Kontakt gelöscht, soweit keine gesetzlichen Aufbewahrungsfristen entgegenstehen.</p>\n<p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an Geschäftsanbahnung).</p>\n<p>Zur Terminbuchung nutzen wir Cal.com Inc., 2261 Market Street #5792, San Francisco, CA 94114, USA. Datenschutzerklärung: <a href=\"https://cal.com/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">https://cal.com/privacy</a>. Da Cal.com in den USA ansässig ist, kann es zu einer Übertragung personenbezogener Daten in die USA kommen. Die Übermittlung erfolgt auf Grundlage der EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.</p>\n<h2>5. Cookies</h2>\n<p>Diese Website setzt ausschließlich technisch notwendige Cookies ein (z.&nbsp;B. zur Zwischenspeicherung des Puls-Check-Fortschritts im Browser). Es werden keine Tracking- oder Marketing-Cookies eingesetzt; ein Einwilligungs-Banner ist daher nicht erforderlich.</p>\n<h2>6. Datensicherheit</h2>\n<p>Die Datenübertragung zwischen Ihrem Browser und unserer Website erfolgt ausschließlich verschlüsselt (HTTPS/SSL). Unsere Infrastruktur befindet sich in Europa. Übertragungen in Drittländer finden nur in den oben genannten Fällen und auf Basis geeigneter Garantien (EU-Standardvertragsklauseln) statt.</p>\n<h2>7. Ihre Rechte</h2>\n<p>Sie haben nach DSGVO das Recht auf Auskunft (Art. 15), Berichtigung (Art. 16), Löschung (Art. 17), Einschränkung der Verarbeitung (Art. 18), Datenübertragbarkeit (Art. 20) sowie Widerspruch gegen die Verarbeitung (Art. 21). Anfragen richten Sie bitte an <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a>.</p>\n<h2>8. Beschwerderecht</h2>\n<p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Für uns zuständig ist:</p>\n<p>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>Promenade 18, 91522 Ansbach<br><a href=\"https://www.lda.bayern.de\" rel=\"noopener noreferrer\" target=\"_blank\">www.lda.bayern.de</a></p>\n<p><em>Stand: Juni 2026</em></p>"
+    }
   }
 }

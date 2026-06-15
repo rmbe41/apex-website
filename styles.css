@@ -1916,6 +1916,111 @@ button {
   color: #ffffff;
 }
 
+.footer-grid--legal {
+  max-width: 36rem;
+}
+
+.header-actions--legal {
+  margin-left: auto;
+}
+
+/* Legal pages */
+.legal-page {
+  min-height: calc(100vh - var(--nav-h));
+  padding-top: calc(var(--nav-h) + 20px);
+  padding-bottom: clamp(64px, 8vw, 96px);
+}
+
+.legal-page__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin: 0 0 1.25rem -0.35rem;
+  padding: 0.35rem 0.55rem 0.35rem 0.35rem;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--muted-2);
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.legal-page__back-icon {
+  flex-shrink: 0;
+  opacity: 0.65;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.legal-page__back-label {
+  line-height: 1;
+}
+
+.legal-page__back:hover {
+  color: var(--muted);
+  background: rgba(15, 45, 74, 0.04);
+}
+
+.legal-page__back:hover .legal-page__back-icon {
+  opacity: 0.9;
+  transform: translateX(-1px);
+}
+
+.legal-page__title {
+  margin: 0 0 1.75rem;
+  max-width: 42rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+}
+
+.legal-prose {
+  max-width: 42rem;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.legal-prose h2 {
+  margin: 2rem 0 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--navy);
+}
+
+.legal-prose h2:first-child {
+  margin-top: 0;
+}
+
+.legal-prose p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.legal-prose p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-prose a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-decoration-color: rgba(15, 45, 74, 0.35);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 0.15s ease;
+}
+
+.legal-prose a:hover {
+  text-decoration-color: var(--navy);
+}
+
+.legal-prose strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
 .site-footer .footer-impressum strong {
   color: rgba(248, 250, 252, 0.88);
 }

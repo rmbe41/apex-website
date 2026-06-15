@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datenschutz | Apex Partners</title>
+    <meta
+      name="description"
+      content="Datenschutzerklärung von Apex Partners."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-legal-page="privacy">
+    <header class="site-header site-header--surface-light" id="header">
+      <div class="header-inner">
+        <a class="logo-link" href="/" data-i18n-aria="nav.logoAria" aria-label="Apex Partners Startseite">
+          <img
+            id="header-logo"
+            src="assets/brand/Apex%20Partners%20-%20Logo%20Navy.svg"
+            alt="Apex Partners"
+            width="180"
+            height="28"
+          />
+        </a>
+        <div class="header-actions header-actions--legal">
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button
+              type="button"
+              class="lang-dropdown__trigger"
+              id="lang-toggle"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-controls="lang-menu"
+              data-i18n-aria="lang.choose"
+              aria-label="Sprache wählen"
+            >
+              <span class="lang-dropdown__current" id="lang-toggle-icon" aria-hidden="true">
+                <svg class="lang-flag lang-flag--de" viewBox="0 0 22 15" fill="none" aria-hidden="true">
+                  <rect width="22" height="5" fill="#000"/>
+                  <rect width="22" height="5" y="5" fill="#D00"/>
+                  <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                </svg>
+                <svg class="lang-flag lang-flag--en" viewBox="0 0 22 15" fill="none" aria-hidden="true" hidden>
+                  <rect width="22" height="15" fill="#B22234"/>
+                  <rect width="22" height="1.154" y="1.154" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="3.462" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="5.769" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="8.077" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="10.385" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="12.692" fill="#FFF"/>
+                  <rect width="8.8" height="8.077" fill="#3C3B6E"/>
+                </svg>
+              </span>
+              <svg class="lang-dropdown__chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="lang-dropdown__menu" id="lang-menu" role="listbox" hidden>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="de" role="option" aria-selected="true">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="5" fill="#000"/>
+                      <rect width="22" height="5" y="5" fill="#D00"/>
+                      <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                    </svg>
+                  </span>
+                  <span data-i18n="lang.de">Deutsch</span>
+                </button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="en" role="option" aria-selected="false">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="15" fill="#B22234"/>
+                      <rect width="22" height="1.154" y="1.154" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="3.462" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="5.769" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="8.077" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="10.385" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="12.692" fill="#FFF"/>
+                      <rect width="8.8" height="8.077" fill="#3C3B6E"/>
+                    </svg>
+                  </span>
+                  <span data-i18n="lang.en">English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="legal-page band band--light">
+      <div class="container">
+        <a href="/" class="legal-page__back" data-i18n="legal.back">
+          <svg class="legal-page__back-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M8.75 2.625L4.375 7l4.375 4.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="legal-page__back-label">Zurück</span>
+        </a>
+        <h1 class="legal-page__title" data-i18n="legal.privacy.title">Datenschutzerklärung</h1>
+        <div class="legal-prose" data-i18n-html="legal.privacy.bodyHtml"></div>
+      </div>
+    </main>
+
+    <footer class="site-footer band band--dark">
+      <div class="container">
+        <div class="footer-grid footer-grid--legal">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/brand/Apex%20Partners%20-%20Logo%20White.svg"
+                alt="Apex Partners"
+                width="160"
+                height="26"
+              />
+            </div>
+            <p class="footer-tag" data-i18n="footer.tagline">
+              KI-Systeme für Mittelstand & Scaleups — von der ersten Sichtung bis zur selbstverständlichen
+              Nutzung im Alltag.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copyright">© 2026 Apex Partners</span>
+          <a href="impressum.html" data-i18n="footer.imprintLink">Impressum</a>
+          <a href="datenschutz.html" data-i18n="footer.privacyLink">Datenschutz</a>
+          <a href="mailto:info@apexpartners.tech" data-i18n="footer.email">info@apexpartners.tech</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+  </body>
+</html>

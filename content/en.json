@@ -72,7 +72,7 @@
       "leadSubmit": "Send",
       "leadSubmitting": "Sending…",
       "leadPrivacy": "Only used to send your results. No newsletter.",
-      "leadPrivacyHtml": "Only used to send your results. No newsletter. <a href=\"#datenschutz\">Privacy policy</a>.",
+      "leadPrivacyHtml": "Only used to send your results. No newsletter. <a href=\"datenschutz.html\">Privacy policy</a>.",
       "leadSuccess": "Thank you — we'll send your assessment shortly.",
       "leadErrorInvalid": "Please enter a valid email address.",
       "leadErrorGeneric": "Could not send. Please try again.",
@@ -770,12 +770,7 @@
   },
   "footer": {
     "tagline": "AI systems for mid-market companies & scaleups — from first exploration to everyday use.",
-    "legalName": "Apex Partners",
-    "legalEntity": "A brand of Robin Betz Unternehmensberatung",
-    "legalRep": "represented by Robin Miguel Betz",
-    "legalAddress": "Rottmannstraße 20, 80333 Munich, Germany",
-    "privacyTitle": "Privacy",
-    "privacyHtml": "When you optionally request your AI Pulse Check results by email, we process your email address and your answers and assessment to send the results and respond to follow-up questions. Legal basis: Art. 6(1)(b) GDPR (pre-contractual steps at your request). Recipient: Resend (email delivery, USA) under standard contractual clauses. Retention: until your request is handled, up to 12 months. You have rights of access, rectification, erasure, restriction, objection, and complaint to a supervisory authority. Contact: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a>.",
+    "imprintLink": "Imprint",
     "privacyLink": "Privacy",
     "copyright": "© 2026 Apex Partners",
     "email": "info@apexpartners.tech"
@@ -786,5 +781,25 @@
     "en": "English",
     "switchToEn": "Switch to English",
     "switchToDe": "Switch to German"
+  },
+  "legal": {
+    "back": "Back",
+    "backHome": "Back to home",
+    "impressum": {
+      "meta": {
+        "title": "Imprint | Apex Partners",
+        "description": "Legal notice and provider information for Apex Partners."
+      },
+      "title": "Imprint",
+      "bodyHtml": "<h2>Information in accordance with § 5 TMG</h2>\n<p><strong>Apex Partners</strong><br>Brand of Robin Betz Unternehmensberatung<br>Owner: Robin Miguel Villavecchia Betz<br>Rottmannstraße 20<br>80333 Munich<br>Germany</p>\n<p><strong>Contact</strong><br>Email: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a></p>\n<p><strong>Responsible for content</strong><br>Robin Miguel Villavecchia Betz, Rottmannstraße 20, 80333 Munich</p>\n<p><strong>EU Dispute Resolution</strong><br><a href=\"https://ec.europa.eu/consumers/odr/\" rel=\"noopener noreferrer\" target=\"_blank\">https://ec.europa.eu/consumers/odr/</a></p>\n<p><strong>Consumer Dispute Settlement</strong><br>We are neither willing nor obliged to participate in dispute resolution proceedings before a consumer arbitration board. Apex Partners exclusively serves business clients.</p>"
+    },
+    "privacy": {
+      "meta": {
+        "title": "Privacy Policy | Apex Partners",
+        "description": "Privacy policy for Apex Partners."
+      },
+      "title": "Privacy Policy",
+      "bodyHtml": "<h2>1. Data Controller</h2>\n<p>Robin Betz Unternehmensberatung (Brand: Apex Partners), Owner: Robin Miguel Villavecchia Betz, Rottmannstraße 20, 80333 Munich, Email: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a></p>\n<h2>2. Data Collection When Visiting the Website</h2>\n<p>When you access our website, our hosting provider automatically collects technical connection data: IP address, browser type, operating system, referrer URL, and the date and time of the request. This data is used solely to ensure the secure operation of the website, is not merged with other data sources, and is automatically deleted after a maximum of 30 days.</p>\n<p>Legal basis: Art. 6(1)(f) GDPR (legitimate interest in error-free operation).</p>\n<p>Hosting provider: Vercel Inc., 340 Pine Street, Suite 701, San Francisco, CA 94104, USA. Privacy policy: <a href=\"https://vercel.com/legal/privacy-policy\" rel=\"noopener noreferrer\" target=\"_blank\">https://vercel.com/legal/privacy-policy</a>. As Vercel is based in the USA, personal data may be transferred to the United States. The transfer is carried out on the basis of EU Standard Contractual Clauses pursuant to Art. 46(2)(c) GDPR. The data processing agreement with Vercel is available at <a href=\"https://vercel.com/legal/dpa\" rel=\"noopener noreferrer\" target=\"_blank\">https://vercel.com/legal/dpa</a>.</p>\n<p>Our domain is registered and managed through IONOS (1&amp;1 IONOS SE, Elgendorfer Str. 57, 56410 Montabaur, Germany). Privacy policy: <a href=\"https://www.ionos.de/terms-gtc/datenschutzerklaerung/\" rel=\"noopener noreferrer\" target=\"_blank\">https://www.ionos.de/terms-gtc/datenschutzerklaerung/</a></p>\n<h2>3. AI Pulse Check</h2>\n<p>The AI Pulse Check runs entirely in your browser. Your answers are evaluated exclusively on your device and are not transmitted to or stored on our servers.</p>\n<p><strong>Optional email delivery of results:</strong> If you voluntarily provide your email address to receive your results, we use it solely for this one-time delivery. The address is not used for marketing purposes, not stored, and not shared with third parties.</p>\n<p>Legal basis: Art. 6(1)(a) GDPR (consent). You may withdraw your consent at any time: <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a></p>\n<p>Emails are sent via Resend Inc., 2261 Market Street #5020, San Francisco, CA 94114, USA. Privacy policy: <a href=\"https://resend.com/legal/privacy-policy\" rel=\"noopener noreferrer\" target=\"_blank\">https://resend.com/legal/privacy-policy</a>. As Resend is based in the USA, personal data may be transferred to the United States. The transfer is carried out on the basis of EU Standard Contractual Clauses pursuant to Art. 46(2)(c) GDPR. The data processing agreement with Resend is available at <a href=\"https://resend.com/legal/dpa\" rel=\"noopener noreferrer\" target=\"_blank\">https://resend.com/legal/dpa</a>.</p>\n<h2>4. Contact and Appointment Booking</h2>\n<p>When you contact us by email or schedule an initial consultation, we process the information you provide (name, email address, and if applicable, company and inquiry details) to handle your request and prepare for a potential collaboration. Data is deleted upon completion of the process or after 6 months without further contact, provided no statutory retention obligations apply.</p>\n<p>Legal basis: Art. 6(1)(b) GDPR (pre-contractual measures) and Art. 6(1)(f) GDPR (legitimate interest in initiating business relationships).</p>\n<p>For appointment booking we use Cal.com Inc., 2261 Market Street #5792, San Francisco, CA 94114, USA. Privacy policy: <a href=\"https://cal.com/privacy\" rel=\"noopener noreferrer\" target=\"_blank\">https://cal.com/privacy</a>. As Cal.com is based in the USA, personal data may be transferred to the United States. The transfer is carried out on the basis of EU Standard Contractual Clauses pursuant to Art. 46(2)(c) GDPR.</p>\n<h2>5. Cookies</h2>\n<p>This website uses only technically necessary cookies (e.g. to temporarily store your progress in the AI Pulse Check within your browser). No tracking or marketing cookies are used; a consent banner is therefore not required.</p>\n<h2>6. Data Security</h2>\n<p>All data transmitted between your browser and our website is encrypted (HTTPS/SSL). Our infrastructure is located in Europe. Transfers to third countries take place only in the cases described above and on the basis of appropriate safeguards (EU Standard Contractual Clauses).</p>\n<h2>7. Your Rights</h2>\n<p>Under the GDPR you have the right to access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20), and to object to processing (Art. 21). Please direct any requests to <a href=\"mailto:info@apexpartners.tech\">info@apexpartners.tech</a>.</p>\n<h2>8. Right to Lodge a Complaint</h2>\n<p>You have the right to lodge a complaint with a data protection supervisory authority. The authority responsible for us is:</p>\n<p>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)<br>Promenade 18, 91522 Ansbach, Germany<br><a href=\"https://www.lda.bayern.de\" rel=\"noopener noreferrer\" target=\"_blank\">www.lda.bayern.de</a></p>\n<p><em>Last updated: June 2026</em></p>"
+    }
   }
 }

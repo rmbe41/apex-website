@@ -155,7 +155,7 @@ Production-Test:
 - [ ] Gültiger Submit → Nutzer erhält Ergebnis-Mail (HTML + Plain-Text)
 - [ ] `info@apexpartners.tech` erhält Lead-Benachrichtigung; Reply-To = Lead
 - [ ] Englische Site → englische Mail
-- [ ] Datenschutz-Link im Formular → `#datenschutz` im Footer
+- [ ] Datenschutz-Link im Formular → `datenschutz.html`
 
 ---
 
