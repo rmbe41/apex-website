@@ -153,6 +153,47 @@ function buildResultHtml(data, siteUrl, lang) {
 </html>`;
 }
 __name(buildResultHtml, "buildResultHtml");
+function buildResultText(data, siteUrl, lang) {
+  const t = copy(lang);
+  const dimensions = Array.isArray(data.dimensions) ? data.dimensions : [];
+  const nextSteps = Array.isArray(data.nextSteps) ? data.nextSteps : [];
+  const score = Number(data.score);
+  const contactUrl = `${siteUrl}/#contact`;
+  const lines = [
+    t.resultTitle,
+    "",
+    `${score} ${t.scoreLabel}`,
+    data.classification,
+    data.summary,
+    "",
+    t.dimensionsTitle,
+    "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500"
+  ];
+  dimensions.forEach(function(d) {
+    lines.push(`${d.name}: ${d.score} / ${d.max}`);
+  });
+  if (nextSteps.length) {
+    lines.push("");
+    lines.push(t.nextStepsTitle);
+    lines.push("\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500");
+    nextSteps.forEach(function(step, index) {
+      lines.push(`${index + 1}. ${step.title}`);
+      lines.push(step.body);
+      lines.push("");
+    });
+  }
+  if (data.collaboration) {
+    lines.push(t.collaborationTitle);
+    lines.push("\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500");
+    lines.push(data.collaboration);
+    lines.push("");
+  }
+  lines.push(`${t.ctaLabel}: ${contactUrl}`);
+  lines.push("");
+  lines.push(t.footer);
+  return lines.join("\n");
+}
+__name(buildResultText, "buildResultText");
 function buildNotifyText(data, lang) {
   const t = copy(lang);
   const timestamp = formatTimestamp(lang);
@@ -220,9 +261,9 @@ async function onRequestPost(context) {
   if (!env.RESEND_API_KEY) {
     return jsonResponse({ ok: false, error: "missing-config" }, 500, origin);
   }
-  const fromEmail = env.PULSCHECK_FROM_EMAIL || "Apex Partners <kontakt@apexpartners.tech>";
-  const notifyEmail = env.PULSCHECK_NOTIFY_EMAIL || "kontakt@apexpartners.tech";
-  const siteUrl = (env.PULSCHECK_SITE_URL || "https://apexpartners.tech").replace(/\/$/, "");
+  const fromEmail = env.PULSCHECK_FROM_EMAIL || "Apex Partners <pulscheck@apexpartners.tech>";
+  const notifyEmail = env.PULSCHECK_NOTIFY_EMAIL || "info@apexpartners.tech";
+  const siteUrl = (env.PULSCHECK_SITE_URL || "https://www.apexpartners.tech").replace(/\/$/, "");
   const t = copy(language);
   const data = {
     email,
@@ -239,7 +280,8 @@ async function onRequestPost(context) {
       to: [email],
       reply_to: notifyEmail,
       subject: t.resultSubject(score, classification),
-      html: buildResultHtml(data, siteUrl, language)
+      html: buildResultHtml(data, siteUrl, language),
+      text: buildResultText(data, siteUrl, language)
     });
   } catch (error) {
     return jsonResponse({ ok: false, error: "result-email-failed" }, 502, origin);

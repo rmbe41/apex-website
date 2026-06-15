@@ -30,14 +30,14 @@ window.APEX_PULSCHECK_LEAD = { endpoint: "/api/pulscheck-lead" };
 1. Account auf [resend.com](https://resend.com) anlegen.
 2. Domain **`apexpartners.tech`** hinzufügen und verifizieren:
    - Resend → Domains → Add domain
-   - DNS-Einträge setzen (SPF, DKIM; DMARC empfohlen)
+   - DNS-Einträge setzen (SPF, DKIM; DMARC empfohlen — siehe Abschnitt **Zustellbarkeit** unten)
    - Status **Verified** abwarten
 3. API Key erzeugen:
    - Resend → API Keys → Create API Key
    - Berechtigung: **Sending access** (für den Start ausreichend)
    - Key kopieren (`re_...`) — wird nur einmal angezeigt
 4. Absender prüfen:
-   - Standard: `Apex Partners <info@apexpartners.tech>`
+   - Standard: `Apex Partners <pulscheck@apexpartners.tech>` (transaktional, Reply-To bleibt `info@`)
    - Domain muss verifiziert sein, sonst schlagen Sends fehl
 
 ---
@@ -60,9 +60,9 @@ Optional (haben sinnvolle Defaults im Code):
 
 | Name | Default |
 |------|---------|
-| `PULSCHECK_FROM_EMAIL` | `Apex Partners <info@apexpartners.tech>` |
+| `PULSCHECK_FROM_EMAIL` | `Apex Partners <pulscheck@apexpartners.tech>` |
 | `PULSCHECK_NOTIFY_EMAIL` | `info@apexpartners.tech` |
-| `PULSCHECK_SITE_URL` | `https://apexpartners.tech` |
+| `PULSCHECK_SITE_URL` | `https://www.apexpartners.tech` |
 
 4. **Save** → danach **Redeploy** auslösen (Deployments → … → Redeploy), damit die Variable aktiv ist.
 
@@ -152,7 +152,7 @@ Production-Test:
 - [ ] OPTIONS `/api/pulscheck-lead` → `204`
 - [ ] Ungültige E-Mail → `400` + `invalid-email`
 - [ ] Honeypot befüllt → `200` + `{ "ok": true }` (keine Mail)
-- [ ] Gültiger Submit → Nutzer erhält HTML-Ergebnis-Mail
+- [ ] Gültiger Submit → Nutzer erhält Ergebnis-Mail (HTML + Plain-Text)
 - [ ] `info@apexpartners.tech` erhält Lead-Benachrichtigung; Reply-To = Lead
 - [ ] Englische Site → englische Mail
 - [ ] Datenschutz-Link im Formular → `#datenschutz` im Footer
@@ -174,5 +174,64 @@ Production-Test:
 | `404` auf `/api/pulscheck-lead` | Keine Vercel Function unter `api/` | Route anlegen / redeployen |
 | `missing-config` | Kein `RESEND_API_KEY` | In Vercel Env Vars setzen + redeploy |
 | `result-email-failed` | Resend lehnt ab | Domain/Absender in Resend prüfen, Resend-Logs checken |
-| Mail im Spam | DKIM/SPF/DMARC | DNS in Resend-Dashboard vervollständigen |
+| Mail im Spam | DNS / Content / Reputation | Abschnitt **Zustellbarkeit** unten |
 | CORS-Fehler lokal | Origin nicht erlaubt | `localhost:3000` in ALLOWED_ORIGINS der API ergänzen |
+
+---
+
+## Zustellbarkeit (Mails landen im Spam)
+
+### Schnell-Check (lokal)
+
+```bash
+./scripts/check-pulscheck-dns.sh apexpartners.tech
+```
+
+Ziel: **0 FAIL**, möglichst keine WARN. Extern zusätzlich: [dns.email](https://dns.email/?domain=apexpartners.tech).
+
+### DNS-Einträge (IONOS / Domain-Registrar)
+
+Resend richtet **DMARC nicht automatisch** ein. Aktuell bei `apexpartners.tech`:
+
+| Record | Status | Empfohlener Wert |
+|--------|--------|------------------|
+| `resend._domainkey` (DKIM) | sollte vorhanden sein | aus Resend → Domains kopieren |
+| SPF auf Root | oft nur IONOS | `v=spf1 include:_spf-eu.ionos.com include:amazonses.com ~all` |
+| `_dmarc` (TXT) | oft ohne Reports | `v=DMARC1; p=none; rua=mailto:info@apexpartners.tech;` |
+
+- `p=none` = nur Monitoring, blockiert nichts (sicher für den Start)
+- Nach 1–2 Wochen stabiler Zustellung optional `p=quarantine`
+
+DNS-Änderungen brauchen bis zu 48 h Propagation. Resend → Domains muss **Verified** zeigen.
+
+### Code (bereits umgesetzt)
+
+Die Ergebnis-Mail wird als **HTML + Plain-Text** versendet (`buildResultText` in [`lib/pulscheck-lead.js`](../lib/pulscheck-lead.js)). Resend warnt sonst unter Deliverability Insights mit „Missing plain text versions“.
+
+Defaults im Code:
+
+- Absender: `pulscheck@apexpartners.tech` (Reply-To: `info@apexpartners.tech`)
+- Links in der Mail: `https://www.apexpartners.tech/#kontakt`
+
+In **Vercel → Environment Variables** dieselben Werte setzen (oder weglassen für Code-Defaults), dann **Redeploy**.
+
+### Resend Deliverability Insights
+
+1. Resend Dashboard → **Emails** → gesendete Puls-Check-Mail öffnen
+2. **Deliverability Insights** prüfen (DMARC, Plain-Text, Link-Domain)
+3. Warnungen der Reihe nach beheben
+
+### mail-tester.com
+
+1. Test-Adresse auf [mail-tester.com](https://www.mail-tester.com) holen
+2. Puls-Check auf Production durchspielen, Mail an diese Adresse senden
+3. Ziel: **Score ≥ 8/10**
+4. Fehlende Punkte (meist DMARC oder SPF) im Report abarbeiten
+
+### Wenn es danach noch im Spam landet
+
+- **Google Postmaster Tools** für `apexpartners.tech` einrichten (Domain-Reputation bei Gmail)
+- Subdomain `mail.apexpartners.tech` in Resend verifizieren und von dort senden
+- Domain Warm-up: erst wenige Mails/Tag, dann steigern
+- Gmail-Spam-Banner lesen („ähnlich wie früher als Spam“ → Reputation; „gefährlich“ → Links/Content prüfen)
+- Empfänger bitten, „Kein Spam“ zu markieren und Absender zu kontaktieren
