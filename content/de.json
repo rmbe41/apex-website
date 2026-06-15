@@ -1,0 +1,671 @@
+{
+  "meta": {
+    "title": "Apex Partners | KI-Systeme für den Mittelstand",
+    "description": "Funktionale KI-Systeme für Kernprozesse — diskret, messbar, maßgeschneidert für den Mittelstand."
+  },
+  "nav": {
+    "logoAria": "Apex Partners Startseite",
+    "navAria": "Hauptnavigation",
+    "mobileNavAria": "Mobile Navigation",
+    "pulscheck": "KI Puls-Check",
+    "useCases": "Use Cases",
+    "howItWorks": "Wie es funktioniert",
+    "contact": "Kontakt",
+    "cta": "Erstgespräch vereinbaren",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen"
+  },
+  "hero": {
+    "eyebrow": "KI-Systeme für den Mittelstand",
+    "titleHtml": "Ihre Erfahrung.<br />Skaliert durch <em>KI</em>.",
+    "lead": "Funktionale KI-Systeme für Ihr Unternehmen in wenigen Wochen. Diskret in der Umsetzung, messbar im Ergebnis, maßgeschneidert für den Mittelstand.",
+    "cta": "Erstgespräch vereinbaren",
+    "pulscheck": "KI Puls-Check",
+    "videoPlayAria": "Film über Apex Partners abspielen",
+    "customersAria": "Kunden und Partner",
+    "pills": [
+      "Umsetzungsstark",
+      "Ergebnisorientiert",
+      "Diskret",
+      "Datenkonform",
+      "Zukunftssicher"
+    ]
+  },
+  "pulscheck": {
+    "label": "KI Puls-Check",
+    "title": "Wo stehen Sie mit KI?",
+    "lead": "Wir zeigen Ihnen, wo KI in Ihrem Unternehmen heute bereits wirken könnte.",
+    "panelTitle": "Finden Sie es jetzt heraus!",
+    "previewOpenAria": "KI Puls-Check starten",
+    "metaAria": "Kurzinfos zum Fragebogen",
+    "metaDuration": "~10 Minuten",
+    "metaQuestions": "9 Fragen",
+    "metaBrowser": "Nur im Browser",
+    "leadHtml": "Der <strong>KI Puls-Check</strong>: neun Fragen, sechs Dimensionen — etwa zehn Minuten. Ihre Antworten werden lokal ausgewertet. Optional können Sie Ihr Ergebnis per E-Mail erhalten.",
+    "dimsAria": "Bewertete Dimensionen",
+    "cta": "KI-Puls Check starten",
+    "preview": {
+      "badge": "KI Puls-Check",
+      "questionCounter": "Frage 1 von 9",
+      "dimension": "Strategie & Führung"
+    },
+    "modal": {
+      "closeAria": "Fragebogen schließen",
+      "dialogTitle": "KI Puls-Check",
+      "badge": "KI Puls-Check",
+      "badgeResult": "KI Puls-Check · Ergebnis",
+      "title": "Los geht's",
+      "sub": "Antippen oder auswählen — Sie gelangen automatisch zur nächsten Frage. Am Ende sehen Sie eine Einordnung von 0 bis 100.",
+      "questionCounter": "Frage {{n}} von 9",
+      "back": "Zurück",
+      "next": "Weiter",
+      "nextFinal": "Zum Ergebnis",
+      "scoreMax": "von 100",
+      "nextStepsTitle": "Handlungsempfehlungen",
+      "contactBtn": "Ergebnis besprechen",
+      "leadTitle": "Ergebnis per E-Mail",
+      "leadDesc": "Optional: Wir senden Ihnen Ihre Auswertung inkl. Dimensionen — zum Nachlesen und Teilen.",
+      "leadEmailLabel": "E-Mail-Adresse",
+      "leadEmailPlaceholder": "name@unternehmen.de",
+      "leadSubmit": "Senden",
+      "leadSubmitting": "Wird gesendet…",
+      "leadPrivacy": "Nur für den Versand Ihrer Ergebnisse. Kein Newsletter.",
+      "leadSuccess": "Vielen Dank — wir senden Ihre Auswertung in Kürze.",
+      "leadErrorInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+      "leadErrorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut.",
+      "leadSubject": "KI Puls-Check Lead — {{label}} ({{score}}/100)",
+      "liveQuestion": "Frage {{n}} von 9. Dimension: {{dim}}. {{q}}",
+      "liveResult": "KI Puls-Check: {{score}} von 100 Punkten. Einordnung: {{label}}.",
+      "collaborationTitle": "Zusammenarbeit"
+    },
+    "data": {
+      "DIMENSIONS": [
+        "Strategie & Führung",
+        "Talent & Kultur",
+        "Tools & Infrastruktur",
+        "Prozesse & Betrieb",
+        "Produkt",
+        "Governance & Risiko"
+      ],
+      "STAGE_LABEL": [
+        "Stufe 0",
+        "Stufe 1",
+        "Stufe 2",
+        "Stufe 3",
+        "Stufe 4",
+        "Stufe 5"
+      ],
+      "questions": [
+        {
+          "dimension": "Strategie & Führung",
+          "q": "Welchen Stellenwert hat KI in Ihrer Unternehmensstrategie und Roadmap?",
+          "options": [
+            {
+              "score": 0,
+              "text": "KI ist kein Thema. Weder auf der Roadmap noch in der Planung."
+            },
+            {
+              "score": 1,
+              "text": "Einzelne verfolgen KI auf eigene Initiative, ohne Unternehmensauftrag."
+            },
+            {
+              "score": 2,
+              "text": "Es gibt eine erste KI-Initiative in einem Bereich, ohne Budget oder formale Verantwortung."
+            },
+            {
+              "score": 3,
+              "text": "KI steht auf der Unternehmensroadmap mit definiertem Budget und benannter Verantwortung."
+            },
+            {
+              "score": 4,
+              "text": "KI ist eine strategische Priorität mit Ressourcen, Zielen und Fortschrittscontrolling auf Führungsebene."
+            },
+            {
+              "score": 5,
+              "text": "KI prägt Produktentscheidungen, Hiring, Betrieb und die langfristige Unternehmenspositionierung."
+            }
+          ]
+        },
+        {
+          "dimension": "Strategie & Führung",
+          "q": "Wie aktiv nutzen Ihre Führungskräfte KI-Tools im eigenen Arbeitsalltag?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Keine Führungskraft nutzt KI-Tools im Arbeitsalltag."
+            },
+            {
+              "score": 1,
+              "text": "Einzelne Führungskräfte testen KI-Tools gelegentlich und informell."
+            },
+            {
+              "score": 2,
+              "text": "Mehrere Führungskräfte nutzen KI-Tools regelmäßig für eigene Aufgaben."
+            },
+            {
+              "score": 3,
+              "text": "Die Mehrheit der Führungsebene hat KI fest in den eigenen Workflow integriert."
+            },
+            {
+              "score": 4,
+              "text": "Führungskräfte setzen KI sichtbar ein und kommunizieren eine klare Nutzungserwartung ins Team."
+            },
+            {
+              "score": 5,
+              "text": "Führungskräfte gestalten mit KI aktiv Strukturen, Rollen und Prozesse in ihren Bereichen um."
+            }
+          ]
+        },
+        {
+          "dimension": "Talent & Kultur",
+          "q": "Welche Rolle spielt KI-Kompetenz in Ihrem Hiring und der Mitarbeiterentwicklung?",
+          "options": [
+            {
+              "score": 0,
+              "text": "KI-Kompetenz ist weder im Hiring noch in der Personalentwicklung ein Thema."
+            },
+            {
+              "score": 1,
+              "text": "KI wird vereinzelt in Stellenanzeigen erwähnt, ohne definiertes Anforderungsprofil."
+            },
+            {
+              "score": 2,
+              "text": "Es gibt einzelne, optionale KI-Schulungsangebote ohne strukturierten Rahmen."
+            },
+            {
+              "score": 3,
+              "text": "KI-Kompetenz ist für ausgewählte Rollen ein definiertes Kriterium in Hiring und Leistungsbeurteilung."
+            },
+            {
+              "score": 4,
+              "text": "KI-Skills sind Bewerbungsvoraussetzung und Teil des Onboardings für die Mehrheit der Rollen."
+            },
+            {
+              "score": 5,
+              "text": "KI-Kompetenz wird unternehmensweit systematisch gemessen, entwickelt und als Kernkompetenz geführt."
+            }
+          ]
+        },
+        {
+          "dimension": "Talent & Kultur",
+          "q": "Wie offen ist Ihre Organisation beim Experimentieren mit KI und beim Teilen von Erkenntnissen?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Es gibt keine Kultur des Austauschs zu KI. Erkenntnisse bleiben bei Einzelpersonen."
+            },
+            {
+              "score": 1,
+              "text": "Einzelne experimentieren mit KI, Erkenntnisse werden jedoch kaum weitergegeben."
+            },
+            {
+              "score": 2,
+              "text": "KI-Tipps und Erfahrungen werden informell über bestehende Kanäle ausgetauscht."
+            },
+            {
+              "score": 3,
+              "text": "Es gibt strukturierte, regelmäßige Formate (z. B. Demos, Task Forces) für den KI-Austausch."
+            },
+            {
+              "score": 4,
+              "text": "KI-Experimente sind ausdrücklich erwünscht und Learnings werden aktiv dokumentiert, auch bei Misserfolgen."
+            },
+            {
+              "score": 5,
+              "text": "Learnings aus KI-Experimenten fließen systematisch in Prozesse und Systeme ein. Iteration ist kulturell verankert."
+            }
+          ]
+        },
+        {
+          "dimension": "Tools & Infrastruktur",
+          "q": "Wie ist KI-Tooling und Infrastruktur in Ihrer Organisation aufgesetzt?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Mitarbeitende nutzen ausschließlich private Consumer-Accounts, unkoordiniert und ohne Unternehmensrahmen."
+            },
+            {
+              "score": 1,
+              "text": "Ein bis zwei KI-Tools sind lizenziert und werden von einzelnen Teams eingesetzt."
+            },
+            {
+              "score": 2,
+              "text": "Ein einheitliches KI-Tool-Set ist definiert, lizenziert, mit Nutzungsrichtlinien ausgerollt und aktiv gemanagt."
+            },
+            {
+              "score": 3,
+              "text": "KI-Tools sind unternehmensweiter Standard mit SSO-Integration, Compliance-Freigabe und strukturierter Adoption."
+            },
+            {
+              "score": 4,
+              "text": "Eigene Integrationen, Prompt-Bibliotheken oder interne Copilots sind auf Basis externer APIs entwickelt."
+            },
+            {
+              "score": 5,
+              "text": "Das Unternehmen betreibt eigene Modelle, Fine-Tuning oder proprietäre KI-Infrastruktur für spezifische Anwendungsfälle."
+            }
+          ]
+        },
+        {
+          "dimension": "Tools & Infrastruktur",
+          "q": "Wie messen Sie die Wirkung und den ROI von KI in Ihrer Organisation?",
+          "options": [
+            {
+              "score": 0,
+              "text": "KI-Wirkung wird nicht gemessen. Es gibt keine Kennzahlen oder Zielvorgaben."
+            },
+            {
+              "score": 1,
+              "text": "Es werden Nutzungsdaten erfasst (z. B. Logins, Lizenznutzung), aber keine Business-Outcomes."
+            },
+            {
+              "score": 2,
+              "text": "Einzelne Teams erfassen KI-Metriken eigenständig, ohne unternehmensweiten Standard."
+            },
+            {
+              "score": 3,
+              "text": "Gemeinsam definierte Kennzahlen (z. B. eingesparte Zeit, Automatisierungsgrad) werden regelmäßig erfasst und geteilt."
+            },
+            {
+              "score": 4,
+              "text": "KI-Ergebnisse werden auf Führungsebene mit klaren KPIs berichtet und fließen aktiv in Entscheidungen ein."
+            },
+            {
+              "score": 5,
+              "text": "KI-Outcomes sind direkt mit OKRs, Ressourcenplanung und Investitionsentscheidungen verknüpft."
+            }
+          ]
+        },
+        {
+          "dimension": "Prozesse & Betrieb",
+          "q": "Wie grundlegend haben Sie operative Prozesse mit und für KI neu gestaltet?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Bestehende Prozesse sind unverändert. KI wird punktuell wie ein weiteres Tool eingesetzt."
+            },
+            {
+              "score": 1,
+              "text": "Einzelne Mitarbeitende haben persönliche Arbeitsabläufe mit KI leicht angepasst, ohne Abstimmung im Team."
+            },
+            {
+              "score": 2,
+              "text": "In ausgewählten Bereichen wurden erste Prozesse mit KI-Unterstützung neu gestaltet."
+            },
+            {
+              "score": 3,
+              "text": "Zentrale Unternehmensprozesse (z. B. Vertrieb, Support, Entwicklung) wurden mit KI grundlegend redesignt."
+            },
+            {
+              "score": 4,
+              "text": "Der Großteil der operativen Kernprozesse ist KI-nativ ausgelegt. Menschen bearbeiten Ausnahmen und Randfälle."
+            },
+            {
+              "score": 5,
+              "text": "Ein unternehmensweites Prozess-Audit ist etabliert. Die überwiegende Mehrheit aller Prozesse ist KI-first konzipiert."
+            }
+          ]
+        },
+        {
+          "dimension": "Produkt",
+          "q": "Wie tief ist KI in Ihr Kernprodukt oder Ihre Kernleistung eingebettet?",
+          "options": [
+            {
+              "score": 0,
+              "text": "KI ist nicht Teil des Produkt- oder Leistungsangebots."
+            },
+            {
+              "score": 1,
+              "text": "Es gibt ein einzelnes KI-Feature, das experimentell eingesetzt oder selten genutzt wird."
+            },
+            {
+              "score": 2,
+              "text": "KI ist sichtbar im Angebot integriert und erzeugt bei einem Teil der Kunden messbaren Mehrwert."
+            },
+            {
+              "score": 3,
+              "text": "KI trägt wesentlich zur Kerndifferenzierung bei und ist Teil des zentralen Wertversprechens."
+            },
+            {
+              "score": 4,
+              "text": "KI ist zentrales Produktelement. Die Mehrheit der Nutzer interagiert regelmäßig und aktiv damit."
+            },
+            {
+              "score": 5,
+              "text": "KI ist das Produkt. Differenzierung und Wettbewerbsvorteil sind ohne KI strukturell nicht denkbar."
+            }
+          ]
+        },
+        {
+          "dimension": "Governance & Risiko",
+          "q": "Wie steuern Sie Risiken, Datensicherheit und verantwortungsvolle Nutzung von KI?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Es gibt keine Richtlinien zum Umgang mit KI, Daten oder Sicherheit."
+            },
+            {
+              "score": 1,
+              "text": "Es existieren informelle Verhaltensregeln, jedoch ohne Dokumentation oder Verbindlichkeit."
+            },
+            {
+              "score": 2,
+              "text": "Grundlegende schriftliche Nutzungsrichtlinien für KI-Tools sind für Mitarbeitende verfügbar."
+            },
+            {
+              "score": 3,
+              "text": "Eine formale KI-Richtlinie inklusive Datenschutz, zulässiger Nutzung und Freigabeprozessen ist veröffentlicht."
+            },
+            {
+              "score": 4,
+              "text": "Ein aktives Governance-Framework ist implementiert: Richtlinien, Freigaben und Incident-Prozesse werden gelebt."
+            },
+            {
+              "score": 5,
+              "text": "Ein KI-Ethik-Rahmen ist etabliert mit regelmäßigen Audits, definierten Verantwortlichkeiten und einer benannten Responsible-AI-Funktion."
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "min": 0,
+          "max": 20,
+          "label": "KI Beobachter",
+          "desc": "KI existiert im Unternehmen auf konzeptioneller Ebene. Das ist die Realität der Mehrheit der Unternehmen im deutschsprachigen Raum. Das eigentliche Risiko liegt nicht im späten Start, sondern im falschen Einstieg: ein KI-Strategieworkshop, ein Hackathon, eine Tool-Evaluierung. Keines davon erzeugt echte Wirkung. Was zählt, ist ein reales Problem, ein klar abgegrenzter Prozess und ein messbares Ergebnis innerhalb von 30 Tagen.",
+          "collaboration": "Gemeinsam analysieren wir Ihre Kernprozesse systematisch auf KI-Hebel, priorisiert nach Aufwand und Impact. Im Rahmen eines gemeinsamen Sprints entwickeln wir Ihren ersten Proof of Value, der intern überzeugt. Kein Konzept. Sondern ein Ergebnis."
+        },
+        {
+          "min": 21,
+          "max": 40,
+          "label": "KI Erkunder",
+          "desc": "Es gibt Bewegung, aber keinen klaren Kurs. Einzelne Tools werden genutzt, erste Gespräche auf Führungsebene haben stattgefunden. Es gibt Begeisterte und Enttäuschte. Das Kernproblem: Man automatisiert Symptome, nicht Ursachen. Weil die Ergebnisse hinter den Erwartungen bleiben, erodiert der interne Rückhalt, bevor er wirklich genutzt wurde. In dieser Phase werden mehr KI-Budgets ohne Wirkung eingesetzt als in jeder anderen. Nicht wegen mangelnder Technologie, sondern wegen falschen Fokus.",
+          "collaboration": "Gemeinsam identifizieren wir ein bis zwei Use Cases mit realem Hebel und entwickeln sie strukturiert: mit Datencheck, Erfolgskriterium und einer Rollout-Logik, die auch das mittlere Management einbindet. Die typischen Fallstricke dieser Phase kennen wir aus eigener Projekterfahrung."
+        },
+        {
+          "min": 41,
+          "max": 60,
+          "label": "KI Praktiker",
+          "desc": "Sie befinden sich in der anspruchsvollsten Phase der KI-Transformation. Es gibt genug Erfolge, um fortzufahren, aber zu wenig Kohärenz, um zu skalieren. Das typische Bild: Mehrere Teams nutzen unterschiedliche Tools nach eigenen Methoden, ohne organisationsübergreifenden Austausch. Es existieren KI-Projekte, aber kein KI-Operating-Model. Das ist der entscheidende Unterschied zwischen taktischen Einzelerfolgen und strukturellem Wettbewerbsvorteil. Die meisten Unternehmen auf diesem Niveau glauben, sie benötigen mehr Tools. Sie benötigen mehr Klarheit.",
+          "collaboration": "Gemeinsam entwickeln wir mit Ihnen das Operating Model, das aus Einzelprojekten ein kohärentes System macht: mit Governance-Struktur, Tooling-Logik und einer Roadmap, die Führung und Teams gleichermaßen trägt."
+        },
+        {
+          "min": 61,
+          "max": 80,
+          "label": "KITreiber",
+          "desc": "Sie sind messbar besser aufgestellt als der Wettbewerb. Das ist eine solide Ausgangsposition, aber kein nachhaltiger Vorsprung. Das zentrale Risiko auf dieser Stufe ist die Verwechslung von Aktivität mit Wirkung: viele KI-Projekte, wenige davon schwer zu replizieren. Effizienzgewinne werden von Wettbewerbern schneller eingeholt, als viele Unternehmen antizipieren. Was strukturell Bestand hat, sind proprietäre Datenvorteile, eingebettete Entscheidungslogik und Systeme, die sich durch kontinuierliche Nutzung selbst verbessern. Auf dieser Stufe gewinnen nicht die, die am meisten unternehmen, sondern die, die am klarsten priorisieren.",
+          "collaboration": "Gemeinsam begleiten wir Sie beim Sprung von einer guten Position zu einem strukturell verteidigbaren Vorsprung: mit einer ehrlichen Bestandsaufnahme, einer Moat-Analyse und einer Roadmap, die auf nachhaltigem Vorteil aufgebaut ist."
+        },
+        {
+          "min": 81,
+          "max": 100,
+          "label": "KI Beobachter",
+          "desc": "Sie operieren an der technologischen Grenze. Genau das ist Ihr Risiko. Die Modelle, auf denen Ihre Systeme beruhen, entwickeln sich schneller als Ihre IT-Zyklen. Was heute einen Wissensvorsprung darstellt, ist in 18 Monaten Industriestandard. Was strukturell Bestand hat, sind Kultur, Daten, Talente und Entscheidungsarchitektur — aber nur, wenn diese konsequent aufgebaut wurden. Die gefährlichste Phase für einen Vorreiter ist Selbstzufriedenheit. Unternehmen, die vor wenigen Jahren als digitale Vorreiter galten, sind heute vielfach Teil des Mittelfelds.",
+          "collaboration": "Gemeinsam arbeiten wir mit Ihnen an dem, was auf dieser Stufe wirklich zählt: einem Vorsprung, der sich selbst trägt. Von der Talent-Architektur über proprietäre Modellansätze bis zur Frage, ob und wie Ihre KI-Fähigkeiten selbst zur Marktleistung werden können."
+        }
+      ],
+      "movesByLevel": {
+        "KIBeobachter": [
+          {
+            "icon": "target",
+            "title": "Stellen Sie die richtigen Ausgangsfragen",
+            "body": "Nicht „Wie können wir KI einsetzen?“, sondern „Warum kostet dieser Prozess drei Wochen, obwohl er das nicht müsste?“ KI ist die Antwort auf ein operatives Problem, kein Selbstzweck."
+          },
+          {
+            "icon": "chart",
+            "title": "Erzielen Sie einen Proof of Value in 30 Tagen",
+            "body": "Kein Konzeptpapier, kein Pilotentwurf. Ein funktionierendes Ergebnis, auch wenn es noch unvollständig ist. Nur reale Ergebnisse erzeugen den internen Rückhalt, den weitere Schritte erfordern."
+          },
+          {
+            "icon": "users",
+            "title": "Benennen Sie einen Verantwortlichen mit Entscheidungsgewalt",
+            "body": "Keine koordinierende Nebenrolle, sondern eine Person mit Zeit und Mandat. KI als Nebentätigkeit zu betreiben bedeutet, es nicht wirklich zu betreiben."
+          },
+          {
+            "icon": "trending",
+            "title": "Beginnen Sie sofort mit Messung",
+            "body": "Zeitersparnis, Fehlerquote, Output-Volumen: eine konkrete Kennzahl. Was nicht gemessen wird, wird nicht weiter finanziert."
+          }
+        ],
+        "KI Erkunder": [
+          {
+            "icon": "tool",
+            "title": "Reduzieren Sie die Tool-Vielfalt",
+            "body": "Inventarisieren Sie den aktuellen Einsatz und konsolidieren Sie auf zwei bis drei Plattformen. Eine größere Tool-Anzahl erhöht den Koordinationsaufwand, nicht den Fortschritt."
+          },
+          {
+            "icon": "target",
+            "title": "Definieren Sie einen Piloten mit klarem Erfolgskriterium",
+            "body": "Ein Pilot ohne vorab definierten Maßstab ist kein Pilot, sondern ein Experiment auf Kosten der eigenen Glaubwürdigkeit."
+          },
+          {
+            "icon": "users",
+            "title": "Hören Sie dem mittleren Management zu",
+            "body": "Nicht mit dem Ziel zu überzeugen, sondern zu verstehen, wo der Widerstand tatsächlich sitzt. Er manifestiert sich selten im C-Level."
+          },
+          {
+            "icon": "map",
+            "title": "Klären Sie den Datenzugang vor der Lösungswahl",
+            "body": "Der überwiegende Teil der KI-Projekte scheitert nicht an der Technologie, sondern daran, dass relevante Daten schlicht nicht zugänglich sind."
+          }
+        ],
+        "KI Praktiker": [
+          {
+            "icon": "map",
+            "title": "Entwickeln Sie ein Operating Model, kein Strategiepapier",
+            "body": "Die zentralen Fragen lauten: Wer trifft welche Entscheidungen? Welche Tools gelten als organisationsweiter Standard? Wie werden Erkenntnisse systematisch geteilt? Diese Fragen ermöglichen Skalierung."
+          },
+          {
+            "icon": "refresh",
+            "title": "Identifizieren Sie Ihren Compound-Use-Case",
+            "body": "Welcher KI-Einsatz gewinnt mit jedem Monat an Wert, weil er Daten akkumuliert oder Prozesse kontinuierlich verbessert? Das ist der strategische Kern Ihrer KI-Agenda."
+          },
+          {
+            "icon": "bulb",
+            "title": "Machen Sie interne Erfolge sichtbar",
+            "body": "Nichts beschleunigt den kulturellen Wandel stärker als ein Kollege, der messbar acht Stunden pro Woche einspart und darüber berichtet."
+          },
+          {
+            "icon": "api",
+            "title": "Treffen Sie die Make-or-Buy-Entscheidung",
+            "body": "Den Aufbau eigener KI-Kompetenz oder die Zusammenarbeit mit externen Spezialisten zu vertagen kostet am Ende mehr als eine klare Entscheidung."
+          }
+        ],
+        "KI Treiber": [
+          {
+            "icon": "chart",
+            "title": "Unterscheiden Sie Effizienz von strukturellem Vorteil",
+            "body": "Klassifizieren Sie Ihre KI-Initiativen danach, was Zeit spart und was einen Vorteil schafft, den Wettbewerber nicht replizieren können. Investieren Sie bewusst asymmetrisch zugunsten von Letzterem."
+          },
+          {
+            "icon": "robot",
+            "title": "Bauen Sie auf Ihren eigenen Daten auf",
+            "body": "Ihr größtes KI-Asset sind nicht die eingesetzten Werkzeuge, sondern die Daten, über die nur Sie verfügen. Nutzen Sie diese, um Lösungen zu entwickeln, die strukturell nicht kopierbar sind."
+          },
+          {
+            "icon": "shield",
+            "title": "Klären Sie Governance, bevor Fehler öffentlich werden",
+            "body": "Datenschutz, Modellverantwortlichkeit, Output-Qualität: Wer diese Fragen nicht vorab geregelt hat, zahlt bei der ersten fehlerhaften KI-Entscheidung mehr als nur einen Reputationsschaden."
+          },
+          {
+            "icon": "world",
+            "title": "Machen Sie KI für Ihre Kunden erlebbar",
+            "body": "Spüren Ihre Kunden den Unterschied? Wenn nicht, lohnt sich die Frage, wo KI im Kundenerlebnis den größten Mehrwert schaffen würde."
+          }
+        ],
+        "KI Vorreiter": [
+          {
+            "icon": "trending",
+            "title": "Bewerten Sie Ihren Vorsprung realistisch",
+            "body": "Welche Ihrer KI-Fähigkeiten sind in zwölf Monaten noch schwer zu replizieren? Nur dort rechtfertigt sich weiteres Investment in Marktführerschaft."
+          },
+          {
+            "icon": "school",
+            "title": "Betrachten Sie KI-Talent als kritischste Säule",
+            "body": "Nicht Budget, nicht Technologie. Entwickeln Sie aktiv eine differenzierte Arbeitgeberpositionierung in diesem Segment, bevor Sie im Wettbewerb um dieselben Profile unterliegen."
+          },
+          {
+            "icon": "trophy",
+            "title": "Prüfen Sie KI als eigenständiges Produkt",
+            "body": "Ihre internen Fähigkeiten sind möglicherweise für Kunden oder den Markt direkt werthaltig. Eine Vermarktungsoption, die die meisten Unternehmen auf dieser Stufe nicht konsequent verfolgen."
+          },
+          {
+            "icon": "world",
+            "title": "Investieren Sie in externe Frühwarnsignale",
+            "body": "Forschungspartnerschaften, Zugänge zu neuen Modellen und strategische Netzwerke in der KI-Community: Wer die nächste Entwicklungswelle früh erkennt, kann sie mitgestalten."
+          }
+        ]
+      },
+      "mailto": {
+        "subject": "KI Puls-Check — {{label}} ({{score}}/100)",
+        "body": "Hallo Apex Partners,\n\nmein KI Puls-Check Ergebnis: {{score}}/100 ({{label}}).\n\nIch möchte mein KI Puls-Check Ergebnis gern kurz mit Ihnen besprechen.\n\nViele Grüße"
+      }
+    }
+  },
+  "useCases": {
+    "0": {
+      "title": "Context Layer",
+      "tagline": "Der Grundstein für angewandte KI in Ihrem Unternehmen.",
+      "challenge": "KI ist nur so nützlich wie die Informationen, auf die sie zugreifen kann. In den meisten Unternehmen ist dieses Wissen über Systeme, Abteilungen, Dokumente und Personen verstreut und damit für KI nicht nutzbar. Das ändern wir.",
+      "buildItems": [],
+      "outcome": "Schnellerer Informationszugang, präzisere KI Agenten, Wissen bleibt im Unternehmen unabhängig von Fluktuation.",
+      "suitable": "Unternehmen mit verteilten Teams, komplexen Systemlandschaften oder laufenden KI-Projekten mit unbefriedigenden Ergebnissen."
+    },
+    "1": {
+      "title": "Unternehmenssteuerung",
+      "tagline": "Fundierte Entscheidungen. Auf Basis aller verfügbaren Informationen.",
+      "challenge": "Führungskräfte entscheiden täglich auf Basis unvollständiger Informationen. KI schließt diese Lücke.",
+      "buildItems": [],
+      "outcome": "Solidere Entscheidungsbasis, kürzere Wege von Daten zu Handlungsempfehlungen, strategische Weichen werden früher gestellt.",
+      "suitable": "Geschäftsführung, Vorstand, C-Level sowie Strategie- und Operations Teams mit komplexen Steuerungskontext."
+    },
+    "2": {
+      "title": "Vertrieb & Kundengewinnung",
+      "tagline": "Mehr Umsatz je Mitarbeitenden. Weniger Aufwand je Abschluss.",
+      "challenge": "Vertriebsteams verbringen zu viel Zeit mit Datenpflege, Recherche und Nachverfolgung, abseits des eigentlichen Verkaufens. KI übernimmt diese Last.",
+      "buildItems": [],
+      "outcome": "Höheres Outreach Volumen, weniger CRM-Pflege, zuverlässigere Umsatzprognosen.",
+      "suitable": "B2B-Vertrieb, Innendienst Teams, Unternehmen mit komplexen Verkaufszyklen."
+    },
+    "3": {
+      "title": "HR & Recruiting",
+      "tagline": "Schnellere Besetzungen. Fundiertere Entscheidungen.",
+      "challenge": "Offene Stellen bleiben länger unbesetzt als nötig. Nicht weil Kandidaten fehlen, sondern weil Vorauswahl, Koordination und Einarbeitung das Personalteam binden.",
+      "buildItems": [],
+      "outcome": "Kürzere Zeit bis zur Stellenbesetzung, bessere Vergleichbarkeit von Bewerbern, Personalteams mit mehr Kapazität für strategische Arbeit.",
+      "suitable": "Unternehmen in Wachstumsphasen, Personalabteilungen mit hohem Bewerbungsvolumen, Branchen mit spezifischen Anforderungsprofilen."
+    },
+    "4": {
+      "title": "Kundenservice",
+      "tagline": "Mehr Anfragen lösen. Mit dem gleichen Team.",
+      "challenge": "Serviceaufwand wächst proportional zum Kundenstamm. Mit KI lassen sich diese beiden entkoppeln, ohne Qualitätseinbußen.",
+      "buildItems": [],
+      "outcome": "Kunden Anfragen ohne manuellen Eingriff gelöst, schnellere Reaktionszeiten, Serviceteams fokussieren auf Fälle mit echtem Mehrwert.",
+      "suitable": "Firmen mit hohem Ticket Volumen, kritischen Kundenbeziehungen oder wachsendem Kundenstamm bei gleichbleibendem Team."
+    },
+    "5": {
+      "title": "Finanzen",
+      "tagline": "Weniger manuelle Finance Operations. Bessere Entscheidungen.",
+      "challenge": "Finanzabteilungen verlieren durch repetitive Aufgaben Kapazität für das, was zählt: Analyse & Steuerung.",
+      "buildItems": [],
+      "outcome": "Reduzierter manueller Aufwand, schnellere Monatsabschlüsse, mehr Kapazität für strategische Finanzsteuerung.",
+      "suitable": "CFO Abteilung, Organisationen mit repetitiven Finanzprozessen, Finanzverantwortliche vor oder nach Restrukturierungen."
+    },
+    "6": {
+      "title": "Recht & Regulatorik",
+      "tagline": "Rechtssicherheit ohne den üblichen Zeitaufwand.",
+      "challenge": "In regulierten Märkten zählt juristische Präzision und trotzdem muss das Tempo stimmen.",
+      "buildItems": [],
+      "outcome": "Vertragsprüfung in einem Bruchteil der Zeit, frühere Risikoerkennung, freie juristische Kapazität für komplexe Fragestellungen.",
+      "suitable": "Unternehmen unter hohem regulatorischen Druck, deren Rechts- oder Compliance Abteilungen ihre Kapazität für wiederkehrende Aufgaben nutzen."
+    },
+    "7": {
+      "title": "Marketing",
+      "tagline": "Konsistente Markenkommunikation. In größerem Maßstab.",
+      "challenge": "Hochwertige Inhalte zu produzieren kostet Zeit. KI verändert das Verhältnis zwischen Aufwand und Ergebnis grundlegend.",
+      "buildItems": [],
+      "outcome": "Höherer Content-Output, präzisere Zielgruppenansprache, mehr Kapazität für Konzeption & Strategie.",
+      "suitable": "Unternehmen mit hohen Kommunikationszielen, Marketing Teams unter Druck, Organisationen mit mehreren Zielgruppen oder Märkten."
+    },
+    "8": {
+      "title": "Daten & Analytics",
+      "tagline": "Datenbasierte Entscheidungen für alle, nicht nur für Spezialisten.",
+      "challenge": "Viele Unternehmen verfügen über eine gute Datenbasis, aber der Zugang bleibt wenigen beschränkt. KI öffnet diesen Zugang ohne Qualitätseinbußen.",
+      "buildItems": [],
+      "outcome": "Fachabteilungen beantworten Fragen eigenständig, Auswertungen breiter zugänglich, mehr Datenspezialisten Kapazität.",
+      "suitable": "Unternehmen mit bestehenden Analytics Tools, Abteilungen mit regelmäßigem Analysebedarf, Organisationen mit wachsender Datenlandschaft."
+    },
+    "label": "Use Cases",
+    "title": "Was wir gemeinsam aufbauen.",
+    "lead": "Ein Überblick über die Bereiche, in denen wir Sie begleiten – von der Strategie bis zur Umsetzung.",
+    "navLabel": "Bereiche",
+    "tabsAria": "Use Cases",
+    "labels": {
+      "challenge": "Herausforderung",
+      "build": "Was wir gemeinsam aufbauen",
+      "outcome": "Typische Ergebnisse",
+      "suitable": "Geeignet für"
+    },
+    "tab": {
+      "0": "Context Layer",
+      "1": "Unternehmenssteuerung",
+      "2": "Vertrieb & Kundengewinnung",
+      "3": "HR & Recruiting",
+      "4": "Kundenservice",
+      "5": "Finanzen",
+      "6": "Recht & Regulatorik",
+      "7": "Marketing",
+      "8": "Daten & Analytics"
+    }
+  },
+  "principles": {
+    "label": "Wie es funktioniert",
+    "title": "Wie wir arbeiten",
+    "lead": "Drei Grundsätze. Ein gemeinsamer Weg.",
+    "step1Title": "Für Ihr Unternehmen entwickelt.",
+    "step1Body": "Jede Lösung entsteht im Dialog mit Ihren Fachbereichen – entwickelt für Ihre konkreten Abläufe, nicht für den allgemeinen Fall.",
+    "step2Title": "In Ihre bestehenden Systeme integriert.",
+    "step2Body": "Wir verbinden neue Technologie mit den Systemen, in denen Ihre Prozesse bereits laufen – ohne Brüche, ohne Parallelstrukturen.",
+    "step3Title": "Ihre Daten bleiben unter Ihrer Kontrolle.",
+    "step3Body": "Ihre Daten bleiben in Europa. Die Infrastruktur bleibt unter Ihrer Kontrolle. Kein Lock-in, keine versteckten Abhängigkeiten."
+  },
+  "team": {
+    "label": "Das Team",
+    "title": "Die Experten für Ihr Projekt",
+    "intro": "Apex Partners ist ein Netzwerk von ehemaligen Gründern und Operatoren aus führenden Institutionen, je nach Projekt zusammengestellt.",
+    "logosAria": "Erfahrung aus führenden Institutionen und Unternehmen"
+  },
+  "founderQuote": {
+    "quote": "Zunächst verstehen wir Ihr Unternehmen und Ihren Kontext. Dann konzipieren wir passende KI-Systeme und setzen diese mit Ihnen um. Schritt für Schritt.",
+    "author": "Apex Partners Gründer — Robin Betz"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "titleHtml": "Ein Gespräch.<br />Ein nächster Schritt.",
+    "lead": "Wir hören zuerst zu und verstehen Ihren Kontext. Dann entscheiden wir gemeinsam, ob und wie wir weiterarbeiten.",
+    "cta": "Erstgespräch vereinbaren",
+    "mailtoHref": "mailto:kontakt@apexpartners.tech?subject=Mandatsanfrage%20%E2%80%93%20Erstgespr%C3%A4ch"
+  },
+  "booking": {
+    "modal": {
+      "closeAria": "Terminbuchung schließen",
+      "dialogTitle": "Erstgespräch vereinbaren"
+    }
+  },
+  "footer": {
+    "tagline": "KI-Systeme für den Mittelstand — von der ersten Sichtung bis zur selbstverständlichen Nutzung im Alltag.",
+    "legalName": "Apex Partners",
+    "legalEntity": "Marke der Robin Betz Unternehmensberatung",
+    "legalRep": "vertreten durch Robin Miguel Betz",
+    "legalAddress": "Rottmannstraße 20, 80333 München",
+    "copyright": "© 2026 Apex Partners",
+    "email": "kontakt@apexpartners.tech"
+  },
+  "lang": {
+    "choose": "Sprache wählen",
+    "de": "Deutsch",
+    "en": "English",
+    "switchToEn": "Auf Englisch wechseln",
+    "switchToDe": "Auf Deutsch wechseln"
+  }
+}

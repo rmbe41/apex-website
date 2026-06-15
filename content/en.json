@@ -1,0 +1,717 @@
+{
+  "meta": {
+    "title": "Apex Partners | AI systems for mid-market companies",
+    "description": "Functional AI systems for core processes — discreet, measurable, tailored for mid-market companies."
+  },
+  "nav": {
+    "logoAria": "Apex Partners homepage",
+    "navAria": "Main navigation",
+    "mobileNavAria": "Mobile navigation",
+    "pulscheck": "AI Pulse Check",
+    "useCases": "Use cases",
+    "howItWorks": "How it works",
+    "contact": "Contact",
+    "cta": "Book an initial consultation",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "hero": {
+    "eyebrow": "AI systems for mid-market companies",
+    "titleHtml": "Your expertise.<br />Scaled through <em>AI</em>.",
+    "lead": "Functional AI systems for your business in a matter of weeks. Discreet in delivery, measurable in results, tailored for mid-market companies.",
+    "cta": "Book an initial consultation",
+    "pulscheck": "AI Pulse Check",
+    "videoPlayAria": "Play video about Apex Partners",
+    "customersAria": "Clients and partners",
+    "pills": [
+      "Execution-focused",
+      "Results-driven",
+      "Discreet",
+      "Data-compliant",
+      "Future-ready"
+    ]
+  },
+  "pulscheck": {
+    "label": "AI Pulse Check",
+    "title": "Where do you stand with AI?",
+    "lead": "We show you where AI could already make an impact in your organization today.",
+    "panelTitle": "Find out now!",
+    "previewOpenAria": "Start AI Pulse Check",
+    "metaAria": "Quick facts about the questionnaire",
+    "metaDuration": "~10 minutes",
+    "metaQuestions": "9 questions",
+    "metaBrowser": "Browser only",
+    "leadHtml": "The <strong>AI Pulse Check</strong>: nine questions, six dimensions — about ten minutes. Your answers are evaluated locally. Optionally, you can receive your results by email.",
+    "dimsAria": "Dimensions assessed",
+    "cta": "Start AI Pulse Check",
+    "preview": {
+      "badge": "AI Pulse Check",
+      "questionCounter": "Question 1 of 9",
+      "dimension": "Strategy & leadership"
+    },
+    "modal": {
+      "closeAria": "Close questionnaire",
+      "dialogTitle": "AI Pulse Check",
+      "badge": "AI Pulse Check",
+      "badgeResult": "AI Pulse Check · Results",
+      "title": "Let's begin",
+      "sub": "Tap or select an answer — you'll move to the next question automatically. At the end you'll see a score from 0 to 100.",
+      "questionCounter": "Question {{n}} of 9",
+      "back": "Back",
+      "next": "Next",
+      "nextFinal": "View results",
+      "scoreMax": "out of 100",
+      "nextStepsTitle": "Recommendations",
+      "contactBtn": "Discuss your results",
+      "leadTitle": "Results by email",
+      "leadDesc": "Optional: we'll send your full assessment including dimension scores — to review and share.",
+      "leadEmailLabel": "Email address",
+      "leadEmailPlaceholder": "name@company.com",
+      "leadSubmit": "Send",
+      "leadSubmitting": "Sending…",
+      "leadPrivacy": "Only used to send your results. No newsletter.",
+      "leadSuccess": "Thank you — we'll send your assessment shortly.",
+      "leadErrorInvalid": "Please enter a valid email address.",
+      "leadErrorGeneric": "Could not send. Please try again.",
+      "leadSubject": "AI Pulse Check lead — {{label}} ({{score}}/100)",
+      "liveQuestion": "Question {{n}} of 9. Dimension: {{dim}}. {{q}}",
+      "liveResult": "AI Pulse Check: {{score}} out of 100 points. Classification: {{label}}.",
+      "collaborationTitle": "How we work together"
+    },
+    "data": {
+      "DIMENSIONS": [
+        "Strategy & leadership",
+        "Talent & culture",
+        "Tools & infrastructure",
+        "Processes & operations",
+        "Product",
+        "Governance & risk"
+      ],
+      "STAGE_LABEL": [
+        "Stage 0",
+        "Stage 1",
+        "Stage 2",
+        "Stage 3",
+        "Stage 4",
+        "Stage 5"
+      ],
+      "questions": [
+        {
+          "dimension": "Strategy & leadership",
+          "q": "How central is AI to your company's strategy and roadmap?",
+          "options": [
+            {
+              "score": 0,
+              "text": "AI is not on the agenda. Neither on the roadmap nor in planning."
+            },
+            {
+              "score": 1,
+              "text": "Individuals pursue AI on their own initiative, without a company mandate."
+            },
+            {
+              "score": 2,
+              "text": "A first AI initiative exists in one area, without budget or formal ownership."
+            },
+            {
+              "score": 3,
+              "text": "AI is on the company roadmap with a defined budget and named accountability."
+            },
+            {
+              "score": 4,
+              "text": "AI is a strategic priority with resources, targets, and progress reporting at leadership level."
+            },
+            {
+              "score": 5,
+              "text": "AI shapes product decisions, hiring, operations, and long-term company positioning."
+            }
+          ]
+        },
+        {
+          "dimension": "Strategy & leadership",
+          "q": "How actively do your leaders use AI tools in their own day-to-day work?",
+          "options": [
+            {
+              "score": 0,
+              "text": "No leader uses AI tools in their working day."
+            },
+            {
+              "score": 1,
+              "text": "Individual leaders test AI tools occasionally and informally."
+            },
+            {
+              "score": 2,
+              "text": "Several leaders use AI tools regularly for their own tasks."
+            },
+            {
+              "score": 3,
+              "text": "The majority of the leadership team has integrated AI into their personal workflow."
+            },
+            {
+              "score": 4,
+              "text": "Leaders visibly use AI and communicate a clear expectation of adoption to their teams."
+            },
+            {
+              "score": 5,
+              "text": "Leaders are actively using AI to reshape structures, roles, and processes within their areas."
+            }
+          ]
+        },
+        {
+          "dimension": "Talent & culture",
+          "q": "What role does AI competency play in your hiring and people development?",
+          "options": [
+            {
+              "score": 0,
+              "text": "AI competency is not a factor in hiring or employee development."
+            },
+            {
+              "score": 1,
+              "text": "AI is occasionally mentioned in job postings, without a defined requirements profile."
+            },
+            {
+              "score": 2,
+              "text": "There are isolated, optional AI training offerings without a structured framework."
+            },
+            {
+              "score": 3,
+              "text": "AI competency is a defined criterion in hiring and performance reviews for selected roles."
+            },
+            {
+              "score": 4,
+              "text": "AI skills are a hiring requirement and part of onboarding for the majority of roles."
+            },
+            {
+              "score": 5,
+              "text": "AI competency is systematically measured, developed, and managed as a core capability across the organization."
+            }
+          ]
+        },
+        {
+          "dimension": "Talent & culture",
+          "q": "How openly does your organization experiment with AI and share what it learns?",
+          "options": [
+            {
+              "score": 0,
+              "text": "There is no culture of sharing around AI. Insights stay with individuals."
+            },
+            {
+              "score": 1,
+              "text": "Individuals experiment with AI, but findings are rarely passed on."
+            },
+            {
+              "score": 2,
+              "text": "AI tips and experiences are exchanged informally through existing channels."
+            },
+            {
+              "score": 3,
+              "text": "Structured, recurring formats (e.g. demos, task forces) exist for sharing AI knowledge."
+            },
+            {
+              "score": 4,
+              "text": "AI experiments are explicitly encouraged and learnings are actively documented, including failures."
+            },
+            {
+              "score": 5,
+              "text": "Learnings from AI experiments flow systematically into processes and systems. Iteration is culturally embedded."
+            }
+          ]
+        },
+        {
+          "dimension": "Tools & infrastructure",
+          "q": "How is AI tooling and infrastructure set up in your organization?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Employees use only personal consumer accounts, uncoordinated and without an organizational framework."
+            },
+            {
+              "score": 1,
+              "text": "One or two AI tools are licensed and used by specific teams."
+            },
+            {
+              "score": 2,
+              "text": "A standardized AI tool set is defined, licensed, rolled out with usage guidelines, and actively managed."
+            },
+            {
+              "score": 3,
+              "text": "AI tools are the company-wide standard with SSO integration, compliance approval, and structured adoption."
+            },
+            {
+              "score": 4,
+              "text": "Custom integrations, prompt libraries, or internal copilots have been built on top of external APIs."
+            },
+            {
+              "score": 5,
+              "text": "The company operates its own models, fine-tuning, or proprietary AI infrastructure for specific use cases."
+            }
+          ]
+        },
+        {
+          "dimension": "Tools & infrastructure",
+          "q": "How do you measure the impact and ROI of AI in your organization?",
+          "options": [
+            {
+              "score": 0,
+              "text": "AI impact is not measured. There are no metrics or targets."
+            },
+            {
+              "score": 1,
+              "text": "Usage data is captured (e.g. logins, license utilization), but no business outcomes are tracked."
+            },
+            {
+              "score": 2,
+              "text": "Individual teams track AI metrics independently, without a company-wide standard."
+            },
+            {
+              "score": 3,
+              "text": "Shared metrics (e.g. time saved, degree of automation) are regularly captured and reported across teams."
+            },
+            {
+              "score": 4,
+              "text": "AI results are reported to leadership with clear KPIs and actively inform decisions."
+            },
+            {
+              "score": 5,
+              "text": "AI outcomes are directly linked to OKRs, resource planning, and investment decisions."
+            }
+          ]
+        },
+        {
+          "dimension": "Processes & operations",
+          "q": "How fundamentally have you redesigned operational processes with and for AI?",
+          "options": [
+            {
+              "score": 0,
+              "text": "Existing processes are unchanged. AI is used selectively as one tool among many."
+            },
+            {
+              "score": 1,
+              "text": "Individual employees have made minor personal workflow adjustments using AI, without team alignment."
+            },
+            {
+              "score": 2,
+              "text": "In selected areas, initial processes have been redesigned with AI support."
+            },
+            {
+              "score": 3,
+              "text": "Core company processes (e.g. sales, support, development) have been fundamentally redesigned with AI."
+            },
+            {
+              "score": 4,
+              "text": "The majority of core operational processes are AI-native. Humans handle exceptions and edge cases."
+            },
+            {
+              "score": 5,
+              "text": "A company-wide process audit is established. The vast majority of processes are designed AI-first."
+            }
+          ]
+        },
+        {
+          "dimension": "Product",
+          "q": "How deeply is AI embedded in your core product or service offering?",
+          "options": [
+            {
+              "score": 0,
+              "text": "AI is not part of the product or service offering."
+            },
+            {
+              "score": 1,
+              "text": "There is a single AI feature that is used experimentally or infrequently."
+            },
+            {
+              "score": 2,
+              "text": "AI is visibly integrated into the offering and generates measurable value for a portion of customers."
+            },
+            {
+              "score": 3,
+              "text": "AI contributes substantially to core differentiation and is part of the central value proposition."
+            },
+            {
+              "score": 4,
+              "text": "AI is a central product element. The majority of users interact with it regularly and actively."
+            },
+            {
+              "score": 5,
+              "text": "AI is the product. Differentiation and competitive advantage are structurally inseparable from AI."
+            }
+          ]
+        },
+        {
+          "dimension": "Governance & risk",
+          "q": "How do you manage risks, data security, and the responsible use of AI?",
+          "options": [
+            {
+              "score": 0,
+              "text": "There are no guidelines governing the use of AI, data handling, or security."
+            },
+            {
+              "score": 1,
+              "text": "Informal behavioral norms around AI exist, but nothing is documented or binding."
+            },
+            {
+              "score": 2,
+              "text": "Basic written usage guidelines for AI tools are available to employees."
+            },
+            {
+              "score": 3,
+              "text": "A formal AI policy covering data protection, permitted use cases, and approval processes has been published."
+            },
+            {
+              "score": 4,
+              "text": "An active governance framework is in place: policies, approval processes, and incident procedures are operational."
+            },
+            {
+              "score": 5,
+              "text": "An AI ethics framework is established with regular audits, defined accountability, and a named Responsible AI function."
+            }
+          ]
+        }
+      ],
+      "levels": [
+        {
+          "min": 0,
+          "max": 20,
+          "label": "AI Observer",
+          "desc": "AI exists at the conceptual level within your organization. This reflects the reality of the majority of companies across the German-speaking world. The real risk is not a late start, but the wrong start: an AI strategy workshop, a hackathon, a tool evaluation. None of these generate real impact. What counts is a real problem, a clearly defined process, and a measurable result within 30 days.",
+          "collaboration": "We systematically analyze your core processes for AI leverage, prioritized by effort and impact. Through a joint sprint, we develop your first Proof of Value that convinces internally. No concept. A result."
+        },
+        {
+          "min": 21,
+          "max": 40,
+          "label": "AI Explorer",
+          "desc": "There is movement, but no clear direction. Individual tools are being used, initial conversations have taken place at leadership level. There are enthusiasts and there are skeptics. The core problem: symptoms are being automated, not causes. Because results fall short of expectations, internal backing erodes before it has been truly leveraged. More AI budgets are spent without impact in this phase than in any other. Not due to a lack of technology, but due to misplaced focus.",
+          "collaboration": "We identify one or two use cases with real leverage and develop them in a structured way: with a data check, success criteria, and a rollout logic that also brings middle management on board. We know the typical pitfalls of this phase from our own project experience."
+        },
+        {
+          "min": 41,
+          "max": 60,
+          "label": "AI Practitioner",
+          "desc": "You are in the most demanding phase of AI transformation. There are enough successes to continue, but too little coherence to scale. The typical picture: multiple teams using different tools according to their own methods, without cross-organizational exchange. There are AI projects, but no AI operating model. That is the decisive difference between tactical individual successes and structural competitive advantage. Most companies at this level believe they need more tools. They need more clarity.",
+          "collaboration": "We develop the operating model that turns individual projects into a coherent system: with governance structure, tooling logic, and a roadmap that carries both leadership and teams."
+        },
+        {
+          "min": 61,
+          "max": 80,
+          "label": "AI Driver",
+          "desc": "You are measurably better positioned than the competition. That is a solid starting point, but not a sustainable advantage. The central risk at this level is confusing activity with impact: many AI projects, few of which are difficult to replicate. Efficiency gains are caught up by competitors faster than most companies anticipate. What holds up structurally are proprietary data advantages, embedded decision logic, and systems that improve themselves through continuous use. At this level, the winners are not those who do the most, but those who prioritize most clearly.",
+          "collaboration": "We accompany you in making the leap from a good position to a structurally defensible advantage: with an honest inventory, a moat analysis, and a roadmap built on sustainable competitive strength."
+        },
+        {
+          "min": 81,
+          "max": 100,
+          "label": "AI Pioneer",
+          "desc": "You operate at the technological frontier. That is precisely your risk. The models underpinning your systems are evolving faster than your IT cycles. What represents a knowledge advantage today will be industry standard in 18 months. What endures structurally are culture, data, talent, and decision architecture — but only if these have been built with consistency. The most dangerous phase for a pioneer is complacency. Companies regarded as digital leaders just a few years ago are, in many cases, part of the mainstream today.",
+          "collaboration": "We work with you on what truly matters at this level: an advantage that sustains itself. From talent architecture to proprietary model approaches, through to the question of whether and how your AI capabilities can themselves become a market offering."
+        }
+      ],
+      "movesByLevel": {
+        "AI Observer": [
+          {
+            "icon": "target",
+            "title": "Ask the right question",
+            "body": "Not \"How can we use AI?\" but \"Why does this process require three full-time employees when it shouldn't?\" AI is the answer to an operational problem, not an end in itself."
+          },
+          {
+            "icon": "chart",
+            "title": "Achieve a Proof of Value within 30 days",
+            "body": "No concept paper, no pilot draft. A working result, even if still rough. Only real results generate the internal backing that further steps require."
+          },
+          {
+            "icon": "users",
+            "title": "Appoint an owner with decision-making authority",
+            "body": "Not a coordinating role, but a person with time and mandate. Running AI as a side activity means not running it at all."
+          },
+          {
+            "icon": "trending",
+            "title": "Start measuring from day one",
+            "body": "Time saved, error rates, output volume: one concrete metric. What is not measured will not be funded."
+          }
+        ],
+        "AI Explorer": [
+          {
+            "icon": "tool",
+            "title": "Reduce tool proliferation",
+            "body": "Inventory current usage and consolidate to two or three platforms. A larger number of tools increases coordination overhead, not progress."
+          },
+          {
+            "icon": "target",
+            "title": "Define a pilot with a clear success criterion",
+            "body": "A pilot without a predefined benchmark is not a pilot. It is an experiment at the cost of your own credibility."
+          },
+          {
+            "icon": "users",
+            "title": "Listen to middle management",
+            "body": "Not with the goal of convincing, but of understanding where resistance actually sits. It rarely manifests at the C-level."
+          },
+          {
+            "icon": "map",
+            "title": "Clarify data access before choosing a solution",
+            "body": "The majority of AI projects fail not because of the technology, but because the relevant data is simply inaccessible."
+          }
+        ],
+        "AI Practitioner": [
+          {
+            "icon": "map",
+            "title": "Build an operating model, not a strategy paper",
+            "body": "The central questions are: Who makes which decisions? Which tools are the organizational standard? How are insights systematically shared? Answering these questions is what enables scaling."
+          },
+          {
+            "icon": "refresh",
+            "title": "Identify your compound use case",
+            "body": "Which AI application gains value with every passing month because it accumulates data or continuously improves processes? That is the strategic core of your AI agenda."
+          },
+          {
+            "icon": "bulb",
+            "title": "Make internal successes visible",
+            "body": "Nothing accelerates cultural change more than a colleague who measurably saves eight hours per week and talks about it."
+          },
+          {
+            "icon": "api",
+            "title": "Make the make-or-buy decision",
+            "body": "Deferring the choice between building internal AI capability and working with external specialists ultimately costs more than making a clear decision."
+          }
+        ],
+        "AI Driver": [
+          {
+            "icon": "chart",
+            "title": "Distinguish efficiency from structural advantage",
+            "body": "Classify your AI initiatives by what saves time and what creates an advantage competitors cannot replicate. Invest deliberately and asymmetrically in favor of the latter."
+          },
+          {
+            "icon": "robot",
+            "title": "Build on your own data",
+            "body": "Your greatest AI asset is not the tools you use, but the data only you possess. Use it to develop solutions that are structurally non-replicable."
+          },
+          {
+            "icon": "shield",
+            "title": "Establish governance before mistakes become public",
+            "body": "Data protection, model accountability, output quality: those who have not addressed these questions in advance will pay more than a reputational price when the first flawed AI decision becomes visible."
+          },
+          {
+            "icon": "world",
+            "title": "Make AI tangible for your customers",
+            "body": "Do your customers feel the difference? If not, it is worth asking where AI would create the greatest value in their experience."
+          }
+        ],
+        "AI Pioneer": [
+          {
+            "icon": "trending",
+            "title": "Assess your advantage realistically",
+            "body": "Which of your AI capabilities will still be difficult to replicate in twelve months? Only there does further investment in market leadership justify itself."
+          },
+          {
+            "icon": "school",
+            "title": "Treat AI talent as your most critical resource",
+            "body": "Not budget, not technology. Actively build a differentiated employer positioning in this segment before losing out in the competition for the same profiles."
+          },
+          {
+            "icon": "trophy",
+            "title": "Explore AI as a standalone product",
+            "body": "Your internal capabilities may be directly valuable to customers or the broader market. A commercialization path that most companies at this level do not pursue consistently."
+          },
+          {
+            "icon": "world",
+            "title": "Invest in external early-warning signals",
+            "body": "Research partnerships, access to emerging models, and strategic networks within the AI community: those who recognize the next development wave early can help shape it."
+          }
+        ]
+      },
+      "mailto": {
+        "subject": "AI Pulse Check — {{label}} ({{score}}/100)",
+        "body": "Hello Apex Partners,\n\nmy AI Pulse Check result: {{score}}/100 ({{label}}).\n\nI would like to briefly discuss my AI Pulse Check results with you.\n\nBest regards"
+      }
+    }
+  },
+  "useCases": {
+    "0": {
+      "title": "Context layer",
+      "tagline": "The foundation for applied AI in your organization.",
+      "challenge": "AI is only as useful as the information it can access. In most companies, knowledge is scattered across systems, departments, and people — making it unusable for AI. We change that.",
+      "buildItems": [
+        "Company-wide search across all relevant systems and repositories",
+        "Knowledge structures that map relationships between projects, customers, and topics",
+        "Automated documentation that captures knowledge before it leaves the organization",
+        "A unified knowledge base as the foundation for all AI systems"
+      ],
+      "outcome": "Faster access to information, more precise internal assistants, knowledge stays in the company — regardless of turnover.",
+      "suitable": "Companies with distributed teams, grown system landscapes, or ongoing AI projects with disappointing results."
+    },
+    "1": {
+      "title": "Corporate management",
+      "tagline": "Sound decisions. Based on all available information.",
+      "challenge": "Leaders decide daily on incomplete information. AI closes that gap systematically.",
+      "buildItems": [
+        "Executive assistants that monitor KPIs, explain variances, and surface options",
+        "Scenario analysis for operational and strategic decisions — traceable and quantified",
+        "Early warning systems based on operational and market signals",
+        "Strategic decision briefs from automatically aggregated data — without manual research"
+      ],
+      "outcome": "Stronger decision foundations, shorter paths from data to recommendations, strategic choices made earlier.",
+      "suitable": "Executive management, boards, C-level, and strategy or operations teams with complex steering requirements."
+    },
+    "2": {
+      "title": "Sales & customer acquisition",
+      "tagline": "More revenue per employee. Less effort per close.",
+      "challenge": "Sales teams spend a large share of time on data upkeep, research, and follow-up — away from actual selling. AI takes on that load.",
+      "buildItems": [
+        "Sales assistants that handle first contact, coordinate follow-up, and qualify prospects",
+        "CRM automation with contextual next steps and up-to-date customer data",
+        "Early pipeline risk detection — not only at quarter end",
+        "Automated meeting prep from internal and public data"
+      ],
+      "outcome": "Higher contact volume, less CRM maintenance, more reliable revenue forecasts.",
+      "suitable": "B2B sales, inside sales teams, companies with longer or complex sales cycles."
+    },
+    "3": {
+      "title": "HR & recruiting",
+      "tagline": "Faster hiring. Better decisions.",
+      "challenge": "Open roles stay vacant longer than necessary — not because candidates are missing, but because screening, coordination, and onboarding tie up HR disproportionately.",
+      "buildItems": [
+        "Automated CV screening ranked against individual requirement profiles",
+        "Interview assistants with structured questions and evaluation documentation",
+        "Personalized onboarding assistants for new hires' first weeks",
+        "Internal HR agents for standard requests and skills analysis to identify gaps"
+      ],
+      "outcome": "Shorter time to fill, better comparability of candidates, HR teams with more capacity for strategic work.",
+      "suitable": "Growing companies, HR departments with high application volume, industries with specific requirement profiles."
+    },
+    "4": {
+      "title": "Customer service",
+      "tagline": "Resolve more requests. With the same or a smaller team.",
+      "challenge": "Service effort grows with the customer base. AI decouples those curves — without sacrificing quality.",
+      "buildItems": [
+        "AI service assistants for recurring standard requests",
+        "Intelligent intake routing by priority, category, and ownership",
+        "Automatic detection of critical customer situations with immediate escalation",
+        "Customer satisfaction scoring for early churn risk detection"
+      ],
+      "outcome": "A substantial share of requests resolved without manual intervention, faster response times, service teams focus on high-value cases.",
+      "suitable": "Companies with high request volume, critical customer relationships, or growing customer bases with a stable team."
+    },
+    "5": {
+      "title": "Finance",
+      "tagline": "Less manual process. Better decision foundations.",
+      "challenge": "Finance teams lose capacity to repetitive tasks — at the expense of analysis and steering.",
+      "buildItems": [
+        "Automated invoice processing and reconciliation",
+        "Continuous spend analysis with savings potential detection",
+        "Liquidity and revenue forecasts from historical and current data",
+        "Procurement and approval automation plus structured contract analysis"
+      ],
+      "outcome": "Reduced manual effort, faster month-end close, more capacity for strategic finance steering.",
+      "suitable": "Mid-market companies, organizations with repetitive finance processes, finance leaders before or after restructuring."
+    },
+    "6": {
+      "title": "Legal & regulatory",
+      "tagline": "Legal certainty without the usual delay.",
+      "challenge": "In regulated environments, careful legal handling is non-negotiable — but it does not have to be slow.",
+      "buildItems": [
+        "Automated contract review with clause extraction and risk assessment",
+        "Alignment of internal policies with regulatory requirements",
+        "Documentation for privacy and industry-specific regulation",
+        "Audit assistants for evidence and audit trails",
+        "Internal legal assistant for standard legal questions — without burdening legal counsel"
+      ],
+      "outcome": "Contract review in a fraction of the previous time, earlier risk detection, legal capacity freed for complex matters.",
+      "suitable": "Companies under high regulatory pressure whose legal or compliance teams spend most capacity on recurring review tasks."
+    },
+    "7": {
+      "title": "Marketing",
+      "tagline": "Consistent brand communication. At greater scale.",
+      "challenge": "Producing high-quality content takes time — regardless of team size or budget. AI fundamentally shifts the effort-to-outcome ratio.",
+      "buildItems": [
+        "Content creation for SEO, advertising, social, and email — in your brand voice",
+        "Personalization logic by audience, channel, and buying stage",
+        "Automated testing of content variants with systematic evaluation",
+        "Consistent brand language and visibility analysis in AI-powered search environments"
+      ],
+      "outcome": "Higher content output per employee, more precise audience targeting, more capacity for concept and strategy.",
+      "suitable": "Companies with ambitious communication goals, marketing teams under resource pressure, organizations with multiple audiences or markets."
+    },
+    "8": {
+      "title": "Data & analytics",
+      "tagline": "Data-driven decisions — for everyone, not only specialists.",
+      "challenge": "Many companies have a solid data foundation, but access stays limited to a few people. AI opens that access — without sacrificing quality.",
+      "buildItems": [
+        "Natural-language database queries — questions in plain language, answers from the system",
+        "Automated reporting that adapts to changing requirements",
+        "Explanatory analytics: not only what happened, but why",
+        "Automatic anomaly detection and data cleansing for reliable data quality"
+      ],
+      "outcome": "Business units answer data questions independently, analytics more widely accessible, data specialists focus on complex work.",
+      "suitable": "Companies with existing analytics systems, business units with regular analysis needs, organizations with growing data landscapes."
+    },
+    "label": "Use cases",
+    "title": "What we build together.",
+    "lead": "An overview of the areas where we support you — from strategy through to implementation.",
+    "navLabel": "Areas",
+    "tabsAria": "Use cases",
+    "labels": {
+      "challenge": "Challenge",
+      "build": "What we build together",
+      "outcome": "Typical outcomes",
+      "suitable": "Best suited for"
+    },
+    "tab": {
+      "0": "Context layer",
+      "1": "Corporate management",
+      "2": "Sales & customer acquisition",
+      "3": "HR & recruiting",
+      "4": "Customer service",
+      "5": "Finance",
+      "6": "Legal & regulatory",
+      "7": "Marketing",
+      "8": "Data & analytics"
+    }
+  },
+  "principles": {
+    "label": "How it works",
+    "title": "How we work",
+    "lead": "Three principles. One shared path.",
+    "step1Title": "Built for your company.",
+    "step1Body": "Every solution is developed in dialogue with your teams — designed for your specific workflows, not for a generic use case.",
+    "step2Title": "Integrated into your existing systems.",
+    "step2Body": "We connect new technology with the systems where your processes already run — without disruption, without parallel structures.",
+    "step3Title": "Your data stays under your control.",
+    "step3Body": "Your data stays in Europe. The infrastructure stays under your control. No lock-in, no hidden dependencies."
+  },
+  "team": {
+    "label": "The team",
+    "title": "The experts for your project",
+    "intro": "Apex Partners was founded by Robin Betz, drawing on experts from leading institutions — assembled for each engagement.",
+    "logosAria": "Experience from leading institutions and companies"
+  },
+  "founderQuote": {
+    "quote": "First, we understand your company. Then we design the right AI systems and implement them with you. You benefit from our experience: what works, what does not, and the shortest path to results.",
+    "author": "Founder of Apex Partners — Robin Betz"
+  },
+  "contact": {
+    "label": "Contact",
+    "titleHtml": "One conversation.<br />One next step.",
+    "lead": "We listen first and understand your context. Then we decide together whether and how to move forward.",
+    "cta": "Book an initial consultation",
+    "mailtoHref": "mailto:kontakt@apexpartners.tech?subject=Engagement%20inquiry%20%E2%80%93%20Initial%20consultation"
+  },
+  "booking": {
+    "modal": {
+      "closeAria": "Close booking",
+      "dialogTitle": "Book an initial consultation"
+    }
+  },
+  "footer": {
+    "tagline": "AI systems for mid-market companies — from first exploration to everyday use.",
+    "legalName": "Apex Partners",
+    "legalEntity": "A brand of Robin Betz Unternehmensberatung",
+    "legalRep": "represented by Robin Miguel Betz",
+    "legalAddress": "Rottmannstraße 20, 80333 Munich, Germany",
+    "copyright": "© 2026 Apex Partners",
+    "email": "kontakt@apexpartners.tech"
+  },
+  "lang": {
+    "choose": "Choose language",
+    "de": "German",
+    "en": "English",
+    "switchToEn": "Switch to English",
+    "switchToDe": "Switch to German"
+  }
+}

@@ -1,0 +1,11 @@
+name = "apexraw"
+compatibility_date = "2024-08-01"
+pages_build_output_dir = "."
+
+[vars]
+PULSCHECK_FROM_EMAIL = "Apex Partners <kontakt@apexpartners.tech>"
+PULSCHECK_NOTIFY_EMAIL = "kontakt@apexpartners.tech"
+PULSCHECK_SITE_URL = "https://apexpartners.tech"
+
+# Set in Cloudflare dashboard (Pages → Settings → Environment variables):
+# RESEND_API_KEY = re_...

@@ -347,12 +347,11 @@
                   </div>
                   <div class="pulscheck-preview-progress-head">
                     <span data-i18n="pulscheck.preview.questionCounter">Frage 1 von 9</span>
-                    <span class="pulscheck-preview-progress-dim" data-i18n="pulscheck.preview.dimension">Strategie&nbsp;&amp;&nbsp;Führung</span>
+                    <div class="pulscheck-preview-dim-tag" data-i18n="pulscheck.preview.dimension">Strategie&nbsp;&amp;&nbsp;Führung</div>
                   </div>
                   <div class="pulscheck-preview-track">
                     <div class="pulscheck-preview-fill"></div>
                   </div>
-                  <div class="pulscheck-preview-dim-tag" data-i18n="pulscheck.preview.dimension">Strategie&nbsp;&amp;&nbsp;Führung</div>
                   <div class="pulscheck-preview-q-bars">
                     <span class="pulscheck-preview-bar-line pulscheck-preview-bar-line--question"></span>
                     <span
@@ -790,7 +789,7 @@
             <p class="section-label" data-i18n="team.label">Das Team</p>
             <h2 class="section-title team-title" data-i18n="team.title">Die Experten für Ihr Projekt</h2>
             <p class="team-intro" data-i18n="team.intro">
-              Apex Partners wurde von Robin Betz gegründet mit Experten aus führenden Institutionen, je nach Projekt zusammengestellt.
+              Apex Partners ist ein Netzwerk von ehemaligen Gründern und Operatoren aus führenden Institutionen, je nach Projekt zusammengestellt.
             </p>
           </header>
           <div class="team-logo-panel" data-i18n-aria="team.logosAria" aria-label="Erfahrung aus führenden Institutionen und Unternehmen">
@@ -861,14 +860,13 @@
               <div class="pulscheck-progress">
                 <div class="pulscheck-progress-meta">
                   <span id="pulscheck-q-counter">Frage 1 von 9</span>
-                  <span id="pulscheck-q-dim"></span>
+                  <span class="pulscheck-dim-tag" id="pulscheck-dim-tag"></span>
                 </div>
                 <div class="pulscheck-progress-track">
                   <div class="pulscheck-progress-fill" id="pulscheck-prog-fill"></div>
                 </div>
               </div>
               <div class="pulscheck-step-body" id="pulscheck-step-body">
-                <p class="pulscheck-dim-tag" id="pulscheck-dim-tag"></p>
                 <p class="pulscheck-q-text" id="pulscheck-q-text" tabindex="-1"></p>
                 <div class="pulscheck-options" id="pulscheck-options" role="group" aria-labelledby="pulscheck-q-text"></div>
               </div>
@@ -903,8 +901,12 @@
               <p class="pulscheck-result-desc" id="pulscheck-res-desc"></p>
               <div class="pulscheck-dim-grid" id="pulscheck-dim-grid"></div>
               <div class="pulscheck-next-moves">
-                <h4 class="pulscheck-next-title" data-i18n="pulscheck.modal.nextStepsTitle">Empfohlene nächste Schritte</h4>
+                <h4 class="pulscheck-next-title" data-i18n="pulscheck.modal.nextStepsTitle">Handlungsempfehlungen</h4>
                 <div id="pulscheck-moves"></div>
+              </div>
+              <div class="pulscheck-collaboration" id="pulscheck-collaboration" hidden>
+                <h4 class="pulscheck-next-title" data-i18n="pulscheck.modal.collaborationTitle">Zusammenarbeit</h4>
+                <p class="pulscheck-collaboration-body" id="pulscheck-collaboration-body"></p>
               </div>
               <div class="pulscheck-lead-capture" id="pulscheck-lead-capture">
                 <div class="pulscheck-lead-inner" id="pulscheck-lead-form-wrap">
@@ -1360,11 +1362,11 @@
     </script>
     <script>
       window.APEX_PULSCHECK_LEAD = {
-        endpoint: "https://formsubmit.co/ajax/kontakt@apexpartners.tech",
+        endpoint: "/api/pulscheck-lead",
       };
     </script>
-    <script src="i18n.js?v=2"></script>
-    <script src="pulscheck.js?v=2"></script>
-    <script src="booking.js?v=2"></script>
+    <script src="i18n.js?v=4"></script>
+    <script src="pulscheck.js?v=4"></script>
+    <script src="booking.js?v=4"></script>
   </body>
 </html>

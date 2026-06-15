@@ -132,7 +132,6 @@
     el("pulscheck-q-counter").textContent = fmt(t("pulscheck.modal.questionCounter"), {
       n: current + 1,
     });
-    el("pulscheck-q-dim").textContent = q.dimension;
     el("pulscheck-dim-tag").textContent = q.dimension;
     el("pulscheck-q-text").textContent = q.q;
     setProgress();
@@ -306,31 +305,32 @@
   function buildLeadPayload(email) {
     var result = lastResults;
     var lang = window.ApexI18n ? window.ApexI18n.getLang() : "de";
-    var dimLines = dimensions()
-      .map(function (d) {
-        return d + ": " + result.dimScores[d] + "/" + result.dimMax[d];
-      })
-      .join("\n");
+    var dimRows = dimensions().map(function (d) {
+      return {
+        name: d,
+        score: result.dimScores[d],
+        max: result.dimMax[d],
+        pct: Math.round((result.dimScores[d] / result.dimMax[d]) * 100),
+      };
+    });
+    var nextSteps = movesForLevel(result.level.label).map(function (m) {
+      return { title: m.title, body: m.body };
+    });
 
     return {
-      _subject: fmt(t("pulscheck.modal.leadSubject"), {
-        score: result.scaled,
-        label: result.level.label,
-      }),
-      _replyto: email,
       email: email,
       score: result.scaled,
       classification: result.level.label,
       summary: result.level.desc,
-      dimensions: dimLines,
+      collaboration: result.level.collaboration || "",
+      dimensions: dimRows,
+      nextSteps: nextSteps,
       language: lang,
       source: "pulscheck",
-      _template: "table",
-      _captcha: "false",
     };
   }
 
-  function submitLeadCapture(email) {
+  function submitLeadCapture(payload) {
     var endpoint = leadEndpoint();
     if (!endpoint || !lastResults) {
       return Promise.reject(new Error("missing-endpoint"));
@@ -342,7 +342,7 @@
         "Content-Type": "application/json",
         Accept: "application/json",
       },
-      body: JSON.stringify(buildLeadPayload(email)),
+      body: JSON.stringify(payload),
     }).then(function (res) {
       if (!res.ok) throw new Error("submit-failed");
       return res.json().catch(function () {
@@ -369,8 +369,16 @@
       return;
     }
 
+    var payload = buildLeadPayload(email);
+    if (form) {
+      var honeyField = form.querySelector('[name="_honey"]');
+      if (honeyField && honeyField.value) {
+        payload.honeypot = honeyField.value;
+      }
+    }
+
     setLeadSubmitting(true);
-    submitLeadCapture(email)
+    submitLeadCapture(payload)
       .then(function () {
         var formWrap = el("pulscheck-lead-form-wrap");
         var success = el("pulscheck-lead-success");
@@ -450,6 +458,18 @@
         );
       })
       .join("");
+
+    var collabWrap = el("pulscheck-collaboration");
+    var collabBody = el("pulscheck-collaboration-body");
+    if (collabWrap && collabBody) {
+      if (level.collaboration) {
+        collabBody.textContent = level.collaboration;
+        collabWrap.hidden = false;
+      } else {
+        collabBody.textContent = "";
+        collabWrap.hidden = true;
+      }
+    }
 
     el("pulscheck-btn-contact").setAttribute(
       "href",
@@ -601,10 +621,18 @@
     render(true);
   }
 
+  function start() {
+    if (window.ApexI18n && window.ApexI18n.whenReady) {
+      window.ApexI18n.whenReady(bootQuiz);
+    } else {
+      bootQuiz();
+    }
+  }
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", bootQuiz);
+    document.addEventListener("DOMContentLoaded", start);
   } else {
-    bootQuiz();
+    start();
   }
 
   document.addEventListener("languagechange", function () {
