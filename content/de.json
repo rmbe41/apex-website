@@ -597,7 +597,12 @@
       "title": "Context Layer",
       "tagline": "Der Grundstein für angewandte KI in Ihrem Unternehmen.",
       "challenge": "KI ist nur so nützlich wie die Informationen, auf die sie zugreifen kann. In den meisten Unternehmen ist dieses Wissen über Systeme, Abteilungen, Dokumente und Personen verstreut und damit für KI nicht nutzbar. Das ändern wir.",
-      "buildItems": [],
+      "buildItems": [
+        "Unternehmensweite Suche über alle relevanten Systeme und Ablagen",
+        "Wissensstrukturen, die Zusammenhänge zwischen Projekten und Domänen abbilden",
+        "Automatisierte Dokumentation, die Wissen erfasst bevor es die Organisation verlässt",
+        "Eine einheitliche Wissensbasis als Grundlage für alle KI-Systeme"
+      ],
       "outcome": "Schnellerer Informationszugang, präzisere KI Agenten, Wissen bleibt im Unternehmen unabhängig von Fluktuation.",
       "suitable": "Unternehmen mit verteilten Teams, komplexen Systemlandschaften oder laufenden KI-Projekten mit unbefriedigenden Ergebnissen."
     },
@@ -605,7 +610,12 @@
       "title": "Unternehmenssteuerung",
       "tagline": "Fundierte Entscheidungen. Auf Basis aller verfügbaren Informationen.",
       "challenge": "Führungskräfte entscheiden täglich auf Basis unvollständiger Informationen. KI schließt diese Lücke.",
-      "buildItems": [],
+      "buildItems": [
+        "Führungsassistenten, die Kennzahlen überwachen, Abweichungen erklären und Handlungsoptionen aufzeigen",
+        "Szenarioanalysen für operative und strategische Entscheidungen – nachvollziehbar und quantifiziert",
+        "Frühwarnsysteme auf Basis betrieblicher und marktbezogener Signale",
+        "Strategische Entscheidungsvorlagen auf Basis aggregierter Daten ohne manuellen Rechercheaufwand"
+      ],
       "outcome": "Solidere Entscheidungsbasis, kürzere Wege von Daten zu Handlungsempfehlungen, strategische Weichen werden früher gestellt.",
       "suitable": "Geschäftsführung, Vorstand, C-Level sowie Strategie- und Operations Teams mit komplexen Steuerungskontext."
     },
@@ -613,7 +623,12 @@
       "title": "Vertrieb & Kundengewinnung",
       "tagline": "Mehr Umsatz je Mitarbeitenden. Weniger Aufwand je Abschluss.",
       "challenge": "Vertriebsteams verbringen zu viel Zeit mit Datenpflege, Recherche und Nachverfolgung, abseits des eigentlichen Verkaufens. KI übernimmt diese Last.",
-      "buildItems": [],
+      "buildItems": [
+        "Vertriebsassistenten, die Erstkontakte übernehmen, Folgekommunikation koordinieren & Interessenten qualifizieren",
+        "CRM-Automatisierung mit kontextbezogenen nächsten Schritten und aktuellen Kundendaten",
+        "Frühzeitige Risikoerkennung in der Pipeline, nicht erst am Quartalsende",
+        "Automatisierte Gesprächsvorbereitung auf Basis interner und öffentlicher Daten"
+      ],
       "outcome": "Höheres Outreach Volumen, weniger CRM-Pflege, zuverlässigere Umsatzprognosen.",
       "suitable": "B2B-Vertrieb, Innendienst Teams, Unternehmen mit komplexen Verkaufszyklen."
     },
@@ -621,7 +636,12 @@
       "title": "HR & Recruiting",
       "tagline": "Schnellere Besetzungen. Fundiertere Entscheidungen.",
       "challenge": "Offene Stellen bleiben länger unbesetzt als nötig. Nicht weil Kandidaten fehlen, sondern weil Vorauswahl, Koordination und Einarbeitung das Personalteam binden.",
-      "buildItems": [],
+      "buildItems": [
+        "Automatisiertes CV-Screening mit Ranking nach individuellen Anforderungsprofilen",
+        "Interview-Assistenten mit strukturierten Fragen und Bewertungsdokumentation",
+        "Personalisierte Einarbeitungsassistenten für neue Mitarbeitendenden",
+        "Interne HR-Agenten für Standardanfragen sowie Analyse zur Identifikation von Lücken"
+      ],
       "outcome": "Kürzere Zeit bis zur Stellenbesetzung, bessere Vergleichbarkeit von Bewerbern, Personalteams mit mehr Kapazität für strategische Arbeit.",
       "suitable": "Unternehmen in Wachstumsphasen, Personalabteilungen mit hohem Bewerbungsvolumen, Branchen mit spezifischen Anforderungsprofilen."
     },
@@ -629,7 +649,12 @@
       "title": "Kundenservice",
       "tagline": "Mehr Anfragen lösen. Mit dem gleichen Team.",
       "challenge": "Serviceaufwand wächst proportional zum Kundenstamm. Mit KI lassen sich diese beiden entkoppeln, ohne Qualitätseinbußen.",
-      "buildItems": [],
+      "buildItems": [
+        "KI-Service Agenten für wiederkehrende Standardanfragen",
+        "Intelligente Ticket Steuerung nach Priorität, Kategorie und Zuständigkeit",
+        "Automatische Erkennung kritischer Kundensituationen mit sofortiger Weiterleitung",
+        "Kundenbefragungen zur Früherkennung gefährdeter Beziehungen & Abwanderungsprognose"
+      ],
       "outcome": "Kunden Anfragen ohne manuellen Eingriff gelöst, schnellere Reaktionszeiten, Serviceteams fokussieren auf Fälle mit echtem Mehrwert.",
       "suitable": "Firmen mit hohem Ticket Volumen, kritischen Kundenbeziehungen oder wachsendem Kundenstamm bei gleichbleibendem Team."
     },
@@ -637,7 +662,12 @@
       "title": "Finanzen",
       "tagline": "Weniger manuelle Finance Operations. Bessere Entscheidungen.",
       "challenge": "Finanzabteilungen verlieren durch repetitive Aufgaben Kapazität für das, was zählt: Analyse & Steuerung.",
-      "buildItems": [],
+      "buildItems": [
+        "Automatisierte Rechnungs- und Buchungsverarbeitung",
+        "Kontinuierliche Ausgabenanalyse mit Einsparpotenzialerkennung",
+        "Liquiditäts- und Umsatzprognosen durch kontinuierliche Datenbasis",
+        "Automatisierung von Einkaufs- und Freigabeprozessen inklusive Vertragsanalyse"
+      ],
       "outcome": "Reduzierter manueller Aufwand, schnellere Monatsabschlüsse, mehr Kapazität für strategische Finanzsteuerung.",
       "suitable": "CFO Abteilung, Organisationen mit repetitiven Finanzprozessen, Finanzverantwortliche vor oder nach Restrukturierungen."
     },
@@ -645,7 +675,13 @@
       "title": "Recht & Regulatorik",
       "tagline": "Rechtssicherheit ohne den üblichen Zeitaufwand.",
       "challenge": "In regulierten Märkten zählt juristische Präzision und trotzdem muss das Tempo stimmen.",
-      "buildItems": [],
+      "buildItems": [
+        "Automatisierte Vertragsprüfung mit Klauselextraktion & Risikobewertung",
+        "Abgleich interner Richtlinien gegen regulatorische Anforderungen",
+        "Dokumentation für Datenschutz und branchenspezifischer Regulatorik",
+        "Prüfungsassistenten für Nachweise und Prüfpfade",
+        "Interner Rechtsassistent für juristische Standardfragen"
+      ],
       "outcome": "Vertragsprüfung in einem Bruchteil der Zeit, frühere Risikoerkennung, freie juristische Kapazität für komplexe Fragestellungen.",
       "suitable": "Unternehmen unter hohem regulatorischen Druck, deren Rechts- oder Compliance Abteilungen ihre Kapazität für wiederkehrende Aufgaben nutzen."
     },
@@ -653,7 +689,12 @@
       "title": "Marketing",
       "tagline": "Konsistente Markenkommunikation. In größerem Maßstab.",
       "challenge": "Hochwertige Inhalte zu produzieren kostet Zeit. KI verändert das Verhältnis zwischen Aufwand und Ergebnis grundlegend.",
-      "buildItems": [],
+      "buildItems": [
+        "Strategische Content Erstellungs in der Sprache Ihrer Marke für SEO & GEO, Werbung und mehr",
+        "Personalisierungslogik nach Zielgruppe, Kanal und Kaufphase",
+        "Automatisiertes Testen von Inhaltsvarianten mit systematischer Auswertung",
+        "Konsistente Markensprache und Sichtbarkeitsanalyse in KI-gestützten Suchumgebungen"
+      ],
       "outcome": "Höherer Content-Output, präzisere Zielgruppenansprache, mehr Kapazität für Konzeption & Strategie.",
       "suitable": "Unternehmen mit hohen Kommunikationszielen, Marketing Teams unter Druck, Organisationen mit mehreren Zielgruppen oder Märkten."
     },
@@ -661,7 +702,12 @@
       "title": "Daten & Analytics",
       "tagline": "Datenbasierte Entscheidungen für alle, nicht nur für Spezialisten.",
       "challenge": "Viele Unternehmen verfügen über eine gute Datenbasis, aber der Zugang bleibt wenigen beschränkt. KI öffnet diesen Zugang ohne Qualitätseinbußen.",
-      "buildItems": [],
+      "buildItems": [
+        "Fragen & Antworten in natürlicher Sprache aus Ihren Systemen und Wissen",
+        "Automatisiertes Berichtswesen, das sich an veränderte Anforderungen anpasst",
+        "Erklärende Auswertungen: nicht nur was passiert ist, sondern warum",
+        "Automatische Abweichungserkennung sowie Datenbereinigung für verlässliche Datenqualität"
+      ],
       "outcome": "Fachabteilungen beantworten Fragen eigenständig, Auswertungen breiter zugänglich, mehr Datenspezialisten Kapazität.",
       "suitable": "Unternehmen mit bestehenden Analytics Tools, Abteilungen mit regelmäßigem Analysebedarf, Organisationen mit wachsender Datenlandschaft."
     },
