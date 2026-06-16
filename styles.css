@@ -892,6 +892,10 @@ button {
   height: clamp(26px, 3.3vw, 36px);
 }
 
+.hero-logo-set img.hero-logo--digital-helix {
+  height: clamp(23px, 3.1vw, 32px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-logo-track {
     animation: none;
@@ -995,6 +999,10 @@ button {
 
   .hero-logo-set img.hero-logo--aareal {
     --hero-logo-h: clamp(28px, 4.2vw, 34px);
+  }
+
+  .hero-logo-set img.hero-logo--digital-helix {
+    --hero-logo-h: clamp(25px, 3.7vw, 30px);
   }
 
   @supports not (zoom: 1) {
