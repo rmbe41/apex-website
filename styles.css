@@ -1861,17 +1861,22 @@ button {
   position: relative;
   overflow: hidden;
   padding: var(--blog-page-top) 0 clamp(52px, 6vw, 72px);
-  text-align: center;
 }
 
 .blog-hero .container {
   position: relative;
   z-index: 1;
+  text-align: left;
+}
+
+.blog-hero .legal-page__back {
+  margin-bottom: clamp(24px, 4vw, 36px);
 }
 
 .blog-hero__header {
   margin: 0 auto;
   max-width: 48rem;
+  text-align: center;
 }
 
 .blog-hero__header .section-label {

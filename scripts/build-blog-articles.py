@@ -201,7 +201,7 @@ def build_article(meta: dict, lang: str) -> dict:
 def main() -> None:
     article_cta = {
         "de": {
-            "text": "Sind Sie neugierig geworden, was KI für Sie bedeuten kann?",
+            "text": "Neugierig geworden, was KI für Sie bedeuten kann?",
             "button": "Kontakt aufnehmen",
         },
         "en": {
