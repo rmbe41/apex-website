@@ -3,7 +3,16 @@
 
   var STORAGE_KEY = "apex-lang";
   var SUPPORTED = ["de", "en"];
-  var CONTENT_BASE = "content/";
+  var CONTENT_BASE = (function () {
+    var scripts = document.getElementsByTagName("script");
+    for (var i = scripts.length - 1; i >= 0; i--) {
+      var src = scripts[i].getAttribute("src");
+      if (src && src.indexOf("i18n.js") !== -1) {
+        return src.replace(/i18n\.js(\?.*)?$/, "") + "content/";
+      }
+    }
+    return "content/";
+  })();
   var currentLang = "de";
   var translations = null;
   var ready = false;
@@ -43,10 +52,23 @@
     var metaDesc = document.querySelector('meta[name="description"]');
     var legalPage = document.body.getAttribute("data-legal-page");
     var legalMeta = legalPage ? resolve(t, "legal." + legalPage + ".meta") : null;
+    var blogPage = document.body.getAttribute("data-blog-page");
+    var blogArticleIdx = document.body.getAttribute("data-blog-article");
+    var blogMeta = null;
+
+    if (blogPage === "listing") {
+      blogMeta = t.blog && t.blog.meta ? t.blog.meta : null;
+    } else if (blogArticleIdx != null && t.blog && Array.isArray(t.blog.articles)) {
+      var article = t.blog.articles[Number(blogArticleIdx)];
+      blogMeta = article && article.meta ? article.meta : null;
+    }
 
     if (legalMeta) {
       document.title = legalMeta.title;
       if (metaDesc) metaDesc.setAttribute("content", legalMeta.description);
+    } else if (blogMeta) {
+      document.title = blogMeta.title;
+      if (metaDesc) metaDesc.setAttribute("content", blogMeta.description);
     } else {
       document.title = t.meta.title;
       if (metaDesc) metaDesc.setAttribute("content", t.meta.description);
@@ -79,6 +101,11 @@
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
       var val = get(el.getAttribute("data-i18n-placeholder"));
       if (val != null) el.setAttribute("placeholder", val);
+    });
+
+    document.querySelectorAll("[data-i18n-alt]").forEach(function (el) {
+      var val = get(el.getAttribute("data-i18n-alt"));
+      if (val != null) el.setAttribute("alt", val);
     });
 
     document.querySelectorAll("[data-i18n-list]").forEach(function (el) {

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KI-Agenten rasen ins Unternehmen — die Kontrolle hinkt hinterher | Apex Partners Blog</title>
+    <meta name="description" content="KI-Agenten im Unternehmen: Ambition, Risiken und praktische Leitplanken für kontrollierten Einsatz." />
+    <link rel="icon" type="image/png" href="../assets/brand/Apex%20Partners%20-%20Icon%20Navy.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/brand/Apex%20Partners%20-%20Icon%20Navy.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/brand/Apex%20Partners%20-%20Icon%20White.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="../assets/brand/Apex%20Partners%20-%20Icon%20Navy.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body data-blog-article="2">
+    <header class="site-header site-header--surface-dark" id="header">
+      <div class="header-inner">
+        <a class="logo-link" href="../index.html" data-i18n-aria="nav.logoAria" aria-label="Apex Partners Startseite">
+          <img
+            id="header-logo"
+            src="../assets/brand/Apex%20Partners%20-%20Logo%20White.svg"
+            alt="Apex Partners"
+            width="180"
+            height="28"
+          />
+        </a>
+        <nav class="nav-desktop" data-i18n-aria="nav.navAria" aria-label="Hauptnavigation">
+          <a href="../index.html#pulscheck" data-i18n="nav.pulscheck">KI Puls-Check</a>
+          <a href="../index.html#use-cases" data-i18n="nav.useCases">Use Cases</a>
+          <a href="../index.html#wie" data-i18n="nav.howItWorks">Wie es funktioniert</a>
+          <a href="../blog.html" data-i18n="nav.blog">Blog</a>
+          <a href="../index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="header-actions">
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button
+              type="button"
+              class="lang-dropdown__trigger"
+              id="lang-toggle"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-controls="lang-menu"
+              data-i18n-aria="lang.choose"
+              aria-label="Sprache wählen"
+            >
+              <span class="lang-dropdown__current" id="lang-toggle-icon" aria-hidden="true">
+                <svg class="lang-flag lang-flag--de" viewBox="0 0 22 15" fill="none" aria-hidden="true">
+                  <rect width="22" height="5" fill="#000"/>
+                  <rect width="22" height="5" y="5" fill="#D00"/>
+                  <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                </svg>
+                <svg class="lang-flag lang-flag--en" viewBox="0 0 22 15" fill="none" aria-hidden="true" hidden>
+                  <rect width="22" height="15" fill="#B22234"/>
+                  <rect width="22" height="1.154" y="1.154" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="3.462" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="5.769" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="8.077" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="10.385" fill="#FFF"/>
+                  <rect width="22" height="1.154" y="12.692" fill="#FFF"/>
+                  <rect width="8.8" height="8.077" fill="#3C3B6E"/>
+                  <circle cx="1.5" cy="1.4" r="0.38" fill="#FFF"/>
+                  <circle cx="3.1" cy="1.4" r="0.38" fill="#FFF"/>
+                  <circle cx="4.7" cy="1.4" r="0.38" fill="#FFF"/>
+                  <circle cx="6.3" cy="1.4" r="0.38" fill="#FFF"/>
+                  <circle cx="7.9" cy="1.4" r="0.38" fill="#FFF"/>
+                  <circle cx="2.3" cy="2.7" r="0.38" fill="#FFF"/>
+                  <circle cx="3.9" cy="2.7" r="0.38" fill="#FFF"/>
+                  <circle cx="5.5" cy="2.7" r="0.38" fill="#FFF"/>
+                  <circle cx="7.1" cy="2.7" r="0.38" fill="#FFF"/>
+                  <circle cx="1.5" cy="4" r="0.38" fill="#FFF"/>
+                  <circle cx="3.1" cy="4" r="0.38" fill="#FFF"/>
+                  <circle cx="4.7" cy="4" r="0.38" fill="#FFF"/>
+                  <circle cx="6.3" cy="4" r="0.38" fill="#FFF"/>
+                  <circle cx="7.9" cy="4" r="0.38" fill="#FFF"/>
+                  <circle cx="2.3" cy="5.3" r="0.38" fill="#FFF"/>
+                  <circle cx="3.9" cy="5.3" r="0.38" fill="#FFF"/>
+                  <circle cx="5.5" cy="5.3" r="0.38" fill="#FFF"/>
+                  <circle cx="7.1" cy="5.3" r="0.38" fill="#FFF"/>
+                  <circle cx="1.5" cy="6.6" r="0.38" fill="#FFF"/>
+                  <circle cx="3.1" cy="6.6" r="0.38" fill="#FFF"/>
+                  <circle cx="4.7" cy="6.6" r="0.38" fill="#FFF"/>
+                  <circle cx="6.3" cy="6.6" r="0.38" fill="#FFF"/>
+                  <circle cx="7.9" cy="6.6" r="0.38" fill="#FFF"/>
+                </svg>
+              </span>
+              <svg class="lang-dropdown__chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="lang-dropdown__menu" id="lang-menu" role="listbox" hidden>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="de" role="option" aria-selected="true">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="5" fill="#000"/>
+                      <rect width="22" height="5" y="5" fill="#D00"/>
+                      <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                    </svg>
+                  </span>
+                  <span data-i18n="lang.de">Deutsch</span>
+                </button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="en" role="option" aria-selected="false">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="15" fill="#B22234"/>
+                      <rect width="22" height="1.154" y="1.154" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="3.462" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="5.769" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="8.077" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="10.385" fill="#FFF"/>
+                      <rect width="22" height="1.154" y="12.692" fill="#FFF"/>
+                      <rect width="8.8" height="8.077" fill="#3C3B6E"/>
+                      <circle cx="1.5" cy="1.4" r="0.38" fill="#FFF"/>
+                      <circle cx="3.1" cy="1.4" r="0.38" fill="#FFF"/>
+                      <circle cx="4.7" cy="1.4" r="0.38" fill="#FFF"/>
+                      <circle cx="6.3" cy="1.4" r="0.38" fill="#FFF"/>
+                      <circle cx="7.9" cy="1.4" r="0.38" fill="#FFF"/>
+                      <circle cx="2.3" cy="2.7" r="0.38" fill="#FFF"/>
+                      <circle cx="3.9" cy="2.7" r="0.38" fill="#FFF"/>
+                      <circle cx="5.5" cy="2.7" r="0.38" fill="#FFF"/>
+                      <circle cx="7.1" cy="2.7" r="0.38" fill="#FFF"/>
+                      <circle cx="1.5" cy="4" r="0.38" fill="#FFF"/>
+                      <circle cx="3.1" cy="4" r="0.38" fill="#FFF"/>
+                      <circle cx="4.7" cy="4" r="0.38" fill="#FFF"/>
+                      <circle cx="6.3" cy="4" r="0.38" fill="#FFF"/>
+                      <circle cx="7.9" cy="4" r="0.38" fill="#FFF"/>
+                      <circle cx="2.3" cy="5.3" r="0.38" fill="#FFF"/>
+                      <circle cx="3.9" cy="5.3" r="0.38" fill="#FFF"/>
+                      <circle cx="5.5" cy="5.3" r="0.38" fill="#FFF"/>
+                      <circle cx="7.1" cy="5.3" r="0.38" fill="#FFF"/>
+                      <circle cx="1.5" cy="6.6" r="0.38" fill="#FFF"/>
+                      <circle cx="3.1" cy="6.6" r="0.38" fill="#FFF"/>
+                      <circle cx="4.7" cy="6.6" r="0.38" fill="#FFF"/>
+                      <circle cx="6.3" cy="6.6" r="0.38" fill="#FFF"/>
+                      <circle cx="7.9" cy="6.6" r="0.38" fill="#FFF"/>
+                    </svg>
+                  </span>
+                  <span data-i18n="lang.en">English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="header-cta"
+            href="#"
+            data-booking-open
+            aria-haspopup="dialog"
+            aria-controls="booking-modal"
+            data-i18n="nav.cta"
+            >Erstgespräch vereinbaren</a
+          >
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            data-i18n-aria="nav.menuOpen"
+            aria-label="Menü öffnen"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="nav-mobile" id="mobile-nav" data-i18n-aria="nav.mobileNavAria" aria-label="Mobile Navigation">
+      <a href="../index.html#pulscheck" data-i18n="nav.pulscheck">KI Puls-Check</a>
+      <a href="../index.html#use-cases" data-i18n="nav.useCases">Use Cases</a>
+      <a href="../index.html#wie" data-i18n="nav.howItWorks">Wie es funktioniert</a>
+      <a href="../blog.html" data-i18n="nav.blog">Blog</a>
+          <a href="../index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+      <a
+        class="header-cta"
+        href="#"
+        data-booking-open
+        aria-haspopup="dialog"
+        aria-controls="booking-modal"
+        data-i18n="nav.cta"
+        >Erstgespräch vereinbaren</a
+      >
+    </nav>
+
+    <main id="top">
+      <section class="blog-article-hero band band--dark">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container">
+          <a href="../blog.html" class="legal-page__back" data-i18n="blog.back">
+            <svg class="legal-page__back-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M8.75 2.625L4.375 7l4.375 4.375" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="legal-page__back-label">Zurück zum Blog</span>
+          </a>
+          <p class="blog-article__meta">
+            <time datetime="2026-06-04" data-i18n="blog.articles.2.date">4. Juni 2026</time>
+            <span class="blog-article__meta-sep" aria-hidden="true">·</span>
+            <span data-i18n="blog.articles.2.category">Agentic AI</span>
+          </p>
+          <h1 class="blog-article-hero__title" data-i18n="blog.articles.2.title">KI-Agenten rasen ins Unternehmen — die Kontrolle hinkt hinterher</h1>
+        </div>
+      </section>
+
+      <section class="section band band--light blog-article-section">
+        <div class="container">
+          <figure class="blog-article__hero">
+            <img
+              src="../assets/blog/artikel-3.jpg"
+              alt=""
+              width="1024"
+              height="576"
+              decoding="async"
+              data-i18n-alt="blog.articles.2.imageAlt"
+            />
+          </figure>
+          <div class="blog-article__body legal-prose" data-i18n-html="blog.articles.2.bodyHtml"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer band band--dark">
+      <div class="container">
+        <div class="footer-grid footer-grid--legal">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="../assets/brand/Apex%20Partners%20-%20Logo%20White.svg"
+                alt="Apex Partners"
+                width="160"
+                height="26"
+              />
+            </div>
+            <p class="footer-tag" data-i18n="footer.tagline">
+              KI-Systeme für Mittelstand & Scaleups. Konzeption, Einführung und Integration.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copyright">© 2026 Apex Partners</span>
+          <a href="../impressum.html" data-i18n="footer.imprintLink">Impressum</a>
+          <a href="../datenschutz.html" data-i18n="footer.privacyLink">Datenschutz</a>
+          <a href="mailto:info@apexpartners.tech" data-i18n="footer.email">info@apexpartners.tech</a>
+        </div>
+      </div>
+    </footer>
+
+    <div
+      class="booking-modal"
+      id="booking-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="booking-dialog-title"
+    >
+      <div class="booking-modal-backdrop" data-booking-close aria-hidden="true"></div>
+      <div class="booking-modal-shell">
+        <div class="booking-modal-panel">
+          <button
+            type="button"
+            class="booking-modal-close"
+            id="booking-modal-close"
+            data-i18n-aria="booking.modal.closeAria"
+            aria-label="Terminbuchung schließen"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+          <p id="booking-dialog-title" class="pulscheck-sr-only" data-i18n="booking.modal.dialogTitle">Erstgespräch vereinbaren</p>
+          <div class="booking-cal-inline" id="my-cal-inline-30min"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../i18n.js"></script>
+    <script src="../site-nav.js"></script>
+    <script src="../booking.js"></script>
+  </body>
+</html>

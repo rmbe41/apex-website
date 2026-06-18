@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog | Apex Partners</title>
+    <meta
+      name="description"
+      content="Einblicke und Perspektiven zu KI, Prozessen und Umsetzung im Mittelstand."
+    />
+    <link rel="icon" type="image/png" href="assets/brand/Apex%20Partners%20-%20Icon%20Navy.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/brand/Apex%20Partners%20-%20Icon%20Navy.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      href="assets/brand/Apex%20Partners%20-%20Icon%20White.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="assets/brand/Apex%20Partners%20-%20Icon%20Navy.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-blog-page="listing">
+    <header class="site-header site-header--surface-dark" id="header">
+      <div class="header-inner">
+        <a class="logo-link" href="index.html" data-i18n-aria="nav.logoAria" aria-label="Apex Partners Startseite">
+          <img
+            id="header-logo"
+            src="assets/brand/Apex%20Partners%20-%20Logo%20White.svg"
+            alt="Apex Partners"
+            width="180"
+            height="28"
+          />
+        </a>
+        <nav class="nav-desktop" data-i18n-aria="nav.navAria" aria-label="Hauptnavigation">
+          <a href="index.html#pulscheck" data-i18n="nav.pulscheck">KI Puls-Check</a>
+          <a href="index.html#use-cases" data-i18n="nav.useCases">Use Cases</a>
+          <a href="index.html#wie" data-i18n="nav.howItWorks">Wie es funktioniert</a>
+          <a href="blog.html" class="is-active" aria-current="page" data-i18n="nav.blog">Blog</a>
+          <a href="index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+        </nav>
+        <div class="header-actions">
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button
+              type="button"
+              class="lang-dropdown__trigger"
+              id="lang-toggle"
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-controls="lang-menu"
+              data-i18n-aria="lang.choose"
+              aria-label="Sprache wählen"
+            >
+              <span class="lang-dropdown__current" id="lang-toggle-icon" aria-hidden="true">
+                <svg class="lang-flag lang-flag--de" viewBox="0 0 22 15" fill="none" aria-hidden="true">
+                  <rect width="22" height="5" fill="#000"/>
+                  <rect width="22" height="5" y="5" fill="#D00"/>
+                  <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                </svg>
+                <svg class="lang-flag lang-flag--en" viewBox="0 0 22 15" fill="none" aria-hidden="true" hidden>
+                  <rect width="22" height="15" fill="#B22234"/>
+                  <rect width="8.8" height="8.077" fill="#3C3B6E"/>
+                </svg>
+              </span>
+              <svg class="lang-dropdown__chevron" width="10" height="10" viewBox="0 0 10 10" fill="none" aria-hidden="true">
+                <path d="M2 3.5L5 6.5L8 3.5" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+            <ul class="lang-dropdown__menu" id="lang-menu" role="listbox" hidden>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="de" role="option" aria-selected="true">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="5" fill="#000"/>
+                      <rect width="22" height="5" y="5" fill="#D00"/>
+                      <rect width="22" height="5" y="10" fill="#FFCE00"/>
+                    </svg>
+                  </span>
+                  <span data-i18n="lang.de">Deutsch</span>
+                </button>
+              </li>
+              <li role="presentation">
+                <button type="button" class="lang-dropdown__option" data-lang="en" role="option" aria-selected="false">
+                  <span class="lang-flag-wrap" aria-hidden="true">
+                    <svg class="lang-flag" viewBox="0 0 22 15" fill="none">
+                      <rect width="22" height="15" fill="#B22234"/>
+                      <rect width="8.8" height="8.077" fill="#3C3B6E"/>
+                    </svg>
+                  </span>
+                  <span data-i18n="lang.en">English</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <a
+            class="header-cta"
+            href="#"
+            data-booking-open
+            aria-haspopup="dialog"
+            aria-controls="booking-modal"
+            data-i18n="nav.cta"
+            >Erstgespräch vereinbaren</a
+          >
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+            data-i18n-aria="nav.menuOpen"
+            aria-label="Menü öffnen"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <nav class="nav-mobile" id="mobile-nav" data-i18n-aria="nav.mobileNavAria" aria-label="Mobile Navigation">
+      <a href="index.html#pulscheck" data-i18n="nav.pulscheck">KI Puls-Check</a>
+      <a href="index.html#use-cases" data-i18n="nav.useCases">Use Cases</a>
+      <a href="index.html#wie" data-i18n="nav.howItWorks">Wie es funktioniert</a>
+      <a href="blog.html" class="is-active" aria-current="page" data-i18n="nav.blog">Blog</a>
+      <a href="index.html#kontakt" data-i18n="nav.contact">Kontakt</a>
+      <a
+        class="header-cta"
+        href="#"
+        data-booking-open
+        aria-haspopup="dialog"
+        aria-controls="booking-modal"
+        data-i18n="nav.cta"
+        >Erstgespräch vereinbaren</a
+      >
+    </nav>
+
+    <main id="top">
+      <section class="blog-hero band band--dark">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="container">
+          <header class="blog-hero__header">
+            <p class="section-label" data-i18n="blog.label">Blog</p>
+            <h1 class="blog-hero__title" data-i18n="blog.title">Einblicke & Perspektiven</h1>
+            <p class="section-lead" data-i18n="blog.lead">
+              Praxisnahe Gedanken zu KI, Prozessen und Umsetzung im Mittelstand.
+            </p>
+          </header>
+        </div>
+      </section>
+
+      <section class="section band band--light blog-listing-section principles-section">
+        <div class="container">
+          <div class="blog-grid" role="list">
+          <article class="blog-card" role="listitem">
+            <a class="blog-card-link" href="blog/hundert-piloten-kein-produkt.html" data-i18n-href="blog.articles.0.href">
+              <div class="blog-card-media">
+                <img
+                  src="assets/blog/artikel-1.jpg"
+                  alt=""
+                  width="1024"
+                  height="576"
+                  loading="lazy"
+                  decoding="async"
+                  data-i18n-alt="blog.articles.0.imageAlt"
+                />
+              </div>
+              <div class="blog-card-body">
+                <p class="blog-card-meta">
+                  <time datetime="2026-06-18" data-i18n="blog.articles.0.date">18. Juni 2026</time>
+                  <span class="blog-card-meta-sep" aria-hidden="true">·</span>
+                  <span data-i18n="blog.articles.0.category">Produktion</span>
+                </p>
+                <h2 class="blog-card-title" data-i18n="blog.articles.0.title">
+                  Hundert Piloten, kein Produkt — warum KI-Projekte im Testbetrieb sterben
+                </h2>
+                <p class="blog-card-excerpt" data-i18n="blog.articles.0.excerpt">
+                  88 Prozent setzen KI ein — aber nur jedes vierte Unternehmen bringt 40 Prozent oder mehr seiner Experimente in Produktion. Woran es hakt und was Vorreiter anders machen.
+                </p>
+                <span class="blog-card-more">
+                  <span data-i18n="blog.readMore">Mehr lesen</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" role="listitem">
+            <a class="blog-card-link" href="blog/made-in-eu-sovereign-ai.html" data-i18n-href="blog.articles.1.href">
+              <div class="blog-card-media">
+                <img
+                  src="assets/blog/artikel-2.jpg"
+                  alt=""
+                  width="1024"
+                  height="576"
+                  loading="lazy"
+                  decoding="async"
+                  data-i18n-alt="blog.articles.1.imageAlt"
+                />
+              </div>
+              <div class="blog-card-body">
+                <p class="blog-card-meta">
+                  <time datetime="2026-06-11" data-i18n="blog.articles.1.date">11. Juni 2026</time>
+                  <span class="blog-card-meta-sep" aria-hidden="true">·</span>
+                  <span data-i18n="blog.articles.1.category">Souveränität</span>
+                </p>
+                <h2 class="blog-card-title" data-i18n="blog.articles.1.title">
+                  Made in EU zählt wieder — warum der Bauort Ihrer KI plötzlich strategisch ist
+                </h2>
+                <p class="blog-card-excerpt" data-i18n="blog.articles.1.excerpt">
+                  Mehr als drei von vier Unternehmen beziehen das Herkunftsland in ihre KI-Anbieterentscheidung ein. Was Sovereign AI für den Mittelstand bedeutet.
+                </p>
+                <span class="blog-card-more">
+                  <span data-i18n="blog.readMore">Mehr lesen</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" role="listitem">
+            <a class="blog-card-link" href="blog/ki-agenten-kontrolle.html" data-i18n-href="blog.articles.2.href">
+              <div class="blog-card-media">
+                <img
+                  src="assets/blog/artikel-3.jpg"
+                  alt=""
+                  width="1024"
+                  height="576"
+                  loading="lazy"
+                  decoding="async"
+                  data-i18n-alt="blog.articles.2.imageAlt"
+                />
+              </div>
+              <div class="blog-card-body">
+                <p class="blog-card-meta">
+                  <time datetime="2026-06-04" data-i18n="blog.articles.2.date">4. Juni 2026</time>
+                  <span class="blog-card-meta-sep" aria-hidden="true">·</span>
+                  <span data-i18n="blog.articles.2.category">Agentic AI</span>
+                </p>
+                <h2 class="blog-card-title" data-i18n="blog.articles.2.title">
+                  KI-Agenten rasen ins Unternehmen — die Kontrolle hinkt hinterher
+                </h2>
+                <p class="blog-card-excerpt" data-i18n="blog.articles.2.excerpt">
+                  74 Prozent wollen autonome KI-Agenten — aber nur 21 Prozent haben ein ausgereiftes Governance-Modell. Der dritte Weg zwischen blindem Rollout und Abwarten.
+                </p>
+                <span class="blog-card-more">
+                  <span data-i18n="blog.readMore">Mehr lesen</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" role="listitem">
+            <a class="blog-card-link" href="blog/lizenzen-und-hoffen.html" data-i18n-href="blog.articles.3.href">
+              <div class="blog-card-media">
+                <img
+                  src="assets/blog/artikel-4.jpg"
+                  alt=""
+                  width="1024"
+                  height="576"
+                  loading="lazy"
+                  decoding="async"
+                  data-i18n-alt="blog.articles.3.imageAlt"
+                />
+              </div>
+              <div class="blog-card-body">
+                <p class="blog-card-meta">
+                  <time datetime="2026-05-28" data-i18n="blog.articles.3.date">28. Mai 2026</time>
+                  <span class="blog-card-meta-sep" aria-hidden="true">·</span>
+                  <span data-i18n="blog.articles.3.category">Adoption</span>
+                </p>
+                <h2 class="blog-card-title" data-i18n="blog.articles.3.title">
+                  Der teuerste Fehler bei der KI-Einführung — Lizenzen verteilen und hoffen
+                </h2>
+                <p class="blog-card-excerpt" data-i18n="blog.articles.3.excerpt">
+                  Zugang zu KI-Tools ist um 50 Prozent gewachsen — aber weniger als 60 Prozent der Berechtigten nutzen sie täglich. Der Engpass ist Adoption, nicht Technologie.
+                </p>
+                <span class="blog-card-more">
+                  <span data-i18n="blog.readMore">Mehr lesen</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+          <article class="blog-card" role="listitem">
+            <a class="blog-card-link" href="blog/governance-und-resilienz.html" data-i18n-href="blog.articles.4.href">
+              <div class="blog-card-media">
+                <img
+                  src="assets/blog/artikel-5.jpg"
+                  alt=""
+                  width="1024"
+                  height="576"
+                  loading="lazy"
+                  decoding="async"
+                  data-i18n-alt="blog.articles.4.imageAlt"
+                />
+              </div>
+              <div class="blog-card-body">
+                <p class="blog-card-meta">
+                  <time datetime="2026-05-21" data-i18n="blog.articles.4.date">21. Mai 2026</time>
+                  <span class="blog-card-meta-sep" aria-hidden="true">·</span>
+                  <span data-i18n="blog.articles.4.category">Governance</span>
+                </p>
+                <h2 class="blog-card-title" data-i18n="blog.articles.4.title">
+                  Erst Kontrolle, dann Tempo — warum Governance und Resilienz über Ihre KI-Skalierung entscheiden
+                </h2>
+                <p class="blog-card-excerpt" data-i18n="blog.articles.4.excerpt">
+                  Die schnellsten KI-Wachstumsprogramme haben nicht die wenigsten Regeln — sondern die durchdachtesten. Governance und Resilienz als Fundament.
+                </p>
+                <span class="blog-card-more">
+                  <span data-i18n="blog.readMore">Mehr lesen</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="booking-modal"
+      id="booking-modal"
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="booking-dialog-title"
+    >
+      <div class="booking-modal-backdrop" data-booking-close aria-hidden="true"></div>
+      <div class="booking-modal-shell">
+        <div class="booking-modal-panel">
+          <button
+            type="button"
+            class="booking-modal-close"
+            id="booking-modal-close"
+            data-i18n-aria="booking.modal.closeAria"
+            aria-label="Terminbuchung schließen"
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
+          <p id="booking-dialog-title" class="pulscheck-sr-only" data-i18n="booking.modal.dialogTitle">Erstgespräch vereinbaren</p>
+          <div class="booking-cal-inline" id="my-cal-inline-30min"></div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer band band--dark">
+      <div class="container">
+        <div class="footer-grid footer-grid--legal">
+          <div>
+            <div class="footer-brand">
+              <img
+                src="assets/brand/Apex%20Partners%20-%20Logo%20White.svg"
+                alt="Apex Partners"
+                width="160"
+                height="26"
+              />
+            </div>
+            <p class="footer-tag" data-i18n="footer.tagline">
+              KI-Systeme für Mittelstand & Scaleups. Konzeption, Einführung und Integration.
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span data-i18n="footer.copyright">© 2026 Apex Partners</span>
+          <a href="impressum.html" data-i18n="footer.imprintLink">Impressum</a>
+          <a href="datenschutz.html" data-i18n="footer.privacyLink">Datenschutz</a>
+          <a href="mailto:info@apexpartners.tech" data-i18n="footer.email">info@apexpartners.tech</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="site-nav.js"></script>
+    <script src="booking.js"></script>
+  </body>
+</html>
