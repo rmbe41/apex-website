@@ -169,9 +169,16 @@ def md_to_html(md: str) -> str:
     return "".join(parts)
 
 
+def extract_excerpt(md_text: str, max_sentences: int = 4) -> str:
+    lead = md_text.strip().split("\n\n")[0].strip()
+    sentences = re.split(r"(?<=[.!?])\s+", lead)
+    return " ".join(sentences[:max_sentences]).strip()
+
+
 def build_article(meta: dict, lang: str) -> dict:
     md_path = CONTENT_DIR / "blog" / lang / f"{meta['md']}.md"
-    body_html = md_to_html(md_path.read_text(encoding="utf-8"))
+    md_text = md_path.read_text(encoding="utf-8")
+    body_html = md_to_html(md_text)
     title = meta[f"title_{lang}"]
     suffix = "Apex Partners Blog"
     return {
@@ -180,7 +187,7 @@ def build_article(meta: dict, lang: str) -> dict:
         "dateIso": meta["date_iso"],
         "category": meta[f"category_{lang}"],
         "title": title,
-        "excerpt": meta[f"excerpt_{lang}"],
+        "excerpt": extract_excerpt(md_text),
         "image": meta["image"],
         "imageAlt": meta[f"imageAlt_{lang}"],
         "meta": {
@@ -192,9 +199,20 @@ def build_article(meta: dict, lang: str) -> dict:
 
 
 def main() -> None:
+    article_cta = {
+        "de": {
+            "text": "Sind Sie neugierig geworden, was KI für Sie bedeuten kann?",
+            "button": "Kontakt aufnehmen",
+        },
+        "en": {
+            "text": "Curious what AI could mean for you?",
+            "button": "Get in touch",
+        },
+    }
     for lang in ("de", "en"):
         path = CONTENT_DIR / f"{lang}.json"
         data = json.loads(path.read_text(encoding="utf-8"))
+        data["blog"]["articleCta"] = article_cta[lang]
         data["blog"]["articles"] = [build_article(meta, lang) for meta in ARTICLES]
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Updated {path} ({len(data['blog']['articles'])} articles)")
