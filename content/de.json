@@ -846,6 +846,64 @@
       "button": "Kontakt aufnehmen"
     }
   },
+  "homeFaq": {
+    "label": "Q&A",
+    "title": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "question": "Für wen sind Apex Partners KI Systeme geeignet?",
+        "answer": "Vom etablierten Mittelständler bis zum wachsenden Scale-up – unsere Lösungen funktionieren branchenübergreifend. Industrie, E-Commerce, Healthcare, Logistik, Finance & Insurance. Entscheidend ist eine einfache Frage: Sind Sie bereit, Ihr Unternehmen mit KI zu transformieren?"
+      },
+      {
+        "question": "Wie läuft das Erstgespräch ab – und wozu verpflichte ich mich dabei?",
+        "answer": "Zu nichts. Das Erstgespräch dauert etwa 30 bis 45 Minuten und dient ausschließlich dazu, Ihre Situation zu verstehen. Wir stellen Fragen, hören zu und geben Ihnen eine erste ehrliche Einschätzung – ob und wie KI bei Ihnen sinnvoll einsetzbar ist. Kein Verkaufsgespräch, kein Druck, keine versteckten Folgeschritte. Wenn es passt, besprechen wir gemeinsam wie es weitergehen könnte. Wenn nicht, sagen wir das auch."
+      },
+      {
+        "question": "Wo fangen wir an, wenn wir noch keine KI-Erfahrung haben?",
+        "answer": "Genau da, wo Sie stehen. KI-Vorkenntnisse sind keine Voraussetzung – weder technisch noch strategisch. Wir beginnen immer mit einem konkreten Problem oder Prozess in Ihrem Unternehmen, nicht mit Technologie um der Technologie willen. Oft ist der beste Einstieg ein überschaubares Pilotprojekt, das schnell sichtbare Ergebnisse liefert und intern Vertrauen schafft. Von dort aus wächst das Vorhaben in Ihrem Tempo."
+      },
+      {
+        "question": "Funktioniert das mit unserer bestehenden Software?",
+        "answer": "In der Regel ja. Wir verbinden unsere Lösungen mit den gängigen ERP- und CRM-Systemen – von SAP über Salesforce bis hin zu branchenspezifischen Tools. Auch gewachsene oder ältere Systemlandschaften sind kein Ausschlusskriterium. Wir analysieren im Vorfeld genau, was technisch möglich ist, und bauen die Integration so, dass Ihr laufender Betrieb nicht gestört wird. Was konkret machbar ist, klären wir im ersten Gespräch."
+      },
+      {
+        "question": "Brauchen wir saubere Daten, bevor wir starten?",
+        "answer": "Nein – und das ist einer der häufigsten Irrtümer. Perfekte Daten hat kaum ein Unternehmen. Wir arbeiten mit dem, was vorhanden ist, identifizieren wo nötig Lücken und helfen Ihnen, die Datenqualität Schritt für Schritt zu verbessern. Manchmal ist das sogar Teil des Projekts selbst. Sie müssen nicht erst „fertig“ sein, um anzufangen."
+      },
+      {
+        "question": "Wie viel Zeit muss ich für eine Implementierung einplanen?",
+        "answer": "Eine pauschale Antwort wäre unehrlich. Manche Projekte – etwa ein einfacher Voice Agent für den telefonischen Erstkontakt – sind in wenigen Wochen umgesetzt. Andere Vorhaben, wie die KI-gestützte Transformation ganzer Abteilungen, erfordern mehr Zeit. Was Ihr konkretes Projekt zeitlich benötigt, klären wir gemeinsam im ersten Gespräch – kostenlos und transparent."
+      },
+      {
+        "question": "Was kommt finanziell auf uns zu?",
+        "answer": "Das hängt vom Projektumfang ab. Der Einstieg – beispielsweise mit einem KI-Chatbot – beginnt bei ca. 2.900 €. Umfangreichere Automatisierungsvorhaben bewegen sich zwischen 15.000 € und 70.000 €. Größere Enterprise-Projekte werden ausschließlich individuell bepreist. In jedem Fall bekommen Sie von uns einen klaren Business Case mit konkreten ROI-Erwartungen."
+      },
+      {
+        "question": "Ab wann rechnet sich die Investition?",
+        "answer": "Das lässt sich nicht pauschal beantworten – und das sagen wir Ihnen offen. Ein System zur automatisierten Lead-Qualifizierung zahlt sich schneller aus als eine komplexe Datenpipeline oder ein Context Layer. Genau deshalb stimmen wir den ROI individuell vor Vertragsabschluss mit Ihnen ab. Sie wissen im Voraus, wann sich das Projekt für Sie rechnet."
+      },
+      {
+        "question": "Wie messen wir gemeinsam den Erfolg des Projekts?",
+        "answer": "Bevor wir starten, definieren wir gemeinsam klare Kennzahlen – abhängig vom Projektziel. Das können eingesparte Arbeitsstunden sein, kürzere Bearbeitungszeiten, höhere Conversion Rates oder schlicht reduzierte Kosten. Diese Zielwerte halten wir schriftlich fest. Während des Projekts tracken wir die Entwicklung transparent, und nach Go-live sehen Sie schwarz auf weiß, was das System leistet. Kein Bauchgefühl, sondern messbare Ergebnisse."
+      },
+      {
+        "question": "Wie gehen Sie mit Datenschutz und DSGVO um?",
+        "answer": "Datenschutz ist zentraler Ausgangspunkt, keine Nachbetrachtung. Unsere Lösungen laufen auf Servern in Deutschland, Daten verlassen zu keinem Zeitpunkt die EU, und Ihre Datenschutzbeauftragten erhalten alle notwendigen Unterlagen. Auch die Anforderungen des EU AI Act sind in unsere Entwicklung fest integriert."
+      },
+      {
+        "question": "Müssen wir intern IT-Kapazitäten bereitstellen?",
+        "answer": "Nein. Die vollständige technische Umsetzung liegt in unseren Händen. Wir sorgen dafür, dass Ihre Mitarbeitenden sicher mit den neuen Systemen umgehen können – ohne dass Ihre IT-Abteilung dabei überlastet wird. Und wenn Sie perspektivisch eigenes KI-Wissen im Unternehmen aufbauen möchten, begleiten wir Sie auch auf diesem Weg."
+      },
+      {
+        "question": "Schult Apex Partners auch unsere Mitarbeitenden?",
+        "answer": "Selbstverständlich. Wir begleiten Ihr Team über die Implementierung hinaus – mit praxisnahen Schulungen, die auf die jeweilige Rolle zugeschnitten sind: für die Führungsebene genauso wie für Teams im operativen Tagesgeschäft."
+      },
+      {
+        "question": "Was macht Apex Partners anders als andere Anbieter?",
+        "answer": "Viele reden über KI. Wir bauen sie. Unser Team vereint über 10 Spezialistinnen und Spezialisten mit mehr als fünf Jahren praktischer KI-Erfahrung – und denkt wie ein Gründerteam, nicht wie ein Beratungshaus. Was uns antreibt, sind messbare Ergebnisse für Sie, nicht Stundennachweise für uns."
+      }
+    ]
+  },
   "founderQuote": {
     "quote": "Zunächst verstehen wir Ihr Unternehmen und Ihren Kontext. Dann konzipieren wir passende KI-Systeme und setzen diese mit Ihnen um.<br />Schritt für Schritt.",
     "author": "Apex Partners Gründer — Robin Betz"

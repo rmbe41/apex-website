@@ -214,6 +214,8 @@ def main() -> None:
         data = json.loads(path.read_text(encoding="utf-8"))
         data["blog"]["articleCta"] = article_cta[lang]
         data["blog"]["articles"] = [build_article(meta, lang) for meta in ARTICLES]
+        if "faqTitle" in data["blog"]:
+            del data["blog"]["faqTitle"]
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"Updated {path} ({len(data['blog']['articles'])} articles)")
 

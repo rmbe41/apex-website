@@ -846,6 +846,64 @@
       "button": "Get in touch"
     }
   },
+  "homeFaq": {
+    "label": "Q&A",
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "question": "Who are Apex Partners' AI systems designed for?",
+        "answer": "From established mid-sized companies to fast-growing scale-ups – our solutions work across industries. Manufacturing, e-commerce, healthcare, logistics, finance & insurance. The deciding factor is one simple question: Are you ready to transform your business with AI?"
+      },
+      {
+        "question": "What happens in the first conversation – and what am I committing to?",
+        "answer": "Nothing. The initial call lasts around 30 to 45 minutes and is solely about understanding your situation. We ask questions, listen, and give you an honest first assessment – whether and how AI makes sense for your business. No sales pitch, no pressure, no hidden next steps. If there's a fit, we'll talk about what a next step could look like. If there isn't, we'll tell you that too."
+      },
+      {
+        "question": "Where do we start if we have no experience with AI?",
+        "answer": "Exactly where you are. No prior knowledge of AI is required – neither technical nor strategic. We always start with a concrete problem or process in your business, not with technology for technology's sake. Often the best starting point is a manageable pilot project that delivers visible results quickly and builds internal confidence. From there, things grow at your pace."
+      },
+      {
+        "question": "Will this work with our existing software?",
+        "answer": "In most cases, yes. We connect our solutions with common ERP and CRM systems – from SAP to Salesforce to industry-specific tools. Even complex or legacy system landscapes are not a dealbreaker. We assess what's technically feasible upfront and build the integration in a way that doesn't disrupt your day-to-day operations. What's possible in your specific case is something we'll clarify in the first conversation."
+      },
+      {
+        "question": "Do we need clean data before we start?",
+        "answer": "No – and this is one of the most common misconceptions. Hardly any company has perfect data. We work with what's available, identify gaps where needed, and help you improve data quality step by step. Sometimes that's even part of the project itself. You don't need to be \"ready\" before you begin."
+      },
+      {
+        "question": "How much time should I budget for an implementation?",
+        "answer": "A blanket answer would be dishonest. Some projects – like a simple voice agent for inbound calls – can go live within a few weeks. Others, such as AI-driven transformation across entire departments, naturally require more time. What your specific project needs in terms of timeline is something we work out together in the first conversation – at no cost and with full transparency."
+      },
+      {
+        "question": "What kind of investment are we looking at?",
+        "answer": "It depends on the scope of the project. Entry-level solutions – such as an AI chatbot – start at around €2,900. More extensive automation projects typically range between €15,000 and €70,000. Larger enterprise projects are priced individually. In every case, you'll receive a clear business case from us with concrete ROI projections."
+      },
+      {
+        "question": "When will the investment pay off?",
+        "answer": "There's no one-size-fits-all answer – and we'll be upfront about that. A system that automatically qualifies leads will pay off faster than a complex data pipeline or a context layer. That's exactly why we work out the ROI with you individually before any contract is signed. You'll know in advance when the project will start paying for itself."
+      },
+      {
+        "question": "How do we measure the success of the project together?",
+        "answer": "Before we start, we define clear metrics together – based on your project goals. That could be hours saved, faster processing times, higher conversion rates, or simply reduced costs. We document these targets in writing. Throughout the project, we track progress transparently, and after go-live you'll see in black and white what the system is delivering. No gut feeling – just measurable results."
+      },
+      {
+        "question": "How do you ensure GDPR compliance?",
+        "answer": "Data protection is a fundamental starting point, not an afterthought. Our solutions run on servers in Germany, data never leaves the EU, and your data protection officers receive all necessary documentation. EU AI Act requirements are also firmly built into our development process."
+      },
+      {
+        "question": "Do we need to provide internal IT resources?",
+        "answer": "No. The entire technical implementation is handled by us. We make sure your employees can work confidently with the new systems – without putting additional strain on your IT department. And if you'd like to build internal AI expertise over time, we'll support you on that journey too."
+      },
+      {
+        "question": "Does Apex Partners also train our employees?",
+        "answer": "Absolutely. We support your team beyond the implementation – with hands-on training tailored to each role: for leadership just as much as for teams in day-to-day operations."
+      },
+      {
+        "question": "What makes Apex Partners different from traditional consulting providers?",
+        "answer": "A lot of companies talk about AI. We build it. Our team combines more than 10 specialists with over five years of hands-on AI experience – and thinks like a founding team, not a consultancy. What drives us is measurable results for you, not billable hours for us."
+      }
+    ]
+  },
   "founderQuote": {
     "quote": "First, we understand your company. Then we design the right AI systems and implement them with you. You benefit from our experience: what works, what does not, and the shortest path to results.",
     "author": "Founder of Apex Partners — Robin Betz"
